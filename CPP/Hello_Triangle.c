@@ -204,7 +204,7 @@ void Shutdown ( ESContext *esContext )
    glDeleteProgram ( userData->programObject );
 }
 
-int esMain ( ESContext *esContext )
+int OMEMain ( ESContext *esContext )
 {
    esContext->userData = malloc ( sizeof ( UserData ) );
 
