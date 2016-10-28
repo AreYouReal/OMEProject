@@ -36,6 +36,7 @@
 //    OpenGL ES 3.0 Programming Guide.
 //
 
+#define _CRT_SECURE_NO_WARNINGS
 ///
 //  Includes
 //
@@ -58,6 +59,7 @@ typedef FILE esFile;
 #ifdef __APPLE__
 #include "FileWrapper.h"
 #endif
+
 
 ///
 //  Macros
