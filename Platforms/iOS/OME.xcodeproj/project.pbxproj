@@ -18,8 +18,8 @@
 		F31159B61DC365050012690A /* esShader.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159AE1DC365050012690A /* esShader.c */; };
 		F31159B71DC365050012690A /* esShapes.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159AF1DC365050012690A /* esShapes.c */; };
 		F31159B81DC365050012690A /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159B01DC365050012690A /* esTransform.c */; };
-		F31159BA1DC365050012690A /* esUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159B31DC365050012690A /* esUtil.c */; };
-		F31159BB1DC365050012690A /* Hello_Triangle.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159B51DC365050012690A /* Hello_Triangle.c */; };
+		F31159BA1DC365050012690A /* OMEUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31159B31DC365050012690A /* OMEUtil.cpp */; };
+		F31159BB1DC365050012690A /* Hello_Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31159B51DC365050012690A /* Hello_Triangle.cpp */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
 		F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F41DC2223D00563510 /* InfoPlist.strings */; };
 		F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F71DC2224600563510 /* OME-Info.plist */; };
@@ -32,6 +32,7 @@
 		F36F6D441DC1F9790089F6C4 /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3F1DC1F9790089F6C4 /* FileWrapper.m */; };
 		F36F6D451DC1F9790089F6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D401DC1F9790089F6C4 /* main.m */; };
 		F36F6D461DC1F9790089F6C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D421DC1F9790089F6C4 /* ViewController.m */; };
+		F389B96A1DC7909C00163180 /* OMEP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F389B9681DC7909C00163180 /* OMEP.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +57,9 @@
 		F31159AE1DC365050012690A /* esShader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esShader.c; path = ../../CPP/esShader.c; sourceTree = SOURCE_ROOT; };
 		F31159AF1DC365050012690A /* esShapes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esShapes.c; path = ../../CPP/esShapes.c; sourceTree = SOURCE_ROOT; };
 		F31159B01DC365050012690A /* esTransform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esTransform.c; path = ../../CPP/esTransform.c; sourceTree = SOURCE_ROOT; };
-		F31159B31DC365050012690A /* esUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esUtil.c; path = ../../CPP/esUtil.c; sourceTree = SOURCE_ROOT; };
-		F31159B41DC365050012690A /* esUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = esUtil.h; path = ../../CPP/esUtil.h; sourceTree = SOURCE_ROOT; };
-		F31159B51DC365050012690A /* Hello_Triangle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = Hello_Triangle.c; path = ../../CPP/Hello_Triangle.c; sourceTree = SOURCE_ROOT; };
+		F31159B31DC365050012690A /* OMEUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OMEUtil.cpp; path = ../../CPP/OMEUtil.cpp; sourceTree = SOURCE_ROOT; };
+		F31159B41DC365050012690A /* OMEUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OMEUtil.hpp; path = ../../CPP/OMEUtil.hpp; sourceTree = SOURCE_ROOT; };
+		F31159B51DC365050012690A /* Hello_Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hello_Triangle.cpp; path = ../../CPP/Hello_Triangle.cpp; sourceTree = SOURCE_ROOT; };
 		F32AA2F21DC2223800563510 /* OMETests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OMETests-Info.plist"; path = "OMETests/OMETests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F32AA2F51DC2223D00563510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OMETests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		F32AA2F71DC2224600563510 /* OME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OME-Info.plist"; path = "OME/OME-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -75,6 +76,8 @@
 		F36F6D401DC1F9790089F6C4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OME/main.m; sourceTree = SOURCE_ROOT; };
 		F36F6D411DC1F9790089F6C4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = OME/ViewController.h; sourceTree = SOURCE_ROOT; };
 		F36F6D421DC1F9790089F6C4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = OME/ViewController.m; sourceTree = SOURCE_ROOT; };
+		F389B9681DC7909C00163180 /* OMEP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OMEP.cpp; path = ../../CPP/OMEP.cpp; sourceTree = SOURCE_ROOT; };
+		F389B9691DC7909C00163180 /* OMEP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OMEP.hpp; path = ../../CPP/OMEP.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,9 +201,11 @@
 				F31159AE1DC365050012690A /* esShader.c */,
 				F31159AF1DC365050012690A /* esShapes.c */,
 				F31159B01DC365050012690A /* esTransform.c */,
-				F31159B31DC365050012690A /* esUtil.c */,
-				F31159B41DC365050012690A /* esUtil.h */,
-				F31159B51DC365050012690A /* Hello_Triangle.c */,
+				F31159B31DC365050012690A /* OMEUtil.cpp */,
+				F31159B41DC365050012690A /* OMEUtil.hpp */,
+				F31159B51DC365050012690A /* Hello_Triangle.cpp */,
+				F389B9681DC7909C00163180 /* OMEP.cpp */,
+				F389B9691DC7909C00163180 /* OMEP.hpp */,
 			);
 			name = CPP;
 			sourceTree = "<group>";
@@ -312,11 +317,12 @@
 				F36F6D461DC1F9790089F6C4 /* ViewController.m in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.m in Sources */,
 				F31159B81DC365050012690A /* esTransform.c in Sources */,
-				F31159BB1DC365050012690A /* Hello_Triangle.c in Sources */,
+				F389B96A1DC7909C00163180 /* OMEP.cpp in Sources */,
+				F31159BB1DC365050012690A /* Hello_Triangle.cpp in Sources */,
 				F36F6D431DC1F9790089F6C4 /* AppDelegate.m in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,
 				F31159B71DC365050012690A /* esShapes.c in Sources */,
-				F31159BA1DC365050012690A /* esUtil.c in Sources */,
+				F31159BA1DC365050012690A /* OMEUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

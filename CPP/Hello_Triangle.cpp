@@ -35,7 +35,7 @@
 //    a minimal vertex/fragment shader.  The purpose of this
 //    example is to demonstrate the basic concepts of
 //    OpenGL ES 3.0 rendering.
-#include "esUtil.h"
+#include "OMEUtil.hpp"
 
 typedef struct
 {
@@ -78,7 +78,7 @@ GLuint LoadShader ( GLenum type, const char *shaderSrc )
 
       if ( infoLen > 1 )
       {
-         char *infoLog = malloc ( sizeof ( char ) * infoLen );
+          char *infoLog = new char[infoLen];
 
          glGetShaderInfoLog ( shader, infoLen, NULL, infoLog );
          esLogMessage ( "Error compiling shader:\n%s\n", infoLog );
@@ -99,7 +99,7 @@ GLuint LoadShader ( GLenum type, const char *shaderSrc )
 //
 int Init ( ESContext *esContext )
 {
-   UserData *userData = esContext->userData;
+   UserData *userData = (UserData*)esContext->userData;
    char vShaderStr[] =
       "#version 300 es                          \n"
       "layout(location = 0) in vec4 vPosition;  \n"
@@ -151,7 +151,7 @@ int Init ( ESContext *esContext )
 
       if ( infoLen > 1 )
       {
-         char *infoLog = malloc ( sizeof ( char ) * infoLen );
+          char *infoLog = new char[infoLen];
 
          glGetProgramInfoLog ( programObject, infoLen, NULL, infoLog );
          esLogMessage ( "Error linking program:\n%s\n", infoLog );
@@ -175,7 +175,7 @@ int Init ( ESContext *esContext )
 //
 void Draw ( ESContext *esContext )
 {
-   UserData *userData = esContext->userData;
+   UserData *userData = (UserData*)esContext->userData;
    GLfloat vVertices[] = {  0.0f,  0.5f, 0.0f,
                             -0.5f, -0.5f, 0.0f,
                             0.5f, -0.5f, 0.0f
@@ -199,7 +199,7 @@ void Draw ( ESContext *esContext )
 
 void Shutdown ( ESContext *esContext )
 {
-   UserData *userData = esContext->userData;
+   UserData *userData = (UserData*)esContext->userData;
 
    glDeleteProgram ( userData->programObject );
 }

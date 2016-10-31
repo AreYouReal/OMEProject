@@ -43,7 +43,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-#include "esUtil.h"
+#include "OMEUtil.hpp"
 #include "esUtil_win.h"
 
 #ifdef ANDROID
