@@ -1,11 +1,3 @@
-//
-//  Hello_TriangleTests.m
-//  Hello_TriangleTests
-//
-//  Created by Daniel Ginsburg on 9/23/13.
-//  Copyright (c) 2013 Daniel Ginsburg. All rights reserved.
-//
-
 #import <XCTest/XCTest.h>
 
 @interface OMETests : XCTestCase
