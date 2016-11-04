@@ -1,23 +1,22 @@
 LOCAL_PATH			:= $(call my-dir)
-SRC_PATH			:= ../../../CPP
+SRC_PATH			:= $(LOCAL_PATH)/../../..
 
 include $(CLEAR_VARS)
 
 LOCAL_MODULE    := OMElib
-LOCAL_CFLAGS    += -DANDROID
+LOCAL_CFLAGS    += -std=c++11
 
-
-LOCAL_SRC_FILES := $(SRC_PATH)/esShader.c \
-				   $(SRC_PATH)/esShapes.c \
-				   $(SRC_PATH)/esTransform.c \
-				   $(SRC_PATH)/esUtil.c \
-				   $(SRC_PATH)/Hello_Triangle.c \
-				   $(SRC_PATH)/esUtil_Android.c \
+LOCAL_SRC_FILES := $(LOCAL_PATH)/Android.cpp \
+$(SRC_PATH)/CPP/Game.cpp\
+$(SRC_PATH)/CPP/Utils/Utils.cpp\
 
 
 LOCAL_C_INCLUDES	:= $(SRC_PATH) \
-						$(SRC_PATH)/../Platforms/Android/jni \
-				   
+ $(COMMON_INC_PATH) \
+$(SRC_PATH)/CPP\
+$(SRC_PATH)/CPP/Utils\
+
+
 LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv3
 
 LOCAL_STATIC_LIBRARIES := android_native_app_glue

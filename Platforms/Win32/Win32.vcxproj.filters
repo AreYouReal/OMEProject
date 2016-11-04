@@ -18,30 +18,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="esUtil_win32.c">
+    <ClCompile Include="..\..\CPP\Game.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CPP\Utils\Utils.cpp">
+      <Filter>Source Files\CPP</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\CPP\Hello_Triangle.c">
-      <Filter>Source Files\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\CPP\esShader.c">
-      <Filter>Source Files\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\CPP\esShapes.c">
-      <Filter>Source Files\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\CPP\esTransform.c">
-      <Filter>Source Files\CPP</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\CPP\esUtil.c">
-      <Filter>Source Files\CPP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\CPP\esUtil.h">
+    <ClInclude Include="..\..\CPP\Game.hpp">
       <Filter>Source Files\CPP</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\CPP\esUtil_win.h">
+    <ClInclude Include="..\..\CPP\Utils\Utils.hpp">
       <Filter>Source Files\CPP</Filter>
     </ClInclude>
   </ItemGroup>
