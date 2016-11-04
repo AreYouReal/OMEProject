@@ -1,6 +1,26 @@
 #include "Utils.hpp"
 
+
+
+
 namespace OME {
+    
+#ifndef __APPLE__
+    
+    /** Check whether EGL_KHR_create_context extension is supported.  If so,
+     return EGL_OPENGL_ES3_BIT_KHR instead of EGL_OPENGL_ES2_BIT */
+    EGLint GetContextRenderableType ( EGLDisplay eglDisplay ){
+#ifdef EGL_KHR_create_context
+        const char *extensions = eglQueryString ( eglDisplay, EGL_EXTENSIONS );
+        // check whether EGL_KHR_create_context is in the extension string
+        if ( extensions != NULL && strstr( extensions, "EGL_KHR_create_context" ) ){
+            return EGL_OPENGL_ES3_BIT_KHR; // extension is supported
+        }
+#endif
+        return EGL_OPENGL_ES2_BIT;          // extension is not supported
+    }
+#endif
+
     
     GLboolean CreateWindow(Context *ctx, std::string title, GLint width, GLint height, GLuint flags){
 #ifndef __APPLE__
@@ -42,7 +62,7 @@ namespace OME {
                 EGL_ALPHA_SIZE,     8,
                 EGL_DEPTH_SIZE,     8,
                 EGL_STENCIL_SIZE,   8,
-                EGL_SAMPLE_BUFFERS, ( flags & OM_WINDOW_MULTISAMPLE ) ? 1 : 0,
+                EGL_SAMPLE_BUFFERS, ( flags & WINDOW_MULTISAMPLE ) ? 1 : 0,
                 // if EGL_KHR_create_context extension is supported, then we will use
                 // EGL_OPENGL_ES3_BIT_KHR instead of EGL_OPENGL_ES2_BIT in the attribute list
                 EGL_RENDERABLE_TYPE, GetContextRenderableType ( ctx->eglDisplay ),
