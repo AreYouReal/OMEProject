@@ -1,13 +1,10 @@
 #import "ViewController.h"
-#include "OMEUtil.hpp"
-
-extern void esMain( ESContext *esContext );
+#include "Game.hpp"
 
 
 @interface ViewController ()
 {
-    
-    ESContext _esContext;
+    OME::Context ctx;
 }
 @property (strong, nonatomic) EAGLContext *context;
 @property (strong, nonatomic) GLKBaseEffect *effect;
@@ -68,39 +65,39 @@ extern void esMain( ESContext *esContext );
 {
     [EAGLContext setCurrentContext:self.context];
     
-    memset( &_esContext, 0, sizeof( _esContext ) );
+    memset( &ctx, 0, sizeof( OME::Context ) );
   
-    esMain( &_esContext );
+    OME::Game::StartUp(&ctx);
 }
 
 - (void)tearDownGL
 {
     [EAGLContext setCurrentContext:self.context];
 
-    if ( _esContext.shutdownFunc )
-    {
-        _esContext.shutdownFunc( &_esContext );
-    }
+//    if ( _esContext.shutdownFunc )
+//    {
+//        _esContext.shutdownFunc( &_esContext );
+//    }
 }
 
 
 - (void)update
 {
-    if ( _esContext.updateFunc )
-    {
-        _esContext.updateFunc( &_esContext, self.timeSinceLastUpdate );
-    }
+//    if ( _esContext.updateFunc )
+//    {
+//        _esContext.updateFunc( &_esContext, self.timeSinceLastUpdate );
+//    }
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    _esContext.width = view.drawableWidth;
-    _esContext.height = view.drawableHeight;
-    
-    if ( _esContext.drawFunc )
-    {
-        _esContext.drawFunc( &_esContext );
-    }
+//    _esContext.width = view.drawableWidth;
+//    _esContext.height = view.drawableHeight;
+//    
+//    if ( _esContext.drawFunc )
+//    {
+//        _esContext.drawFunc( &_esContext );
+//    }
 }
 
 

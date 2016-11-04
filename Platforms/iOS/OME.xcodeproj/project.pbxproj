@@ -15,11 +15,7 @@
 		7626526017F10E6C007CCD43 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626525F17F10E6C007CCD43 /* XCTest.framework */; };
 		7626526117F10E6C007CCD43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523517F10E6C007CCD43 /* Foundation.framework */; };
 		7626526217F10E6C007CCD43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523917F10E6C007CCD43 /* UIKit.framework */; };
-		F31159B61DC365050012690A /* esShader.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159AE1DC365050012690A /* esShader.c */; };
-		F31159B71DC365050012690A /* esShapes.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159AF1DC365050012690A /* esShapes.c */; };
-		F31159B81DC365050012690A /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = F31159B01DC365050012690A /* esTransform.c */; };
-		F31159BA1DC365050012690A /* OMEUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31159B31DC365050012690A /* OMEUtil.cpp */; };
-		F31159BB1DC365050012690A /* Hello_Triangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31159B51DC365050012690A /* Hello_Triangle.cpp */; };
+		F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F314A1721DCCA4D4008657AE /* Utils.cpp */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
 		F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F41DC2223D00563510 /* InfoPlist.strings */; };
 		F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F71DC2224600563510 /* OME-Info.plist */; };
@@ -28,11 +24,11 @@
 		F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FF1DC222CB00563510 /* Main_iPhone.storyboard */; };
 		F32AA30A1DC2230100563510 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32AA3091DC2230100563510 /* Images.xcassets */; };
 		F356AC9F1DC2218000DE529C /* OMETests.m in Sources */ = {isa = PBXBuildFile; fileRef = F356AC9D1DC220E000DE529C /* OMETests.m */; };
-		F36F6D431DC1F9790089F6C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3D1DC1F9790089F6C4 /* AppDelegate.m */; };
-		F36F6D441DC1F9790089F6C4 /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3F1DC1F9790089F6C4 /* FileWrapper.m */; };
+		F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3D1DC1F9790089F6C4 /* AppDelegate.mm */; };
+		F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3F1DC1F9790089F6C4 /* FileWrapper.mm */; };
 		F36F6D451DC1F9790089F6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D401DC1F9790089F6C4 /* main.m */; };
-		F36F6D461DC1F9790089F6C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D421DC1F9790089F6C4 /* ViewController.m */; };
-		F389B96A1DC7909C00163180 /* OMEP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F389B9681DC7909C00163180 /* OMEP.cpp */; };
+		F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D421DC1F9790089F6C4 /* ViewController.mm */; };
+		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,12 +50,8 @@
 		7626523D17F10E6C007CCD43 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		7626525E17F10E6C007CCD43 /* OMETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OMETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7626525F17F10E6C007CCD43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		F31159AE1DC365050012690A /* esShader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esShader.c; path = ../../CPP/esShader.c; sourceTree = SOURCE_ROOT; };
-		F31159AF1DC365050012690A /* esShapes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esShapes.c; path = ../../CPP/esShapes.c; sourceTree = SOURCE_ROOT; };
-		F31159B01DC365050012690A /* esTransform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = esTransform.c; path = ../../CPP/esTransform.c; sourceTree = SOURCE_ROOT; };
-		F31159B31DC365050012690A /* OMEUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OMEUtil.cpp; path = ../../CPP/OMEUtil.cpp; sourceTree = SOURCE_ROOT; };
-		F31159B41DC365050012690A /* OMEUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OMEUtil.hpp; path = ../../CPP/OMEUtil.hpp; sourceTree = SOURCE_ROOT; };
-		F31159B51DC365050012690A /* Hello_Triangle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Hello_Triangle.cpp; path = ../../CPP/Hello_Triangle.cpp; sourceTree = SOURCE_ROOT; };
+		F314A1721DCCA4D4008657AE /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = ../../CPP/Utils/Utils.cpp; sourceTree = SOURCE_ROOT; };
+		F314A1731DCCA4D4008657AE /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = ../../CPP/Utils/Utils.hpp; sourceTree = SOURCE_ROOT; };
 		F32AA2F21DC2223800563510 /* OMETests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OMETests-Info.plist"; path = "OMETests/OMETests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F32AA2F51DC2223D00563510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OMETests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		F32AA2F71DC2224600563510 /* OME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OME-Info.plist"; path = "OME/OME-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -70,14 +62,14 @@
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		F356AC9D1DC220E000DE529C /* OMETests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMETests.m; path = OMETests/OMETests.m; sourceTree = SOURCE_ROOT; };
 		F36F6D3C1DC1F9790089F6C4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OME/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		F36F6D3D1DC1F9790089F6C4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = OME/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		F36F6D3D1DC1F9790089F6C4 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = OME/AppDelegate.mm; sourceTree = SOURCE_ROOT; };
 		F36F6D3E1DC1F9790089F6C4 /* FileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileWrapper.h; path = OME/FileWrapper.h; sourceTree = SOURCE_ROOT; };
-		F36F6D3F1DC1F9790089F6C4 /* FileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileWrapper.m; path = OME/FileWrapper.m; sourceTree = SOURCE_ROOT; };
+		F36F6D3F1DC1F9790089F6C4 /* FileWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FileWrapper.mm; path = OME/FileWrapper.mm; sourceTree = SOURCE_ROOT; };
 		F36F6D401DC1F9790089F6C4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OME/main.m; sourceTree = SOURCE_ROOT; };
 		F36F6D411DC1F9790089F6C4 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = OME/ViewController.h; sourceTree = SOURCE_ROOT; };
-		F36F6D421DC1F9790089F6C4 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = OME/ViewController.m; sourceTree = SOURCE_ROOT; };
-		F389B9681DC7909C00163180 /* OMEP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OMEP.cpp; path = ../../CPP/OMEP.cpp; sourceTree = SOURCE_ROOT; };
-		F389B9691DC7909C00163180 /* OMEP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = OMEP.hpp; path = ../../CPP/OMEP.hpp; sourceTree = SOURCE_ROOT; };
+		F36F6D421DC1F9790089F6C4 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = OME/ViewController.mm; sourceTree = SOURCE_ROOT; };
+		F36F7E381DCCA90E00A335A4 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../CPP/Game.cpp; sourceTree = SOURCE_ROOT; };
+		F36F7E391DCCA90E00A335A4 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Game.hpp; path = ../../CPP/Game.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,12 +102,12 @@
 			isa = PBXGroup;
 			children = (
 				F36F6D3C1DC1F9790089F6C4 /* AppDelegate.h */,
-				F36F6D3D1DC1F9790089F6C4 /* AppDelegate.m */,
+				F36F6D3D1DC1F9790089F6C4 /* AppDelegate.mm */,
 				F36F6D3E1DC1F9790089F6C4 /* FileWrapper.h */,
-				F36F6D3F1DC1F9790089F6C4 /* FileWrapper.m */,
+				F36F6D3F1DC1F9790089F6C4 /* FileWrapper.mm */,
 				F36F6D401DC1F9790089F6C4 /* main.m */,
 				F36F6D411DC1F9790089F6C4 /* ViewController.h */,
-				F36F6D421DC1F9790089F6C4 /* ViewController.m */,
+				F36F6D421DC1F9790089F6C4 /* ViewController.mm */,
 			);
 			name = iOS;
 			path = ../../../../../Common/Source/iOS;
@@ -198,14 +190,10 @@
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
-				F31159AE1DC365050012690A /* esShader.c */,
-				F31159AF1DC365050012690A /* esShapes.c */,
-				F31159B01DC365050012690A /* esTransform.c */,
-				F31159B31DC365050012690A /* OMEUtil.cpp */,
-				F31159B41DC365050012690A /* OMEUtil.hpp */,
-				F31159B51DC365050012690A /* Hello_Triangle.cpp */,
-				F389B9681DC7909C00163180 /* OMEP.cpp */,
-				F389B9691DC7909C00163180 /* OMEP.hpp */,
+				F314A1721DCCA4D4008657AE /* Utils.cpp */,
+				F314A1731DCCA4D4008657AE /* Utils.hpp */,
+				F36F7E381DCCA90E00A335A4 /* Game.cpp */,
+				F36F7E391DCCA90E00A335A4 /* Game.hpp */,
 			);
 			name = CPP;
 			sourceTree = "<group>";
@@ -313,16 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F31159B61DC365050012690A /* esShader.c in Sources */,
-				F36F6D461DC1F9790089F6C4 /* ViewController.m in Sources */,
-				F36F6D441DC1F9790089F6C4 /* FileWrapper.m in Sources */,
-				F31159B81DC365050012690A /* esTransform.c in Sources */,
-				F389B96A1DC7909C00163180 /* OMEP.cpp in Sources */,
-				F31159BB1DC365050012690A /* Hello_Triangle.cpp in Sources */,
-				F36F6D431DC1F9790089F6C4 /* AppDelegate.m in Sources */,
+				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
+				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,
+				F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */,
+				F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */,
+				F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,
-				F31159B71DC365050012690A /* esShapes.c in Sources */,
-				F31159BA1DC365050012690A /* OMEUtil.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
