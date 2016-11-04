@@ -74,31 +74,25 @@
 {
     [EAGLContext setCurrentContext:self.context];
 
-//    if ( _esContext.shutdownFunc )
-//    {
-//        _esContext.shutdownFunc( &_esContext );
-//    }
+    if(ctx.onDestroy){
+        ctx.onDestroy();
+    }
 }
 
 
 - (void)update
 {
-//    if ( _esContext.updateFunc )
-//    {
-//        _esContext.updateFunc( &_esContext, self.timeSinceLastUpdate );
-//    }
+    if(ctx.onUpdate){
+        ctx.onUpdate(self.timeSinceLastUpdate);
+    }
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-//    _esContext.width = view.drawableWidth;
-//    _esContext.height = view.drawableHeight;
-//    
-//    if ( _esContext.drawFunc )
-//    {
-//        _esContext.drawFunc( &_esContext );
-//    }
+    ctx.width = view.drawableWidth;
+    ctx.height = view.drawableHeight;
+    if(ctx.onDraw){
+        ctx.onDraw();
+    }
 }
-
-
 @end

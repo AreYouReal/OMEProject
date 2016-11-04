@@ -4,23 +4,48 @@ using UserData = struct{};
 
 namespace OME {
     
-
+     OME::Context *Game::currentCtx;
     
     int Game::StartUp(OME::Context *ctx){
         ctx->userData = malloc (sizeof(UserData));
-        
-        
         
         if(!CreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
             OME::LOG("Failed to create Window!");
             return 0;
         }
+        currentCtx = ctx;
         
-        initOGL(ctx->width, ctx->height);
+        currentCtx->onUpdate   = OnUpdate;
+        currentCtx->onDraw     = OnDraw;
+        currentCtx->onTouch    = OnTouch;
+        currentCtx->onDestroy  = OnDestroy;
         
         
+        
+        initOGL(currentCtx->width, currentCtx->height);
+
         return 1;
     }
+    
+    
+    void Game::OnUpdate    (const float){
+        
+    }
+    
+    void Game::OnDraw(){
+        glViewport(0, 0, currentCtx->width, currentCtx->height);
+        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+        glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
+    }
+    
+    void Game::OnTouch     (const int, const int, const int){
+    
+    }
+    
+    void Game::OnDestroy   (){
+        
+    }
+    
     
     
     void Game::initOGL(const float w, const float h){
