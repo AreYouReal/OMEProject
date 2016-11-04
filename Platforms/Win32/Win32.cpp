@@ -158,8 +158,12 @@ int main ( int argc, char *argv[] ){
 
    memset ( &ctx, 0, sizeof ( OME::Context ) );
 
-   if ( !OME::Game::StartUp ( &ctx ) ){
 
+   ctx.width = 640;
+   ctx.height = 480;
+   WinCreate(&ctx, "One More Engine In Action!");
+
+   if ( !OME::Game::StartUp ( &ctx ) ){
 	  return 1;
    }
 
