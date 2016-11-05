@@ -2,6 +2,8 @@
 
 #include "Game.hpp"
 
+#include "../3dPart/libpng/png.h"
+
 namespace OME {
     
 #ifndef __APPLE__
@@ -216,8 +218,57 @@ namespace OME {
         returnValue = up<FileContent>(new FileContent(tempBuffer, fSize + 1, fileName));
         return returnValue;
     }
-//    static up<FileContent> readBytesFromFile(string fileName);
-//    static vec<unsigned char> loadRawPNGData(string fileName, unsigned int &width, unsigned int &height);
+    
+    up<FileContent> Utils::readBytesFromFile(string fileName){
+        omFile *pFile;
+        up<FileContent> returnValue;
+        
+        pFile = fileOpen(OME::Game::currentCtx, fileName.c_str());
+        
+        
+        
+        if(pFile == NULL){
+            LOG("Failed open file [%s]\n", fileName.c_str());
+            return returnValue;
+        }
+        
+        long fSize = getFileSize(pFile);
+        unsigned char *tempBuffer = new unsigned char[fSize];
+        if(fileRead(pFile, fSize, tempBuffer) == 0) return returnValue;
+        
+        fileClose(pFile);
+        tempBuffer[fSize] = 0;
+        returnValue = up<FileContent>(new FileContent(tempBuffer, fSize, fileName));
+        return returnValue;
+    }
+    
+    vec<unsigned char> Utils::loadRawPNGData(string fileName){
+        char header[8];
+        
+        png_structp pngPointer;
+        png_infop infoPointer;
+        png_byte bitDepth;
+        int x, y;
+        int number_of_passes;
+        
+        up<FileContent> imageFile = readBytesFromFile(fileName);
+        memcpy(header, imageFile->content, 8);
+        
+//        if(png_sig_cmp((png_const_bytep)header, 0, 8)){
+//            LOG("File is not recognized as a PNG file %s", fileName.c_str());
+//            return vec<unsigned char>();
+//        }
+        
+        
+        LOG("PNG HEADER: %s", header);
+        
+        
+        
+        
+        
+        
+        return vec<unsigned char>();
+    }
     
 }
 

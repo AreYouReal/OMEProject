@@ -90,7 +90,7 @@ namespace OME {
         
         static up<FileContent> readTextFile(string fileName);
         static up<FileContent> readBytesFromFile(string fileName);
-        static vec<unsigned char> loadRawPNGData(string fileName, unsigned int &width, unsigned int &height);
+        static vec<unsigned char> loadRawPNGData(string fileName);
     };
     
 

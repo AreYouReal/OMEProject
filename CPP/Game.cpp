@@ -25,6 +25,8 @@ namespace OME {
         ShaderProgram program;
         program.loadShaders("basic.vert", "basic.frag");
         
+        Utils::loadRawPNGData("spiderman.png");
+        
         initOGL(currentCtx->width, currentCtx->height);
 
         
