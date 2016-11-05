@@ -31,6 +31,7 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
 		F38A960B1DCE0E99005BCA83 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = F38A960A1DCE0E99005BCA83 /* spiderman.png */; };
+		F3BF73E21DCE12F100567884 /* 3dPart in Resources */ = {isa = PBXBuildFile; fileRef = F3BF73E11DCE12F100567884 /* 3dPart */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
@@ -77,11 +78,12 @@
 		F36F7E391DCCA90E00A335A4 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Game.hpp; path = ../../CPP/Game.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
-		F38A960A1DCE0E99005BCA83 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spiderman.png; sourceTree = SOURCE_ROOT; };
+		F38A960A1DCE0E99005BCA83 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spiderman.png; path = ../Android/assets/images/spiderman.png; sourceTree = SOURCE_ROOT; };
+		F3BF73E11DCE12F100567884 /* 3dPart */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 3dPart; path = ../../CPP/3dPart; sourceTree = SOURCE_ROOT; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
 		F3E3099C1DCDE49A000ED6C1 /* FileContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FileContent.h; path = ../../CPP/Utils/Files/FileContent.h; sourceTree = SOURCE_ROOT; };
 		F3E3099E1DCDEAAE000ED6C1 /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.vert; path = ../Android/assets/shaders/basic.vert; sourceTree = SOURCE_ROOT; };
-		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basic.frag; sourceTree = SOURCE_ROOT; };
+		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.frag; path = ../Android/assets/shaders/basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
 		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				F3BF73E11DCE12F100567884 /* 3dPart */,
 				F3E3099B1DCDE46E000ED6C1 /* Files */,
 				F3E309991DCDE306000ED6C1 /* Shader */,
 				F30ECA311DCDE16A005F53B6 /* GameObject */,
@@ -343,6 +346,7 @@
 				F32AA2FC1DC2225200563510 /* InfoPlist.strings in Resources */,
 				F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */,
 				F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */,
+				F3BF73E21DCE12F100567884 /* 3dPart in Resources */,
 				F32AA30A1DC2230100563510 /* Images.xcassets in Resources */,
 				F32AA3011DC222CB00563510 /* Main_iPad.storyboard in Resources */,
 				F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */,

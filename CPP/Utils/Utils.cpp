@@ -254,10 +254,10 @@ namespace OME {
         up<FileContent> imageFile = readBytesFromFile(fileName);
         memcpy(header, imageFile->content, 8);
         
-//        if(png_sig_cmp((png_const_bytep)header, 0, 8)){
-//            LOG("File is not recognized as a PNG file %s", fileName.c_str());
-//            return vec<unsigned char>();
-//        }
+        if(png_sig_cmp((png_const_bytep)header, 0, 8)){
+            LOG("File is not recognized as a PNG file %s", fileName.c_str());
+            return vec<unsigned char>();
+        }
         
         
         LOG("PNG HEADER: %s", header);
