@@ -1,5 +1,7 @@
 #include "Utils.hpp"
 
+#include "Game.hpp"
+
 namespace OME {
     
 #ifndef __APPLE__
@@ -19,7 +21,7 @@ namespace OME {
 #endif
 
     
-    GLboolean OMCreateWindow(Context *ctx, std::string title, GLint width, GLint height, GLuint flags){
+    GLboolean Utils::OMCreateWindow(Context *ctx, std::string title, GLint width, GLint height, GLuint flags){
 #ifndef __APPLE__
         EGLConfig config;
         EGLint majorVersion;
@@ -113,7 +115,7 @@ namespace OME {
 
     }
 
-    void LOG(std::string formatString, ...){
+    void Utils::LOG(std::string formatString, ...){
         va_list params;
         char buf[1024];
         va_start(params, formatString);
@@ -126,15 +128,96 @@ namespace OME {
         va_end(params);
     }
     
-    void PRINT_GL_STRING(std::string name, GLenum s){
+    void Utils::PRINT_GL_STRING(std::string name, GLenum s){
         LOG("GL %s = %s\n", name.c_str(), (const char*)glGetString(s));
     }
     
-    void LOG_GL_ERROR(){
+    void Utils::LOG_GL_ERROR(){
         GLenum err = glGetError();
         if(err != GL_NO_ERROR){
             LOG("\n------------GL_ERROR [ %x ]--------------\n", err);
         }
     }
+    
+
+    omFile* Utils::fileOpen(void *ioContext, string filename){
+        omFile *pFile = NULL;
+#ifdef ANDROID
+        if ( ioContext != NULL ){
+            AAssetManager *assetManager = ( AAssetManager * ) ((OMContext*)ioContext)->platformData;
+            pFile = AAssetManager_open ( assetManager, filename, AASSET_MODE_BUFFER );
+        }
+#else
+#ifdef __APPLE__
+        filename = GetBundleFileName ( filename.c_str() );
+#endif
+        pFile = fopen ( filename.c_str(), "rb" );
+#endif
+        return pFile;
+    }
+    
+    long Utils::getFileSize(omFile *pFile){
+#ifdef ANDROID
+        long fSize = AAsset_getLength(pFile);
+#else
+        fseek(pFile, 0, SEEK_END);
+        long fSize = ftell(pFile);
+        rewind(pFile);
+#endif
+        return fSize;
+    }
+    
+    void    Utils::fileClose       ( omFile *pFile ){
+        if ( pFile != NULL )
+        {
+#ifdef ANDROID
+            AAsset_close ( pFile );
+#else
+            fclose ( pFile );
+            pFile = NULL;
+#endif
+        }
+    }
+    
+    long     Utils::fileRead        ( omFile *pFile, long bytesToRead, void *buffer ){
+        long bytesRead = 0;
+        
+        if ( pFile == NULL ) return bytesRead;
+        
+#ifdef ANDROID
+        bytesRead = AAsset_read ( pFile, buffer, bytesToRead );
+#else
+        bytesRead = fread ( buffer, bytesToRead, 1, pFile );
+#endif
+        
+        return bytesRead;
+    }
+    
+    
+    up<FileContent> Utils::readTextFile(string fileName){
+        omFile *pFile;
+        up<FileContent> returnValue;
+        
+        pFile = fileOpen(OME::Game::currentCtx, fileName.c_str());
+        
+        
+        
+        if(pFile == NULL){
+            LOG("Failed open file [%s]\n", fileName.c_str());
+            return returnValue;
+        }
+        
+        long fSize = getFileSize(pFile);
+        unsigned char *tempBuffer = new unsigned char[fSize + 1];
+        if(fileRead(pFile, fSize, tempBuffer) == 0) return returnValue;
+        
+        fileClose(pFile);
+        tempBuffer[fSize] = 0;
+        returnValue = up<FileContent>(new FileContent(tempBuffer, fSize + 1, fileName));
+        return returnValue;
+    }
+//    static up<FileContent> readBytesFromFile(string fileName);
+//    static vec<unsigned char> loadRawPNGData(string fileName, unsigned int &width, unsigned int &height);
+    
 }
 

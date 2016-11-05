@@ -29,6 +29,9 @@
 		F36F6D451DC1F9790089F6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D401DC1F9790089F6C4 /* main.m */; };
 		F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D421DC1F9790089F6C4 /* ViewController.mm */; };
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
+		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
+		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
+		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,12 @@
 		F36F6D421DC1F9790089F6C4 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = OME/ViewController.mm; sourceTree = SOURCE_ROOT; };
 		F36F7E381DCCA90E00A335A4 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../CPP/Game.cpp; sourceTree = SOURCE_ROOT; };
 		F36F7E391DCCA90E00A335A4 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Game.hpp; path = ../../CPP/Game.hpp; sourceTree = SOURCE_ROOT; };
+		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
+		F3E3099C1DCDE49A000ED6C1 /* FileContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FileContent.h; path = ../../CPP/Utils/Files/FileContent.h; sourceTree = SOURCE_ROOT; };
+		F3E3099E1DCDEAAE000ED6C1 /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.vert; path = ../Android/assets/shaders/basic.vert; sourceTree = SOURCE_ROOT; };
+		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basic.frag; sourceTree = SOURCE_ROOT; };
+		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
+		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +171,7 @@
 		7626524017F10E6C007CCD43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F3E3099D1DCDEA00000ED6C1 /* Shaders */,
 				F32AA2FA1DC2225200563510 /* InfoPlist.strings */,
 				F32AA2F71DC2224600563510 /* OME-Info.plist */,
 				F32AA2F81DC2224600563510 /* OME-Prefix.pch */,
@@ -187,15 +197,60 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F30ECA311DCDE16A005F53B6 /* GameObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = GameObject;
+			sourceTree = "<group>";
+		};
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				F3E3099B1DCDE46E000ED6C1 /* Files */,
+				F3E309991DCDE306000ED6C1 /* Shader */,
+				F3E309981DCDE296000ED6C1 /* Image */,
+				F30ECA311DCDE16A005F53B6 /* GameObject */,
 				F314A1721DCCA4D4008657AE /* Utils.cpp */,
 				F314A1731DCCA4D4008657AE /* Utils.hpp */,
 				F36F7E381DCCA90E00A335A4 /* Game.cpp */,
 				F36F7E391DCCA90E00A335A4 /* Game.hpp */,
+				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
 			);
 			name = CPP;
+			sourceTree = "<group>";
+		};
+		F3E309981DCDE296000ED6C1 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		F3E309991DCDE306000ED6C1 /* Shader */ = {
+			isa = PBXGroup;
+			children = (
+				F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */,
+				F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */,
+			);
+			name = Shader;
+			sourceTree = "<group>";
+		};
+		F3E3099B1DCDE46E000ED6C1 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				F3E3099C1DCDE49A000ED6C1 /* FileContent.h */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		F3E3099D1DCDEA00000ED6C1 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				F3E309A01DCDEB1C000ED6C1 /* basic.frag */,
+				F3E3099E1DCDEAAE000ED6C1 /* basic.vert */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,9 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32AA2FC1DC2225200563510 /* InfoPlist.strings in Resources */,
+				F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */,
 				F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */,
 				F32AA30A1DC2230100563510 /* Images.xcassets in Resources */,
 				F32AA3011DC222CB00563510 /* Main_iPad.storyboard in Resources */,
+				F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */,
 				F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */,
 				F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */,
 				F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */,
@@ -304,6 +361,7 @@
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,
 				F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */,
+				F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */,
 				F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */,
 				F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,

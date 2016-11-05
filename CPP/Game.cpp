@@ -9,8 +9,8 @@ namespace OME {
     int Game::StartUp(OME::Context *ctx){
         ctx->userData = malloc (sizeof(UserData));
         
-        if(!OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
-            OME::LOG("Failed to create Window!");
+        if(!Utils::OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
+            Utils::LOG("Failed to create Window!");
             return 0;
         }
         currentCtx = ctx;
@@ -39,19 +39,17 @@ namespace OME {
     }
     
     void Game::OnTouch     (const int, const int, const int){
-    
-    }
-    
-    void Game::OnDestroy   (){
         
     }
     
-    
+    void Game::OnDestroy   (){
+        Utils::LOG("OnDestroy!");
+    }
     
     void Game::initOGL(const float w, const float h){
-        OME::PRINT_GL_STRING("Version",        GL_VERSION);
-        OME::PRINT_GL_STRING("Vendor",         GL_VENDOR);
-        OME::PRINT_GL_STRING("Renderer",       GL_RENDERER);
+        Utils::PRINT_GL_STRING("Version",        GL_VERSION);
+        Utils::PRINT_GL_STRING("Vendor",         GL_VENDOR);
+        Utils::PRINT_GL_STRING("Renderer",       GL_RENDERER);
 //        OME::PRINT_GL_STRING("Extensions",     GL_EXTENSIONS);
 //        OME::PRINT_GL_STRING("GLSL version",   GL_SHADING_LANGUAGE_VERSION);
         
