@@ -10,17 +10,37 @@ ShaderProgram::~ShaderProgram(){
 
 bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     up<FileContent> vertContent = OME::Utils::readTextFile(vertFileName);
+    up<FileContent> fragContent = OME::Utils::readTextFile(fragFilename);
     
-    if(!vertContent){
-        OME::Utils::LOG("Failed to load shader! [%s]", vertFileName.c_str());
+    if(!vertContent || !fragContent){
         return false;
     }
     
-    OME::Utils::LOG("Loaded vertex fragment file!");
+    GLuint vs = glCreateShader(GL_VERTEX_SHADER);
+    GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
     
-//    omFile *vertexFile = OME::Utils::fileOpen(OME::Game::currentCtx , vertFileName);
+    char* vertexString = (char*)vertContent->content;
+    char* fragmentString = (char*)fragContent->content;
+    
+    glShaderSource(vs, 1, &vertexString, NULL);
+    glShaderSource(fs, 1, &fragmentString, NULL);
+    
+    glCompileShader(vs);
+    glCompileShader(fs);
+    
+    mHandle = glCreateProgram();
+    
+    glAttachShader(mHandle, vs);
+    glAttachShader(mHandle, fs);
+    glLinkProgram(mHandle);
+    
+    glDeleteShader(vs);
+    glDeleteShader(fs);
+    
+    mUniformLocations.clear();
     
     
+    OME::Utils::LOG("Create shader program!!!");
     
     return true;
 }

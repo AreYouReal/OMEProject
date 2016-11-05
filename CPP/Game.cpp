@@ -1,5 +1,7 @@
 #include "Game.hpp"
 
+#include "ShaderProgram.hpp"
+
 using UserData = struct{};
 
 namespace OME {
@@ -20,10 +22,12 @@ namespace OME {
         currentCtx->onTouch    = OnTouch;
         currentCtx->onDestroy  = OnDestroy;
         
-        
+        ShaderProgram program;
+        program.loadShaders("basic.vert", "basic.frag");
         
         initOGL(currentCtx->width, currentCtx->height);
 
+        
         return 1;
     }
     

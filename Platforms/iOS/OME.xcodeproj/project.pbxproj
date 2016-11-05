@@ -78,7 +78,7 @@
 		F3E3099E1DCDEAAE000ED6C1 /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.vert; path = ../Android/assets/shaders/basic.vert; sourceTree = SOURCE_ROOT; };
 		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
-		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = "<group>"; };
+		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

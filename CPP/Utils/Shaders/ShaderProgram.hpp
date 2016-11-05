@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Utils.hpp"
-#include "Game.hpp"
 
 class ShaderProgram{
 public:
