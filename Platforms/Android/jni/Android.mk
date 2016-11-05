@@ -8,12 +8,15 @@ LOCAL_CFLAGS    += -std=c++11
 
 LOCAL_SRC_FILES := $(LOCAL_PATH)/Android.cpp \
 $(SRC_PATH)/CPP/Game.cpp\
+$(SRC_PATH)/CPP/Utils/Shaders/ShaderProgram.cpp\
 $(SRC_PATH)/CPP/Utils/Utils.cpp\
 
 
 LOCAL_C_INCLUDES	:= $(SRC_PATH) \
  $(COMMON_INC_PATH) \
 $(SRC_PATH)/CPP\
+$(SRC_PATH)/CPP/Utils/Files\
+$(SRC_PATH)/CPP/Utils/Shaders\
 $(SRC_PATH)/CPP/Utils\
 
 

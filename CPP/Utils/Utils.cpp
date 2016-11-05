@@ -144,8 +144,8 @@ namespace OME {
         omFile *pFile = NULL;
 #ifdef ANDROID
         if ( ioContext != NULL ){
-            AAssetManager *assetManager = ( AAssetManager * ) ((OMContext*)ioContext)->platformData;
-            pFile = AAssetManager_open ( assetManager, filename, AASSET_MODE_BUFFER );
+            AAssetManager *assetManager = ( AAssetManager * ) ((OME::Context*)ioContext)->platformData;
+            pFile = AAssetManager_open ( assetManager, filename.c_str(), AASSET_MODE_BUFFER );
         }
 #else
 #ifdef __APPLE__
