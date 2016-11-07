@@ -147,6 +147,22 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
 void android_main ( struct android_app *pApp )
 {
 
+ ANativeActivity* activity = pApp->activity;
+    JNIEnv* env = 0;
+
+    activity->vm->AttachCurrentThread(&env, NULL);
+
+    jclass clazz = env->GetObjectClass(activity->clazz);
+    jmethodID methodID = env->GetMethodID(clazz, "getPackageResourcePath", "()Ljava/lang/String;");
+    jobject result = env->CallObjectMethod(activity->clazz, methodID);
+
+    jboolean isCopy;
+    std::string res = env->GetStringUTFChars((jstring)result, &isCopy);
+    LOGI("Looked up package code path: %s", res.c_str());
+
+    setenv( "FILESYSTEM", res.c_str(), 1 );
+
+
    OME::Context context;
    float lastTime;
 

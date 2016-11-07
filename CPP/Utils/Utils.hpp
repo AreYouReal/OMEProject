@@ -6,7 +6,7 @@
 
 
 #include "Shortcuts.hpp"
-#include "FileContent.h"
+#include "Cache.hpp"
     
 #ifdef __APPLE__
 
@@ -15,8 +15,6 @@
 #include <OpenAL/alc.h>
 
 #include "FileWrapper.h"
-
-using omFile = FILE;
     
 #else
 #include <GLES3/gl3.h>
@@ -29,8 +27,8 @@ using omFile = FILE;
 //    
 //#include "al.h"
 //#include "alc.h"
-
-using omFile = AAsset;
+//
+//using omFile = AAsset;
 #endif
     
 #endif
@@ -81,15 +79,19 @@ namespace OME {
         static void PRINT_GL_STRING(std::string name, GLenum s);
         static void LOG_GL_ERROR();
         
+        
 #pragma mark File IO
-        static omFile* fileOpen(void *ioContext, string filename);
-        static long getFileSize(omFile *pFile);
-        static void fileClose(omFile *pFile);
-        static long fileRead(omFile *pFile, long bytesToRead, void *buffer);
+        static string modifyPath(string path);
+        static string extractPath(string path);
+        static string extractFilename(string path);
         
+        static FILE* fileOpen(void *ioContext, string filename);
+        static long getFileSize(FILE *pFile);
+        static void fileClose(FILE *pFile);
+        static long fileRead(FILE *pFile, long bytesToRead, void *buffer);
         
-        static up<FileContent> readTextFile(string fileName);
-        static up<FileContent> readBytesFromFile(string fileName);
+        static up<Cache> loadFile(string filename, bool relativePath);
+
 //        static vec<unsigned char> loadRawPNGData(string fileName);
     };
     

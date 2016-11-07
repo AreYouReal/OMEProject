@@ -9,8 +9,16 @@ ShaderProgram::~ShaderProgram(){
 
 
 bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
-    up<FileContent> vertContent = OME::Utils::readTextFile(vertFileName);
-    up<FileContent> fragContent = OME::Utils::readTextFile(fragFilename);
+    up<Cache> vertContent = OME::Utils::loadFile(vertFileName, true);
+    up<Cache> fragContent = OME::Utils::loadFile(fragFilename, true);
+    
+    
+    
+    
+    OME::Utils::LOG("Vertex shader content: %s", vertContent->content);
+    
+    
+    OME::Utils::LOG("Vertex shader size: %d", vertContent->size);
     
     if(!vertContent || !fragContent){
         return false;

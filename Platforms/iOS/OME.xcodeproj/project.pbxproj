@@ -29,6 +29,7 @@
 		F36F6D451DC1F9790089F6C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D401DC1F9790089F6C4 /* main.m */; };
 		F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D421DC1F9790089F6C4 /* ViewController.mm */; };
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
+		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
 		F38A960B1DCE0E99005BCA83 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = F38A960A1DCE0E99005BCA83 /* spiderman.png */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
@@ -75,11 +76,12 @@
 		F36F6D421DC1F9790089F6C4 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ViewController.mm; path = OME/ViewController.mm; sourceTree = SOURCE_ROOT; };
 		F36F7E381DCCA90E00A335A4 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Game.cpp; path = ../../CPP/Game.cpp; sourceTree = SOURCE_ROOT; };
 		F36F7E391DCCA90E00A335A4 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Game.hpp; path = ../../CPP/Game.hpp; sourceTree = SOURCE_ROOT; };
+		F379BCAF1DCF873E005C121E /* Cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cache.cpp; path = ../../CPP/Utils/Files/Cache.cpp; sourceTree = SOURCE_ROOT; };
+		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
 		F38A960A1DCE0E99005BCA83 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spiderman.png; path = ../Android/assets/images/spiderman.png; sourceTree = SOURCE_ROOT; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
-		F3E3099C1DCDE49A000ED6C1 /* FileContent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FileContent.h; path = ../../CPP/Utils/Files/FileContent.h; sourceTree = SOURCE_ROOT; };
 		F3E3099E1DCDEAAE000ED6C1 /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.vert; path = ../Android/assets/shaders/basic.vert; sourceTree = SOURCE_ROOT; };
 		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.frag; path = ../Android/assets/shaders/basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
@@ -247,7 +249,8 @@
 		F3E3099B1DCDE46E000ED6C1 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				F3E3099C1DCDE49A000ED6C1 /* FileContent.h */,
+				F379BCAF1DCF873E005C121E /* Cache.cpp */,
+				F379BCB01DCF873E005C121E /* Cache.hpp */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */,
 				F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */,
 				F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */,
+				F379BCB11DCF873E005C121E /* Cache.cpp in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +519,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OME/OME-Prefix.pch";
 				INFOPLIST_FILE = "OME/OME-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.areyoureal.ome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -531,6 +536,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OME/OME-Prefix.pch";
 				INFOPLIST_FILE = "OME/OME-Info.plist";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.areyoureal.ome;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";

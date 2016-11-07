@@ -139,104 +139,111 @@ namespace OME {
         }
     }
     
-
-    omFile* Utils::fileOpen(void *ioContext, string filename){
-        omFile *pFile = NULL;
-#ifdef ANDROID
-        if ( ioContext != NULL ){
-            AAssetManager *assetManager = ( AAssetManager * ) ((OME::Context*)ioContext)->platformData;
-            pFile = AAssetManager_open ( assetManager, filename.c_str(), AASSET_MODE_BUFFER );
+    string Utils::modifyPath(string path){
+        string pathToReturn = path;
+        std::replace(pathToReturn.begin(), pathToReturn.end(), '\\', '/');
+        return pathToReturn;
+    }
+    
+    string Utils::extractPath(string path){
+        string mfPath = modifyPath(path);
+        int endPos = mfPath.find_last_of("/");
+        if(endPos == string::npos){
+            return path;
         }
-#else
+        return mfPath.substr(0, endPos + 1);
+    }
+    string Utils::extractFilename(string path){
+        string mfPath = modifyPath(path);
+        int startPos =mfPath.find_last_of("/");
+        if(startPos == string::npos){
+            return path;
+        }
+        return mfPath.substr(startPos + 1, mfPath.length());
+    }
+    
+    
+    up<Cache> Utils::loadFile(string filename, bool relativePath){
+        up<Cache> returnValue;
 #ifdef __APPLE__
-        filename = GetBundleFileName ( filename.c_str() );
-#endif
-        pFile = fopen ( filename.c_str(), "rb" );
-#endif
-        return pFile;
-    }
-    
-    long Utils::getFileSize(omFile *pFile){
-#ifdef ANDROID
-        long fSize = AAsset_getLength(pFile);
-#else
-        fseek(pFile, 0, SEEK_END);
-        long fSize = ftell(pFile);
-        rewind(pFile);
-#endif
-        return fSize;
-    }
-    
-    void    Utils::fileClose       ( omFile *pFile ){
-        if ( pFile != NULL )
-        {
-#ifdef ANDROID
-            AAsset_close ( pFile );
-#else
-            fclose ( pFile );
-            pFile = NULL;
-#endif
+        FILE *f;
+        
+        if(relativePath){
+            string path = Utils::extractPath(getenv("FILESYSTEM"));
+            filename = path + filename;
         }
-    }
-    
-    long     Utils::fileRead        ( omFile *pFile, long bytesToRead, void *buffer ){
-        long bytesRead = 0;
         
-        if ( pFile == NULL ) return bytesRead;
+        f = fopen(filename.c_str(), "rb");
         
-#ifdef ANDROID
-        bytesRead = AAsset_read ( pFile, buffer, bytesToRead );
-#else
-        bytesRead = fread ( buffer, bytesToRead, 1, pFile );
-#endif
-        
-        return bytesRead;
-    }
-    
-    
-    up<FileContent> Utils::readTextFile(string fileName){
-        omFile *pFile;
-        up<FileContent> returnValue;
-        
-        pFile = fileOpen(OME::Game::currentCtx, fileName.c_str());
-        
-        
-        
-        if(pFile == NULL){
-            LOG("Failed open file [%s]\n", fileName.c_str());
+        if(!f){
+            LOG("Failed to read file: %s\n", filename.c_str());
             return returnValue;
         }
         
-        long fSize = getFileSize(pFile);
-        unsigned char *tempBuffer = new unsigned char[fSize + 1];
-        if(fileRead(pFile, fSize, tempBuffer) == 0) return returnValue;
         
-        fileClose(pFile);
-        tempBuffer[fSize] = 0;
-        returnValue = up<FileContent>(new FileContent(tempBuffer, fSize + 1, fileName));
-        return returnValue;
-    }
-    
-    up<FileContent> Utils::readBytesFromFile(string fileName){
-        omFile *pFile;
-        up<FileContent> returnValue;
-        
-        pFile = fileOpen(OME::Game::currentCtx, fileName.c_str());
+        Cache *c = new Cache();
+        c->name = filename;
         
         
+        fseek(f, 0, SEEK_END);
+        c->size = ftell(f);
+        fseek(f, 0, SEEK_SET);
         
-        if(pFile == NULL){
-            LOG("Failed open file [%s]\n", fileName.c_str());
+        c->content = new unsigned char[c->size + 1];;
+        fread(c->content, c->size, 1, f);
+        c->content[c->size] = 0;
+        
+        fclose(f);
+        
+        returnValue = up<Cache>(c);
+        
+#else
+#ifdef ANDROID
+        unzFile         uf;
+        unz_file_info   fi;
+        unz_file_pos    fp;
+        string filePath = getenv("FILESYSTEM");
+        uf = unzOpen(filePath.c_str());
+        
+        if(!uf){
+            LOG("Failed to load file: %s\n", filePath.c_str());
             return returnValue;
         }
         
-        long fSize = getFileSize(pFile);
-        unsigned char *tempBuffer = new unsigned char[fSize];
-        if(fileRead(pFile, fSize, tempBuffer) == 0) return returnValue;
+        if(relativePath){
+            filename = "assets/" + filename;
+        }
         
-        fileClose(pFile);
-        tempBuffer[fSize] = 0;
-        returnValue = up<FileContent>(new FileContent(tempBuffer, fSize, fileName));
+        unzGoToFirstFile(uf);
+        
+        Cache *c = new Cache();
+        
+        unzGetFilePos(uf, &fp);
+        
+        if(unzLocateFile(uf, filename.c_str(), 1) == UNZ_OK){
+            char name[255] = {""};
+            unzGetCurrentFileInfo(uf, &fi, name, 255, NULL, 0, NULL, 0);
+            
+            if(unzOpenCurrentFilePassword(uf, NULL) == UNZ_OK){
+                c->position = 0;
+                c->size = fi.uncompressed_size;
+                c->content = new unsigned char[c->size + 1];
+                c->content[c->size] = 0;
+                
+                while(unzReadCurrentFile(uf, c->content, c->size) > 0){}
+                
+                unzCloseCurrentFile(uf);
+                unzClose(uf);
+                
+                returnValue = up<Cache>(c);
+            }
+        }else{
+            LOG("Failed to load file: %s\n", filename.c_str());
+            unzClose(uf);
+        }
+
+#endif
+#endif
         return returnValue;
     }
     

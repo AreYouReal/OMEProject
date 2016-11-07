@@ -23,10 +23,11 @@ namespace OME {
         currentCtx->onDestroy  = OnDestroy;
         
         ShaderProgram program;
-        program.loadShaders("basic.vert", "basic.frag");
+        program.loadShaders("shaders/basic.vert", "shaders/basic.frag");
+        
+        
         
         initOGL(currentCtx->width, currentCtx->height);
-
         
         return 1;
     }
