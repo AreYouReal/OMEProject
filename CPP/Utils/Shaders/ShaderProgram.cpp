@@ -34,7 +34,13 @@ bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     glShaderSource(fs, 1, &fragmentString, NULL);
     
     glCompileShader(vs);
+    
+    OME::Utils::LOG_GL_ERROR();
+    
     glCompileShader(fs);
+    
+    OME::Utils::LOG_GL_ERROR();
+    
     
     mHandle = glCreateProgram();
     

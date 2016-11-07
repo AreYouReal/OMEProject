@@ -1,7 +1,7 @@
-/* 
-  File.strings
-  OME
-
-  Created by Alexander Kolesnikov on 05/11/2016.
-  Copyright © 2016 Daniel Ginsburg. All rights reserved.
-*/
+#version 300 es
+precision mediump float;
+in vec4 TriangleColor;
+out vec4 FragColor;
+void main() {
+    FragColor = TriangleColor;
+}

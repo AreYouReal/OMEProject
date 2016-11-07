@@ -1,8 +1,13 @@
 #version 300 es
+in vec4        VertexPosition;
+in vec4        VertexColor;
+uniform float  RadianAngle;
 
-layout (location = 0) in vec3 aPosition;
-layout (location = 1) in vec2 aTexCoord;
+out vec4       TriangleColor;
 
-void main(){
-    gl_Position = vec4(aPosition, 1.0);
+void main() {
+    mat2 rotation = mat2(cos(RadianAngle),sin(RadianAngle),
+                         -sin(RadianAngle),cos(RadianAngle));
+    gl_Position   = mat4(rotation)*VertexPosition;
+    TriangleColor = VertexColor;
 }

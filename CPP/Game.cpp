@@ -2,6 +2,15 @@
 
 #include "ShaderProgram.hpp"
 
+
+#ifdef __APPLE__
+#define VERTEX_SHADER "basic.vert"
+#define FRAGMENT_SHADER "basic.frag"
+#else
+#define VERTEX_SHADER "shaders/basic.vert"
+#define FRAGMENT_SHADER "shaders/basic.frag"
+#endif
+
 using UserData = struct{};
 
 namespace OME {
@@ -23,7 +32,7 @@ namespace OME {
         currentCtx->onDestroy  = OnDestroy;
         
         ShaderProgram program;
-        program.loadShaders("shaders/basic.vert", "shaders/basic.frag");
+        program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
         
         
         
