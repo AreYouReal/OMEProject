@@ -2,16 +2,23 @@
 
 #include "Utils.hpp"
 
+struct TextureMemData{
+    string name;
+    int width;
+    int height;
+    unsigned char* bitsraw;
+    unsigned int texID;
+};
+
+
 class Texture2D{
 public:
     Texture2D();
     virtual ~Texture2D();
     
-    bool loadTexture(const string filename, bool generateMipMaps = true);
+    virtual bool loadTexture(const string filename, bool generateMipMaps = true);
     void bind(GLuint texUnit = 0);
     
-private:
-    
-    GLuint mTexture;
-    
+protected:
+    TextureMemData data;
 };

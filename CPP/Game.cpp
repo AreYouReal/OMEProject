@@ -1,6 +1,7 @@
 #include "Game.hpp"
 
 #include "ShaderProgram.hpp"
+#include "PngTexture2D.hpp"
 
 
 #ifdef __APPLE__
@@ -34,6 +35,10 @@ namespace OME {
         ShaderProgram program;
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
         
+        
+        PngTexture2D pngTexture;
+        
+        pngTexture.loadTexture("spiderman.png");
         
         
         initOGL(currentCtx->width, currentCtx->height);

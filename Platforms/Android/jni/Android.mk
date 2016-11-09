@@ -3,24 +3,12 @@ SRC_PATH			:= $(LOCAL_PATH)/../../..
 
 include $(CLEAR_VARS)
 
+include $(SRC_PATH)/CPP/3dPart/zlib/Android.mk
+
 LOCAL_MODULE    := OMElib
 LOCAL_CFLAGS    += -std=c++11
 
 LOCAL_SRC_FILES := $(LOCAL_PATH)/Android.cpp \
-$(SRC_PATH)/CPP/3dPart/zlib/adler32.c\
-$(SRC_PATH)/CPP/3dPart/zlib/compress.c\
-$(SRC_PATH)/CPP/3dPart/zlib/crc32.c\
-$(SRC_PATH)/CPP/3dPart/zlib/deflate.c\
-$(SRC_PATH)/CPP/3dPart/zlib/gzio.c\
-$(SRC_PATH)/CPP/3dPart/zlib/infback.c\
-$(SRC_PATH)/CPP/3dPart/zlib/inffast.c\
-$(SRC_PATH)/CPP/3dPart/zlib/inflate.c\
-$(SRC_PATH)/CPP/3dPart/zlib/inftrees.c\
-$(SRC_PATH)/CPP/3dPart/zlib/ioapi.c\
-$(SRC_PATH)/CPP/3dPart/zlib/trees.c\
-$(SRC_PATH)/CPP/3dPart/zlib/uncompr.c\
-$(SRC_PATH)/CPP/3dPart/zlib/unzip.c\
-$(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Game.cpp\
 $(SRC_PATH)/CPP/Utils/Files/Cache.cpp\
 $(SRC_PATH)/CPP/Utils/Shaders/ShaderProgram.cpp\
