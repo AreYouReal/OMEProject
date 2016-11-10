@@ -35,7 +35,7 @@ void GameObject::destroy(){
 }
 
 
-IComponent* GameObject::addComponent(const up<IComponent> comp){
+IComponent* GameObject::addComponent(up<IComponent> comp){
     IComponent* returnThis = comp.get();
     if(mComponents.find(comp->mType) != mComponents.end()){
         returnThis = mComponents[comp->mType].get();

@@ -19,7 +19,7 @@ public:
     void draw();
     void destroy();
     
-    IComponent* addComponent(const up<IComponent>);
+    IComponent* addComponent(up<IComponent>);
     bool removeComponent(IComponent::Type);
     
     IComponent *getComponent(IComponent::Type);
