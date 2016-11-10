@@ -23,6 +23,8 @@
 		F32AA3011DC222CB00563510 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FD1DC222CB00563510 /* Main_iPad.storyboard */; };
 		F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FF1DC222CB00563510 /* Main_iPhone.storyboard */; };
 		F32AA30A1DC2230100563510 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32AA3091DC2230100563510 /* Images.xcassets */; };
+		F35273FC1DD45ADF00ED870D /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35273FA1DD45ADF00ED870D /* Mesh.cpp */; };
+		F35274031DD45DC300ED870D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274011DD45DC300ED870D /* GameObject.cpp */; };
 		F356AC9F1DC2218000DE529C /* OMETests.m in Sources */ = {isa = PBXBuildFile; fileRef = F356AC9D1DC220E000DE529C /* OMETests.m */; };
 		F359E51B1DD366B400C86972 /* PngTexture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F359E5191DD366B400C86972 /* PngTexture2D.cpp */; };
 		F359E5391DD3685D00C86972 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E51F1DD3685D00C86972 /* png.c */; };
@@ -82,6 +84,11 @@
 		F32AA2FE1DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3001DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		F35273FA1DD45ADF00ED870D /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = ../../../CPP/Scene/Objects/Mesh.cpp; sourceTree = "<group>"; };
+		F35273FB1DD45ADF00ED870D /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = ../../CPP/Scene/Objects/Mesh.hpp; sourceTree = SOURCE_ROOT; };
+		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
+		F35274011DD45DC300ED870D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../CPP/GameObject/GameObject.cpp; sourceTree = "<group>"; };
+		F35274021DD45DC300ED870D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = ../../CPP/GameObject/GameObject.hpp; sourceTree = "<group>"; };
 		F356AC9D1DC220E000DE529C /* OMETests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMETests.m; path = OMETests/OMETests.m; sourceTree = SOURCE_ROOT; };
 		F359E5191DD366B400C86972 /* PngTexture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PngTexture2D.cpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.cpp; sourceTree = "<group>"; };
 		F359E51A1DD366B400C86972 /* PngTexture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PngTexture2D.hpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.hpp; sourceTree = "<group>"; };
@@ -248,6 +255,8 @@
 		F30ECA311DCDE16A005F53B6 /* GameObject */ = {
 			isa = PBXGroup;
 			children = (
+				F35274011DD45DC300ED870D /* GameObject.cpp */,
+				F35274021DD45DC300ED870D /* GameObject.hpp */,
 			);
 			name = GameObject;
 			sourceTree = "<group>";
@@ -255,6 +264,8 @@
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				F35273FD1DD45BF200ED870D /* Components */,
+				F35273F81DD45AA300ED870D /* Scene */,
 				F359E51C1DD3684C00C86972 /* libpng */,
 				F359E5181DD365EA00C86972 /* Image */,
 				F3E3099B1DCDE46E000ED6C1 /* Files */,
@@ -267,7 +278,34 @@
 				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
 			);
 			name = CPP;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
+		};
+		F35273F81DD45AA300ED870D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F35273F91DD45AA900ED870D /* Objects */,
+			);
+			name = Scene;
+			sourceTree = SOURCE_ROOT;
+		};
+		F35273F91DD45AA900ED870D /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F35273FA1DD45ADF00ED870D /* Mesh.cpp */,
+				F35273FB1DD45ADF00ED870D /* Mesh.hpp */,
+			);
+			name = Objects;
+			path = ../../CPP/Scene/Objects;
+			sourceTree = SOURCE_ROOT;
+		};
+		F35273FD1DD45BF200ED870D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F35273FF1DD45C0D00ED870D /* IComponent.hpp */,
+			);
+			name = Components;
+			path = ../../CPP/Components;
+			sourceTree = SOURCE_ROOT;
 		};
 		F359E5181DD365EA00C86972 /* Image */ = {
 			isa = PBXGroup;
@@ -456,9 +494,11 @@
 				F359E5411DD3685D00C86972 /* pngrutil.c in Sources */,
 				F359E5391DD3685D00C86972 /* png.c in Sources */,
 				F359E5461DD3685D00C86972 /* pngwrite.c in Sources */,
+				F35273FC1DD45ADF00ED870D /* Mesh.cpp in Sources */,
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,
 				F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */,
+				F35274031DD45DC300ED870D /* GameObject.cpp in Sources */,
 				F359E51B1DD366B400C86972 /* PngTexture2D.cpp in Sources */,
 				F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */,
 				F359E53A1DD3685D00C86972 /* pngerror.c in Sources */,
