@@ -34,7 +34,7 @@ namespace OME {
         
         ShaderProgram program;
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
-        
+
         
         PngTexture2D pngTexture;
         

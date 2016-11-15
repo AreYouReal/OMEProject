@@ -6,9 +6,7 @@ class ShaderProgram{
 public:
     ShaderProgram();
     ~ShaderProgram();
-    
-    enum ShaderType{ VERTEX, FRAGMENT, PROGRAM };
-
+   
     bool loadShaders( string vertFileName, string fragFilename );
     void use();
     
@@ -16,8 +14,8 @@ public:
     // Set uniforms goes here...
     
 private:
-    string fileToString(const string filename);
-    void checkCompileErrors(GLuint shader, ShaderType type);
+
+    void checkCompileErrors(GLuint object, bool program);
     GLint getUniformLocation(string name);
     
     GLuint mHandle;
