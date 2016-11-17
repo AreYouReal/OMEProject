@@ -1,5 +1,7 @@
 #include "GameObject.hpp"
 
+namespace OME {
+
 GameObject::GameObject(string name) : mName(name){
     OME::Utils::LOG("GO Constructor!\n");
 }
@@ -59,4 +61,5 @@ IComponent* GameObject::getComponent(IComponent::Type type){
         return mComponents[type].get();
     }
     return nullptr;
+}
 }

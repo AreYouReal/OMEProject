@@ -27,12 +27,10 @@
 //    
 //#include "al.h"
 //#include "alc.h"
-//
-//using omFile = AAsset;
 #endif
-    
 #endif
-    
+
+
 #define WINDOW_RGB           0   /// OMCreateWindow flag - RGB color buffer
 #define WINDOW_ALPHA         1   /// OMCreateWindow flag - ALPHA color buffer
 #define WINDOW_DEPTH         2   /// OMCreateWindow flag - depth buffer

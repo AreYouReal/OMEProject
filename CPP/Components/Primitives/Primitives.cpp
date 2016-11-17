@@ -41,10 +41,40 @@ GLfloat  colors[] ={
     1.0, 1.0, 0.0
 };
 
-Primitives::Primitives(GameObject *const gameObject) : Mesh(gameObject){
-
+namespace OME {
+    Primitives::Primitives(GameObject *const gameObject) : Mesh(gameObject){
+        
+    }
+    
+    Primitives::~Primitives(){
+        // Remove shader program
+    }
+    
+    
+    bool Primitives::init(){
+        
+        program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
+        
+        
+        
+        return true;
+    }
+    
+    void Primitives::draw(){
+        program.use();
+        
+    }
+    
+    
+    
+    void Primitives::renderPrimitive(){
+        glDisable(GL_CULL_FACE);
+        glLineWidth(10.0f);
+        
+        
+        
+        
+        
+    }
 }
 
-Primitives::~Primitives(){
-    // Remove shader program
-}

@@ -1,5 +1,8 @@
 #include "ShaderProgram.hpp"
 
+namespace OME {
+
+
 ShaderProgram::ShaderProgram() : mHandle(0){}
 
 
@@ -91,4 +94,5 @@ GLint ShaderProgram::getUniformLocation(string name){
         mUniformLocations[name] = glGetUniformLocation(mHandle, name.c_str());
     }
     return mUniformLocations[name];
+}
 }

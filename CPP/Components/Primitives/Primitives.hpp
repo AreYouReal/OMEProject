@@ -1,19 +1,29 @@
 #pragma once
 
 #include "Mesh.hpp"
+#include "ShaderProgram.hpp"
 
-class Primitives : public Mesh{
-public:
-    Primitives(GameObject *const gameObject);
-    virtual ~Primitives();
-    
-    
-    
-private:
-    unsigned int primitive;
-    char mvp;
-    char aPosition;
-    char aColor;
-    
+namespace OME {
+    class Primitives : public Mesh{
+    public:
+        Primitives(GameObject *const gameObject);
+        virtual ~Primitives();
+        
+        virtual bool init() override;
+        virtual void draw() override;
+        
+    private:
+        unsigned int primitive;
+        char mvp;
+        char aPosition;
+        char aColor;
+        
+        void renderPrimitive();
+        
+        
+        ShaderProgram program;
+        
+    };
+}
 
-};
+

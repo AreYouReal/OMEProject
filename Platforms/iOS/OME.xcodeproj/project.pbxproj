@@ -23,6 +23,7 @@
 		F32AA3011DC222CB00563510 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FD1DC222CB00563510 /* Main_iPad.storyboard */; };
 		F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FF1DC222CB00563510 /* Main_iPhone.storyboard */; };
 		F32AA30A1DC2230100563510 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32AA3091DC2230100563510 /* Images.xcassets */; };
+		F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3462B361DDDBA6F00167FEA /* Camera.cpp */; };
 		F35274031DD45DC300ED870D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274011DD45DC300ED870D /* GameObject.cpp */; };
 		F35274071DD465C100ED870D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274051DD465C100ED870D /* Transform.cpp */; };
 		F35275161DD4665100ED870D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = F352740A1DD4665100ED870D /* CMakeLists.txt */; };
@@ -203,6 +204,9 @@
 		F32AA2FE1DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3001DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		F3462B301DDDB92400167FEA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = ../../CPP/Utils/Header.h; sourceTree = "<group>"; };
+		F3462B361DDDBA6F00167FEA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Camera/Camera.cpp; sourceTree = "<group>"; };
+		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
 		F35274011DD45DC300ED870D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../CPP/GameObject/GameObject.cpp; sourceTree = "<group>"; };
 		F35274021DD45DC300ED870D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = ../../CPP/GameObject/GameObject.hpp; sourceTree = "<group>"; };
@@ -652,41 +656,43 @@
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				F3462B2F1DDDB8CA00167FEA /* Utils */,
 				F35274081DD4663600ED870D /* 3dPart */,
 				F35273FD1DD45BF200ED870D /* Components */,
-				F35273F81DD45AA300ED870D /* Scene */,
-				F359E5181DD365EA00C86972 /* Image */,
-				F3E3099B1DCDE46E000ED6C1 /* Files */,
-				F3E309991DCDE306000ED6C1 /* Shader */,
 				F30ECA311DCDE16A005F53B6 /* GameObject */,
-				F314A1721DCCA4D4008657AE /* Utils.cpp */,
-				F314A1731DCCA4D4008657AE /* Utils.hpp */,
 				F36F7E381DCCA90E00A335A4 /* Game.cpp */,
 				F36F7E391DCCA90E00A335A4 /* Game.hpp */,
-				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
 			);
 			name = CPP;
 			sourceTree = SOURCE_ROOT;
 		};
-		F35273F81DD45AA300ED870D /* Scene */ = {
+		F3462B2F1DDDB8CA00167FEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				F35273F91DD45AA900ED870D /* Objects */,
+				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
+				F359E5181DD365EA00C86972 /* Image */,
+				F3E309991DCDE306000ED6C1 /* Shader */,
+				F3E3099B1DCDE46E000ED6C1 /* Files */,
+				F314A1721DCCA4D4008657AE /* Utils.cpp */,
+				F314A1731DCCA4D4008657AE /* Utils.hpp */,
+				F3462B301DDDB92400167FEA /* Header.h */,
 			);
-			name = Scene;
-			sourceTree = SOURCE_ROOT;
+			name = Utils;
+			sourceTree = "<group>";
 		};
-		F35273F91DD45AA900ED870D /* Objects */ = {
+		F3462B351DDDBA4500167FEA /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				F3462B361DDDBA6F00167FEA /* Camera.cpp */,
+				F3462B371DDDBA6F00167FEA /* Camera.hpp */,
 			);
-			name = Objects;
-			path = ../../CPP/Scene/Objects;
-			sourceTree = SOURCE_ROOT;
+			name = Camera;
+			sourceTree = "<group>";
 		};
 		F35273FD1DD45BF200ED870D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3462B351DDDBA4500167FEA /* Camera */,
 				F35C99BC1DD5819400451CB3 /* Primitives */,
 				F35C99B81DD57EF800451CB3 /* Mesh */,
 				F35274041DD465A400ED870D /* Transform */,
@@ -1338,6 +1344,7 @@
 				F359E5411DD3685D00C86972 /* pngrutil.c in Sources */,
 				F359E5391DD3685D00C86972 /* png.c in Sources */,
 				F359E5461DD3685D00C86972 /* pngwrite.c in Sources */,
+				F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */,
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
 				F35275171DD4665100ED870D /* dummy.cpp in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,

@@ -2,8 +2,12 @@
 
 #include "IComponent.hpp"
 
-class Mesh : public IComponent{
-public:
-    Mesh(GameObject *const gameObject);
-    virtual ~Mesh();    
-};
+namespace OME {
+    class Mesh : public IComponent{
+    public:
+        Mesh(GameObject *const gameObject);
+        virtual ~Mesh();
+    };
+}
+
+

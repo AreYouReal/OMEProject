@@ -1,5 +1,7 @@
 #include "PngTexture2D.hpp"
 
+namespace OME {
+
 bool PngTexture2D::loadTexture(const string filename, bool generateMipMaps ){
     
     data.bitsraw = readPNGFile(filename);
@@ -115,4 +117,6 @@ unsigned char* PngTexture2D::readPNGFile(string filename){
     free(bytep);
     
     return textureArray;
+}
+    
 }

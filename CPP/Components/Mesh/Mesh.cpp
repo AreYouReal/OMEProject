@@ -1,8 +1,11 @@
 #include "Mesh.hpp"
 
-
-Mesh::Mesh(GameObject *const gameObject) : IComponent(gameObject){
-
+namespace OME {
+    Mesh::Mesh(GameObject *const gameObject) : IComponent(gameObject){
+        
+    }
+    
+    Mesh::~Mesh(){}
 }
 
-Mesh::~Mesh(){}
+

@@ -3,6 +3,9 @@
 #include "ShaderProgram.hpp"
 #include "PngTexture2D.hpp"
 
+#include "GameObject.hpp"
+
+#include "Transform.hpp"
 
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
@@ -15,6 +18,9 @@
 using UserData = struct{};
 
 namespace OME {
+    
+    
+    GameObject testGO;
     
      OME::Context *Game::currentCtx;
     
@@ -34,12 +40,11 @@ namespace OME {
         
         ShaderProgram program;
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
-
         
         PngTexture2D pngTexture;
         
         pngTexture.loadTexture("spiderman.png");
-        
+       
         
         initOGL(currentCtx->width, currentCtx->height);
         

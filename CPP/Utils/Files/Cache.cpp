@@ -2,14 +2,18 @@
 
 #include "Utils.hpp"
 
-Cache::Cache(){
-
+namespace OME {
+    Cache::Cache(){
+        
+    }
+    
+    Cache::~Cache(){
+        if(content) delete[] content;
+        OME::Utils::LOG("Cache destructor!");
+    }
 }
 
-Cache::~Cache(){
-    if(content) delete[] content;
-    OME::Utils::LOG("Cache destructor!");
-}
+
 
 
 
