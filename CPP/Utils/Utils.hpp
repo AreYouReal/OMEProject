@@ -97,3 +97,14 @@ namespace OME {
     
 }
 
+// TODO: WRITE FILES...
+//string newFilename = "/storage/emulated/0/Android/data/com.areyoureal.ome/files/hello.txt";
+//FILE *newFile = fopen( newFilename.c_str(), "a");
+//OME::Utils::LOG("FILE PATH! %s\n", newFilename.c_str());
+//if (newFile != NULL)
+//{
+//    OME::Utils::LOG("NEW FILE CREATED!");
+//    fputs("HELLO WORLD!\n", newFile);
+//    fflush(newFile);
+//    fclose(newFile);
+//}
