@@ -5,7 +5,7 @@
 
 #include "GameObject.hpp"
 
-#include "Transform.hpp"
+#include "../CPP/Components/Transform/Transform.hpp"
 
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
@@ -44,7 +44,10 @@ namespace OME {
         PngTexture2D pngTexture;
         
         pngTexture.loadTexture("spiderman.png");
-       
+        
+        
+        
+        Transform qwe(&testGO);
         
         initOGL(currentCtx->width, currentCtx->height);
         

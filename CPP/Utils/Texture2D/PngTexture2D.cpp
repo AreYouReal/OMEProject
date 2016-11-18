@@ -25,10 +25,26 @@ unsigned char* PngTexture2D::readPNGFile(string filename){
     int numberOfPasses;
     
     string path = OME::Utils::extractPath(getenv("FILESYSTEM"));
-    
+#ifdef ANDROID
+    path = "/storage/emulated/0/Android/data/com.areyoureal.ome/files/";
+#endif
     filename = path+filename;
-    
+
     FILE *fp = fopen(filename.c_str(), "rb");
+    
+    
+    string newFilename = "/storage/emulated/0/Android/data/com.areyoureal.ome/files/hello.txt";
+    FILE *newFile = fopen( newFilename.c_str(), "a");
+    OME::Utils::LOG("FILE PATH! %s\n", newFilename.c_str());
+    if (newFile != NULL)
+    {
+        OME::Utils::LOG("NEW FILE CREATED!");
+        fputs("HELLO WORLD!\n", newFile);
+        fflush(newFile);
+        fclose(newFile);
+    }
+    
+    
     if(!fp){
         OME::Utils::LOG("Unable to load png file! [%s]", filename.c_str());
         return nullptr;

@@ -10,19 +10,19 @@ using mat4 = glm::mat4;
 namespace OME {
     
     class Transform : public IComponent{
-        
+    public:
         Transform(GameObject * const gameObject);
         virtual ~Transform();
         
         
-        mat4 getMatrix();
+        glm::mat4 getMatrix();
         
-        vec3 mPosition;
-        vec3 mScale;
-        vec3 mRotation;
-        vec3 mFront;
-        vec3 mUp;
-        vec3 mRight;
+        glm::vec3 mPosition;
+        glm::vec3 mScale;
+        glm::vec3 mRotation;
+        glm::vec3 mFront;
+        glm::vec3 mUp;
+        glm::vec3 mRight;
     };
 }
 

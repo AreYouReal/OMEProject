@@ -139,6 +139,67 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
     } // end switch
 }
 
+
+void DirectoriesTest(struct android_app *pApp){
+    // getPath()
+    JNIEnv* env = 0;
+    ANativeActivity* activity = pApp->activity;
+    activity->vm->AttachCurrentThread(&env, NULL);
+    jclass cls_Env = env->FindClass("android/app/NativeActivity");
+    jmethodID mid_getExtStorage = env->GetMethodID(cls_Env, "getFilesDir", "()Ljava/io/File;");
+    jobject obj_File = env->CallObjectMethod(pApp->activity->clazz, mid_getExtStorage);
+    jclass cls_File = env->FindClass("java/io/File");
+    jmethodID mid_getPath = env->GetMethodID(cls_File, "getPath", "()Ljava/lang/String;");
+    jstring obj_Path = (jstring) env->CallObjectMethod(obj_File, mid_getPath);
+    const char* path = env->GetStringUTFChars(obj_Path, NULL);
+    LOGI("INTERNAL PATH = %s\n", path);
+    env->ReleaseStringUTFChars(obj_Path, path);
+    // getCacheDir()
+    mid_getExtStorage = env->GetMethodID( cls_Env,"getCacheDir", "()Ljava/io/File;");
+    obj_File = env->CallObjectMethod(pApp->activity->clazz, mid_getExtStorage, NULL);
+    cls_File = env->FindClass("java/io/File");
+    mid_getPath = env->GetMethodID(cls_File, "getAbsolutePath", "()Ljava/lang/String;");
+    obj_Path = (jstring) env->CallObjectMethod(obj_File, mid_getPath);
+    path = env->GetStringUTFChars(obj_Path, NULL);
+    LOGI("CACHE DIR = %s\n", path); 
+    env->ReleaseStringUTFChars(obj_Path, path);
+    // getExternalFileDir()
+    mid_getExtStorage = env->GetMethodID( cls_Env,"getExternalFilesDir", "(Ljava/lang/String;)Ljava/io/File;");
+    obj_File = env->CallObjectMethod(pApp->activity->clazz, mid_getExtStorage, NULL);
+    cls_File = env->FindClass("java/io/File");
+    mid_getPath = env->GetMethodID(cls_File, "getPath", "()Ljava/lang/String;");
+    obj_Path = (jstring) env->CallObjectMethod(obj_File, mid_getPath);
+    path = env->GetStringUTFChars(obj_Path, NULL);
+    LOGI("EXTERNAL PATH = %s\n", path);
+    env->ReleaseStringUTFChars(obj_Path, path);
+}
+
+void SetEnv(struct android_app *pApp){
+    JNIEnv* env = 0;
+    ANativeActivity* activity = pApp->activity;
+    activity->vm->AttachCurrentThread(&env, NULL);
+    jclass cls_Env = env->FindClass("android/app/NativeActivity");
+    jmethodID mid_getExtStorage = env->GetMethodID(cls_Env, "getFilesDir", "()Ljava/io/File;");
+    jobject obj_File = env->CallObjectMethod(pApp->activity->clazz, mid_getExtStorage);
+    jclass cls_File = env->FindClass("java/io/File");
+    jmethodID mid_getPath = env->GetMethodID(cls_File, "getPath", "()Ljava/lang/String;");
+    jstring obj_Path = (jstring) env->CallObjectMethod(obj_File, mid_getPath);
+    const char* path = env->GetStringUTFChars(obj_Path, NULL);
+    LOGI("INTERNAL PATH = %s\n", path);
+
+    env->ReleaseStringUTFChars(obj_Path, path);
+
+      mid_getExtStorage = env->GetMethodID( cls_Env,"getExternalFilesDir", "(Ljava/lang/String;)Ljava/io/File;");
+    obj_File = env->CallObjectMethod(pApp->activity->clazz, mid_getExtStorage, NULL);
+    cls_File = env->FindClass("java/io/File");
+    mid_getPath = env->GetMethodID(cls_File, "getPath", "()Ljava/lang/String;");
+    obj_Path = (jstring) env->CallObjectMethod(obj_File, mid_getPath);
+    path = env->GetStringUTFChars(obj_Path, NULL);
+    LOGI("EXTERNAL PATH = %s\n", path);
+    env->ReleaseStringUTFChars(obj_Path, path);
+
+}
+
 ///
 //  android_main()
 //
@@ -146,8 +207,10 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
 //
 void android_main ( struct android_app *pApp )
 {
+DirectoriesTest(pApp);
 
- ANativeActivity* activity = pApp->activity;
+
+  ANativeActivity* activity = pApp->activity;
     JNIEnv* env = 0;
 
     activity->vm->AttachCurrentThread(&env, NULL);
