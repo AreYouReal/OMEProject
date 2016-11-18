@@ -10,7 +10,7 @@
 				android:launchMode="singleTask"
                 android:configChanges="orientation|keyboardHidden">
             <meta-data android:name="android.app.lib_name" 
-                android:value="OMElib" />
+                android:value="OME" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -18,7 +18,7 @@
         </activity>
     </application>
     <uses-feature android:glEsVersion="0x00030000"/>
-    <uses-sdk android:minSdkVersion="24"/>
+    <uses-sdk android:minSdkVersion="19"/>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE">
     </uses-permission>

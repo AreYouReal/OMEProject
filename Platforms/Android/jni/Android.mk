@@ -3,7 +3,7 @@ SRC_PATH			:= $(LOCAL_PATH)/../../..
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE    := OMElib
+LOCAL_MODULE    := OME
 LOCAL_CFLAGS    += -std=c++11
 
 LOCAL_SRC_FILES := $(LOCAL_PATH)/Android.cpp \
