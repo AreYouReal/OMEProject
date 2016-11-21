@@ -18,6 +18,9 @@ namespace OME {
         Camera();
         virtual ~Camera();
         
+        virtual string type() override{
+            return typeid(this).name();
+        }
         
         virtual bool init()     override;
         virtual void update()   override;

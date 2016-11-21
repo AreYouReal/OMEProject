@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Utils.hpp"
+
 namespace OME {
     
     class GameObject;
@@ -13,9 +15,7 @@ namespace OME {
         IComponent(){};
         virtual ~IComponent(){};
 
-        std::string type(){
-            return typeid(this).name();
-        }
+        virtual std::string type() = 0;
         
         virtual bool init(){return true;};
         virtual void update(){};

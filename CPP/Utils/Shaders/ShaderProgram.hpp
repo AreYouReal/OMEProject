@@ -2,6 +2,11 @@
 
 #include "Utils.hpp"
 
+#include "glm.hpp"
+
+using vec3 = glm::vec3;
+using mat4 = glm::mat4;
+
 namespace OME {
     class ShaderProgram{
     public:
@@ -13,6 +18,8 @@ namespace OME {
         
         
         // Set uniforms goes here...
+        
+        void setUniform(string name, mat4 mat);
         
     private:
         

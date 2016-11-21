@@ -12,6 +12,10 @@ namespace OME {
         virtual bool init() override;
         virtual void draw() override;
         
+        virtual string type() override{
+            return typeid(this).name();
+        }
+        
     private:
         unsigned int primitive;
         char mvp;

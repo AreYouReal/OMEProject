@@ -6,12 +6,12 @@
 #include "Camera.hpp"
 
 
-#ifdef __APPLE
-#define VERTEX_SHADER "primitiveVertex.glsl"
-#define FRAGMENT_SHADER "primitiveFragment.glsl"
+#ifdef __APPLE__
+#define VERTEX_SHADER "basic.vert"
+#define FRAGMENT_SHADER "basic.frag"
 #else
-#define VERTEX_SHADER "shaders/primitiveVertex.glsl"
-#define FRAGMENT_SHADER "shaders/primitiveFragment.glsl"
+#define VERTEX_SHADER "shaders/basic.vert"
+#define FRAGMENT_SHADER "shaders/basic.frag"
 #endif
 
 using std::ifstream;
@@ -70,7 +70,15 @@ namespace OME {
         glDisable(GL_CULL_FACE);
         glLineWidth(10.0f);
 
-        glm::mat4 modelMatrix = go->transform()->getMatrix();
+        glm::mat4 modelMatrix   = go->transform()->getMatrix();
+        glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
+        glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
+        
+        program.setUniform("uModelMatrix",      modelMatrix);
+        program.setUniform("uViewMatrix",       viewMat);
+        program.setUniform("uProjectionMatrix", projMatrix);
+        
+        
         
     }
 }

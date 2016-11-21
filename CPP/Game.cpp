@@ -9,6 +9,9 @@
 
 #include "Camera.hpp"
 
+
+#include "Primitives.hpp"
+
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
 #define FRAGMENT_SHADER "basic.frag"
@@ -25,11 +28,16 @@ namespace OME {
     
     GameObject *camObj;
     
+    GameObject *primGO;
+    
     int Game::StartUp(OME::Context *ctx){
-        
         
         Camera *cam = Camera::instance();
         camObj = cam->go;
+        
+        primGO = new GameObject();
+        Primitives *primitives = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
+        primitives->init();
         
         ctx->userData = malloc (sizeof(UserData));
         
@@ -44,13 +52,10 @@ namespace OME {
         currentCtx->onTouch    = OnTouch;
         currentCtx->onDestroy  = OnDestroy;
         
-        ShaderProgram program;
-        program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
-        
         PngTexture2D pngTexture;
-        
         pngTexture.loadTexture("spiderman.png");
 
+               
 
         OME::Utils::LOG("Typeid:  %s", typeid(Camera).name());
         
@@ -78,6 +83,10 @@ namespace OME {
     void Game::OnDestroy   (){
         if(camObj){
             delete camObj;
+        }
+        
+        if(primGO){
+            delete primGO;
         }
         Utils::LOG("OnDestroy!");
     }

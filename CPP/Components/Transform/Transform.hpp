@@ -15,6 +15,10 @@ namespace OME {
         virtual ~Transform();
         
         
+        virtual string type(){
+            return typeid(this).name();
+        }
+        
         glm::mat4 getMatrix();
         
         glm::vec3 mPosition;

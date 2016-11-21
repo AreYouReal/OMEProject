@@ -18,7 +18,7 @@ public:
     
     static void Create(){
         GameObject *go = new GameObject();
-        mInstance = (T*)go->addComponent(up<T>(new T()));
+        mInstance = (T*)go->addComponent(std::move(up<T>(new T())));
     }
     
     static void destroy(){

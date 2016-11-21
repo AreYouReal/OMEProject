@@ -1,5 +1,7 @@
 #include "ShaderProgram.hpp"
 
+#include "../../3dPart/glm/gtc/type_ptr.hpp"
+
 namespace OME {
 
 
@@ -63,6 +65,11 @@ void ShaderProgram::use(){
     }
 }
 
+    
+void ShaderProgram::setUniform(string name, mat4 mat){
+    int uniformLoc = getUniformLocation(name);
+    glUniformMatrix4fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(mat));
+}
 
 #pragma mark Helpers
 void ShaderProgram::checkCompileErrors(GLuint object, bool program){
