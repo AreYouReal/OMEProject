@@ -204,7 +204,7 @@
 		F32AA2FE1DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3001DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		F3462B301DDDB92400167FEA /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = ../../CPP/Utils/Header.h; sourceTree = "<group>"; };
+		F3462B301DDDB92400167FEA /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = ../../CPP/Utils/Singleton.h; sourceTree = "<group>"; };
 		F3462B361DDDBA6F00167FEA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Camera/Camera.cpp; sourceTree = "<group>"; };
 		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
@@ -675,7 +675,7 @@
 				F3E3099B1DCDE46E000ED6C1 /* Files */,
 				F314A1721DCCA4D4008657AE /* Utils.cpp */,
 				F314A1731DCCA4D4008657AE /* Utils.hpp */,
-				F3462B301DDDB92400167FEA /* Header.h */,
+				F3462B301DDDB92400167FEA /* Singleton.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

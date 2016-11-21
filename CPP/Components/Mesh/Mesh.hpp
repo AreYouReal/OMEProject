@@ -5,7 +5,7 @@
 namespace OME {
     class Mesh : public IComponent{
     public:
-        Mesh(GameObject *const gameObject);
+        Mesh();
         virtual ~Mesh();
     };
 }

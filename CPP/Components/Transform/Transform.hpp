@@ -11,7 +11,7 @@ namespace OME {
     
     class Transform : public IComponent{
     public:
-        Transform(GameObject * const gameObject);
+        Transform();
         virtual ~Transform();
         
         
@@ -23,6 +23,10 @@ namespace OME {
         glm::vec3 mFront;
         glm::vec3 mUp;
         glm::vec3 mRight;
+        
+        
+        static glm::vec3 WORLD_UP;
+        
     };
 }
 

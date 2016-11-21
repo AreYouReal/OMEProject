@@ -11,9 +11,14 @@ public:
     
     static T* instance(){
         if(!mInstance){
-            mInstance = new T();
+            Create();
         }
         return mInstance;
+    }
+    
+    static void Create(){
+        GameObject *go = new GameObject();
+        mInstance = (T*)go->addComponent(up<T>(new T()));
     }
     
     static void destroy(){
@@ -26,9 +31,9 @@ public:
 protected:
     Singleton(){}
     static T* mInstance;
-}
+};
 
 template<typename T>
-T* Singletom<T>::mInstance;
+T* Singleton<T>::mInstance;
     
 }

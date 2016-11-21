@@ -21,12 +21,16 @@ using UserData = struct{};
 
 namespace OME {
     
-    
-    GameObject testGO;
-    
      OME::Context *Game::currentCtx;
     
+    GameObject *camObj;
+    
     int Game::StartUp(OME::Context *ctx){
+        
+        
+        Camera *cam = Camera::instance();
+        camObj = cam->go;
+        
         ctx->userData = malloc (sizeof(UserData));
         
         if(!Utils::OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
@@ -47,8 +51,9 @@ namespace OME {
         
         pngTexture.loadTexture("spiderman.png");
 
-        Camera cam(&testGO);
 
+        OME::Utils::LOG("Typeid:  %s", typeid(Camera).name());
+        
         
         initOGL(currentCtx->width, currentCtx->height);
         
@@ -71,6 +76,9 @@ namespace OME {
     }
     
     void Game::OnDestroy   (){
+        if(camObj){
+            delete camObj;
+        }
         Utils::LOG("OnDestroy!");
     }
     

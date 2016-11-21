@@ -2,6 +2,7 @@
 
 #include "Utils.hpp"
 #include "IComponent.hpp"
+#include "../Components/Transform/Transform.hpp"
 
 using string = std::string;
 
@@ -22,13 +23,15 @@ class GameObject{
         void destroy();
         
         IComponent* addComponent(up<IComponent>);
-        bool removeComponent(IComponent::Type);
+        bool removeComponent(string type);
         
-        IComponent *getComponent(IComponent::Type);
-        
+        IComponent *getComponent(string type);
+    
+        Transform* transform();
+    
     private:
         
-        std::map<IComponent::Type, up<IComponent>> mComponents;
+        std::map<string, up<IComponent>> mComponents;
         
     };
 }

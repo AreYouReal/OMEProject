@@ -1,6 +1,10 @@
 #include "Primitives.hpp"
 
 #include "Utils.hpp"
+#include "GameObject.hpp"
+#include "../Transform/Transform.hpp"
+#include "Camera.hpp"
+
 
 #ifdef __APPLE
 #define VERTEX_SHADER "primitiveVertex.glsl"
@@ -9,7 +13,6 @@
 #define VERTEX_SHADER "shaders/primitiveVertex.glsl"
 #define FRAGMENT_SHADER "shaders/primitiveFragment.glsl"
 #endif
-
 
 using std::ifstream;
 using std::ostringstream;
@@ -42,7 +45,7 @@ GLfloat  colors[] ={
 };
 
 namespace OME {
-    Primitives::Primitives(GameObject *const gameObject) : Mesh(gameObject){
+    Primitives::Primitives(){
         
     }
     
@@ -50,12 +53,8 @@ namespace OME {
         // Remove shader program
     }
     
-    
     bool Primitives::init(){
-        
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
-        
-        
         
         return true;
     }
@@ -70,10 +69,8 @@ namespace OME {
     void Primitives::renderPrimitive(){
         glDisable(GL_CULL_FACE);
         glLineWidth(10.0f);
-        
-        
-        
-        
+
+        glm::mat4 modelMatrix = go->transform()->getMatrix();
         
     }
 }

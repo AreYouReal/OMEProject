@@ -1,7 +1,10 @@
 #pragma once
 
 #include "IComponent.hpp"
+#include "Singleton.h"
+
 #include "../Transform/Transform.hpp"
+
 
 #include "glm.hpp"
 
@@ -9,9 +12,10 @@ using mat4 = glm::mat4;
 using vec3 = glm::vec3;
 
 namespace OME {
-    class Camera : public IComponent{
+    class Camera : public IComponent, public Singleton<Camera>{
     public:
-        Camera(GameObject *const gameObject);
+        
+        Camera();
         virtual ~Camera();
         
         
@@ -20,23 +24,24 @@ namespace OME {
         virtual void draw()     override;
         virtual void destroy()  override;
         
-        void camInit(/*parameters*/);
+        void camInit(float width, float height, float fov, float near, float far );
         
-        const float width();
-        const float height();
-        
-        
-        
-        const mat4& getViewMatrix() const;
-        const mat4& getProjectionMatrix() const;
-        const mat4& getNormalMatrix() const;
-        
+        mat4 getViewMatrix();
+        mat4 getProjectionMatrix();
+        mat4 getNormalMatrix();       
         
         virtual void setPosition(const vec3& position){}
         virtual void rotate(float yaw, float pitch){}
         virtual void move(const vec3& offsetPos){}
         
     private:
+        
+        float mWidth;
+        float mHeight;
+        float mFOV; // in degrees
+        float mNearPlane;
+        float mFarPlane;
+        
         
         Transform *transform;
         

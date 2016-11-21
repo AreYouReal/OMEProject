@@ -1,13 +1,15 @@
 #version 300 es
-in vec4        VertexPosition;
-in vec4        VertexColor;
-uniform float  RadianAngle;
+in vec4        aPosition;
+in vec4        aColor;
 
-out vec4       TriangleColor;
+uniform mat4        uModelMatrix;
+uniform mat4        uViewMatrix;
+uniform mat4        uProjectionMatrix;
+
+
+out vec4       vColor;
 
 void main() {
-    mat2 rotation = mat2(cos(RadianAngle),sin(RadianAngle),
-                         -sin(RadianAngle),cos(RadianAngle));
-    gl_Position   = mat4(rotation)*VertexPosition;
-    TriangleColor = VertexColor;
+    gl_Position   = aPosition * uModelMatrix;
+    vColor = aColor;
 }

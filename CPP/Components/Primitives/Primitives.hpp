@@ -6,7 +6,7 @@
 namespace OME {
     class Primitives : public Mesh{
     public:
-        Primitives(GameObject *const gameObject);
+        Primitives();
         virtual ~Primitives();
         
         virtual bool init() override;
