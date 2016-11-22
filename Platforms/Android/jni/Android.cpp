@@ -114,6 +114,7 @@ static void handleCommand ( struct android_app *pApp, int32_t cmd ){
 int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
     OME::Context *context = ( OME::Context * ) pApp->userData;
     int32_t eventType = AInputEvent_getType(event);
+
     switch(eventType){
         case AINPUT_EVENT_TYPE_MOTION:
             switch(AInputEvent_getSource(event)){
@@ -121,13 +122,13 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
                     int action = AKeyEvent_getAction(event) & AMOTION_EVENT_ACTION_MASK;
                     switch(action){
                          case AMOTION_EVENT_ACTION_DOWN:
-                            if(context->onTouch) context->onTouch(0, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 0);
                          break;
                          case AMOTION_EVENT_ACTION_UP:
-                            if(context->onTouch) context->onTouch(1, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 1);
                          break;
                          case AMOTION_EVENT_ACTION_MOVE:
-                            if(context->onTouch) context->onTouch(2, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 2);
                          break;
                     }
                 break;
@@ -239,6 +240,7 @@ DirectoriesTest(pApp);
 
    pApp->onAppCmd = handleCommand;
    pApp->userData = &context;
+   pApp->onInputEvent = handleInput;
 
    lastTime = GetCurrentTime();
 

@@ -32,17 +32,7 @@ namespace OME {
     Primitives *prm;
     
     int Game::StartUp(OME::Context *ctx){
-        
-        Camera *cam = Camera::instance();
-        camObj = cam->go;
-        cam->init();
-        camObj->transform()->mPosition = vec3(0, 0, 1.5f);
-        cam->camInit(640, 480, 90, 0.1f, 1000.0f);
-        
-        primGO = new GameObject();
-        prm = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
-        prm->init();
-        
+
         ctx->userData = malloc (sizeof(UserData));
         
         if(!Utils::OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
@@ -55,6 +45,19 @@ namespace OME {
         currentCtx->onDraw     = OnDraw;
         currentCtx->onTouch    = OnTouch;
         currentCtx->onDestroy  = OnDestroy;
+        
+
+        
+        
+        Camera *cam = Camera::instance();
+        camObj = cam->go;
+        cam->init();
+        camObj->transform()->mPosition = vec3(0, 0, 1.5f);
+        cam->camInit(640, 480, 90, 0.1f, 1000.0f);
+        
+        primGO = new GameObject();
+        prm = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
+        prm->init();
         
         PngTexture2D pngTexture;
         pngTexture.loadTexture("spiderman.png");
@@ -83,7 +86,7 @@ namespace OME {
         prm->draw();
     }
     
-    void Game::OnTouch     (const int x, const int y, const int type){
+    void Game::OnTouch(const int x, const int y, const int type){
         if(prm != nullptr){
             if(type == 0){
                 prm->primitive++;
