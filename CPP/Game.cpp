@@ -36,7 +36,8 @@ namespace OME {
         Camera *cam = Camera::instance();
         camObj = cam->go;
         cam->init();
-        cam->camInit(640, 480, 90, 1, 100);
+        camObj->transform()->mPosition = vec3(0, 0, 3);
+        cam->camInit(640, 480, 90, 0.1f, 1000.0f);
         
         primGO = new GameObject();
         prm = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));

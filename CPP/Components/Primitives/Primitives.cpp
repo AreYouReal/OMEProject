@@ -55,7 +55,7 @@ namespace OME {
     
     bool Primitives::init(){
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
-        
+        primitive = GL_TRIANGLES;
         return true;
     }
     
@@ -69,12 +69,12 @@ namespace OME {
         glLineWidth(10.0f);
 
         glm::mat4 modelMatrix   = go->transform()->getMatrix();
-//        glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
-//        glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
+        glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
+        glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
         
         program.setUniform("uModelMatrix",      modelMatrix);
-//        program.setUniform("uViewMatrix",       viewMat);
-//        program.setUniform("uProjectionMatrix", projMatrix);
+        program.setUniform("uViewMatrix",       viewMat);
+        program.setUniform("uProjectionMatrix", projMatrix);
         
         
         glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, vertices);
