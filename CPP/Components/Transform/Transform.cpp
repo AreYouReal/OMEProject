@@ -16,7 +16,7 @@ namespace OME {
         mRight      = vec3(1, 0, 0);
     }
     
-    Transform::~Transform(){}
+    Transform::~Transform(){}   
     
     mat4 Transform::getMatrix(){
         mat4 returnValue;

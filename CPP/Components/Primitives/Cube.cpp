@@ -11,6 +11,9 @@
 #endif
 
 
+#include "Time.hpp"
+
+
 GLfloat  cubeVerts[][3] = {
     -1, -1, 1 , // V0
     -1, 1,  1 , // V1
@@ -60,7 +63,10 @@ namespace OME {
     
     void Cube::update(){
         static float rotYAngle = 0;
-        rotYAngle += 0.1f;
+        
+        OME::Utils::LOG("delta time: %f\n", Time::deltaTime);
+        
+        rotYAngle += 25 * Time::deltaTime;
         if(rotYAngle > 360) rotYAngle = 0;
         
         go->transform()->mRotation = vec3(0, rotYAngle, 0);

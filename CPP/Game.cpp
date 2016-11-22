@@ -12,6 +12,8 @@
 
 #include "Cube.hpp"
 
+#include "Time.hpp"
+
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
 #define FRAGMENT_SHADER "basic.frag"
@@ -74,6 +76,7 @@ namespace OME {
     
     
     void Game::OnUpdate    (const float){
+        OME::Time::update();
         prm->update();
     }
     
@@ -88,10 +91,7 @@ namespace OME {
     
     void Game::OnTouch(const int x, const int y, const int type){
         if(prm != nullptr){
-//            if(type == 0){
-//                prm->primitive++;
-//                prm->primitive = prm->primitive%7;
-//            }
+
 
         }
     }
