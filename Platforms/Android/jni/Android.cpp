@@ -120,15 +120,15 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
                 case AINPUT_SOURCE_TOUCHSCREEN:
                     int action = AKeyEvent_getAction(event) & AMOTION_EVENT_ACTION_MASK;
                     switch(action){
-                        // case AMOTION_EVENT_ACTION_DOWN:
-                        //    if(context->onTouch != NULL) context->onTouch((int)TouchState::BEGIN, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
-                        // break;
-                        // case AMOTION_EVENT_ACTION_UP:
-                        //    if(context->onTouch != NULL) context->onTouch((int)TouchState::ENDED, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
-                        // break;
-                        // case AMOTION_EVENT_ACTION_MOVE:
-                        //    if(context->onTouch != NULL) context->onTouch((int)TouchState::MOVED, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
-                        // break;
+                         case AMOTION_EVENT_ACTION_DOWN:
+                            if(context->onTouch) context->onTouch(0, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                         break;
+                         case AMOTION_EVENT_ACTION_UP:
+                            if(context->onTouch) context->onTouch(1, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                         break;
+                         case AMOTION_EVENT_ACTION_MOVE:
+                            if(context->onTouch) context->onTouch(2, AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0));
+                         break;
                     }
                 break;
             } // end switch

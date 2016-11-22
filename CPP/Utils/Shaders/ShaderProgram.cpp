@@ -17,8 +17,12 @@ bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     up<Cache> vertContent = OME::Utils::loadFile(vertFileName, true);
     up<Cache> fragContent = OME::Utils::loadFile(fragFilename, true);
 
-    OME::Utils::LOG("Vertex shader content: %s", vertContent->content);
-    OME::Utils::LOG("Vertex shader size: %d", vertContent->size);
+    OME::Utils::LOG("Vertex shader content: %s\n", vertContent->content);
+    OME::Utils::LOG("Vertex shader size: %d\n", vertContent->size);
+    
+    
+    OME::Utils::LOG("Fragment shader content: %s\n", fragContent->content);
+    OME::Utils::LOG("Fragment shader size: %d\n", fragContent->size);
     
     if(!vertContent || !fragContent){
         return false;

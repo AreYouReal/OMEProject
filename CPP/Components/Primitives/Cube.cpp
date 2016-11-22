@@ -10,6 +10,11 @@ namespace OME {
     
     }
     
-    virtual bool init() override;
-    virtual void draw() override;
+    bool Cube::init(){
+        return false;
+    }
+    
+    void Cube::draw(){
+    
+    }
 }

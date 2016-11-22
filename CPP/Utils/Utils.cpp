@@ -227,10 +227,10 @@ namespace OME {
             if(unzOpenCurrentFilePassword(uf, NULL) == UNZ_OK){
                 c->position = 0;
                 c->size = fi.uncompressed_size;
-                c->content = new unsigned char[c->size + 1];
-                c->content[c->size] = 0;
+                c->content = new unsigned char[fi.uncompressed_size + 1];
+                c->content[fi.uncompressed_size] = 0;
                 
-                while(unzReadCurrentFile(uf, c->content, c->size) > 0){}
+                while(unzReadCurrentFile(uf, c->content,fi.uncompressed_size) > 0){}
                 
                 unzCloseCurrentFile(uf);
                 unzClose(uf);

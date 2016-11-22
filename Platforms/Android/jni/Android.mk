@@ -41,6 +41,7 @@ $(SRC_PATH)/CPP/3dPart/zlib/unzip.c\
 $(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Components/Camera/Camera.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/Mesh.cpp\
+$(SRC_PATH)/CPP/Components/Primitives/Cube.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Primitives.cpp\
 $(SRC_PATH)/CPP/Components/Transform/Transform.cpp\
 $(SRC_PATH)/CPP/Game.cpp\
@@ -69,14 +70,15 @@ $(SRC_PATH)/CPP/Components/Transform\
 $(SRC_PATH)/CPP\
 $(SRC_PATH)/CPP/GameObject\
 $(SRC_PATH)/CPP/Utils/Files\
-$(SRC_PATH)/CPP/Utils\
 $(SRC_PATH)/CPP/Utils/Shaders\
+$(SRC_PATH)/CPP/Utils\
 $(SRC_PATH)/CPP/Utils/Texture2D\
 
 
 LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv3
 
 LOCAL_STATIC_LIBRARIES := android_native_app_glue
+LOCAL_CPP_FEATURES := rtti exceptions
 
 include $(BUILD_SHARED_LIBRARY)
 
