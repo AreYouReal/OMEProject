@@ -10,7 +10,7 @@
 #include "Camera.hpp"
 
 
-#include "Primitives.hpp"
+#include "Cube.hpp"
 
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
@@ -29,7 +29,7 @@ namespace OME {
     GameObject *camObj;
     
     GameObject *primGO;
-    Primitives *prm;
+    Cube *prm;
     
     int Game::StartUp(OME::Context *ctx){
 
@@ -52,11 +52,11 @@ namespace OME {
         Camera *cam = Camera::instance();
         camObj = cam->go;
         cam->init();
-        camObj->transform()->mPosition = vec3(0, 0, 1.5f);
+        camObj->transform()->mPosition = vec3(0, 0, 3.0f);
         cam->camInit(640, 480, 90, 0.1f, 1000.0f);
         
         primGO = new GameObject();
-        prm = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
+        prm = (Cube*)primGO->addComponent(up<Cube>(new Cube()));
         prm->init();
         
         PngTexture2D pngTexture;
@@ -74,7 +74,7 @@ namespace OME {
     
     
     void Game::OnUpdate    (const float){
-        
+        prm->update();
     }
     
     void Game::OnDraw(){
@@ -88,10 +88,10 @@ namespace OME {
     
     void Game::OnTouch(const int x, const int y, const int type){
         if(prm != nullptr){
-            if(type == 0){
-                prm->primitive++;
-                prm->primitive = prm->primitive%7;
-            }
+//            if(type == 0){
+//                prm->primitive++;
+//                prm->primitive = prm->primitive%7;
+//            }
 
         }
     }
