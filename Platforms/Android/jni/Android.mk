@@ -50,6 +50,7 @@ $(SRC_PATH)/CPP/Utils/Files/Cache.cpp\
 $(SRC_PATH)/CPP/Utils/Shaders/ShaderProgram.cpp\
 $(SRC_PATH)/CPP/Utils/Texture2D/PngTexture2D.cpp\
 $(SRC_PATH)/CPP/Utils/Texture2D/Texture2D.cpp\
+$(SRC_PATH)/CPP/Utils/Time.cpp\
 $(SRC_PATH)/CPP/Utils/Utils.cpp\
 
 

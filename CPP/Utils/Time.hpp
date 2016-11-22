@@ -1,23 +1,24 @@
 #pragma once
 
-
+#include <chrono>
+#include <ctime>
 
 namespace OME {
-    struct Time{
+    class Time{
+    public:
         
-        static float lastFrame;
-        static float deltaTime;
-        static float scaleCoef;
-        static float startTime;
-        
-        static unsigned int micro();
-        static unsigned int milli();
-        
-        static float scaledTime();
-        static float sinceStart();
-        
+        static void init();
+       
         static void update();
         
+        static float deltaTime();
+    
+    private:
+        
+
+        static std::chrono::time_point<std::chrono::system_clock> gameStart;
+        static std::chrono::time_point<std::chrono::system_clock> lastFrame;
+        static std::chrono::duration<double> chronoDeltaTime;
         
     };
 }

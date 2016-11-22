@@ -63,10 +63,7 @@ namespace OME {
     
     void Cube::update(){
         static float rotYAngle = 0;
-        
-        OME::Utils::LOG("delta time: %f\n", Time::deltaTime);
-        
-        rotYAngle += 25 * Time::deltaTime;
+        rotYAngle += 1 * Time::deltaTime();
         if(rotYAngle > 360) rotYAngle = 0;
         
         go->transform()->mRotation = vec3(0, rotYAngle, 0);
