@@ -86,31 +86,29 @@ namespace OME {
         int vertexSize = (sizeof(float) * 2);
         int numberOfElement = primitiveArraySize / vertexSize;
         
-        
-                        glDrawArrays(primitive, 0, numberOfElement);
-//        switch (primitive) {
-//            case GL_POINTS:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_LINES:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_LINE_LOOP:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_LINE_STRIP:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_TRIANGLES:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_TRIANGLE_STRIP:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//            case GL_TRIANGLE_FAN:
-//                glDrawArrays(primitive, 0, numberOfElement);
-//                break;
-//        }
+        switch (primitive) {
+            case GL_POINTS:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_LINES:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_LINE_LOOP:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_LINE_STRIP:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_TRIANGLES:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_TRIANGLE_STRIP:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+            case GL_TRIANGLE_FAN:
+                glDrawArrays(primitive, 0, numberOfElement);
+                break;
+        }
         
     }
 }
