@@ -16,7 +16,7 @@ namespace OME {
         
         
         virtual string type(){
-            return typeid(this).name();
+            return typeid(Transform).name();
         }
         
         glm::mat4 getMatrix();

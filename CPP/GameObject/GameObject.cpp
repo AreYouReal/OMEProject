@@ -1,7 +1,6 @@
 #include "GameObject.hpp"
 #include "../Components/Transform/Transform.hpp"
 
-
 namespace OME {
 
 GameObject::GameObject(string name) : mName(name){
@@ -47,6 +46,7 @@ IComponent* GameObject::addComponent(up<IComponent> comp){
         returnThis = mComponents[comp->type()].get();
     }else{
         mComponents.insert(std::pair<string, up<IComponent>>(comp->type(), std::move(comp)));
+        OME::Utils::LOG("Adding component to GameObject: %s\n", returnThis->type().c_str());
     }
     returnThis->go = this;
     return returnThis;
@@ -69,8 +69,7 @@ IComponent* GameObject::getComponent(string type){
 }
 
     Transform* GameObject::transform(){
-        string transformType(typeid(Transform).name());
-        return static_cast<Transform*>(getComponent(transformType));
+        return static_cast<Transform*>(getComponent(typeid(Transform).name()));
     }
 
 }

@@ -95,4 +95,50 @@
         ctx.onDraw();
     }
 }
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch;
+    CGPoint pos;
+    
+    if(ctx.onTouch){
+        for( touch in touches ){
+            pos = [ touch locationInView:self.view ];
+            
+            ctx.onTouch( pos.x, pos.y, 0 );
+        }
+    }
+
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch;
+    CGPoint pos;
+    
+    if(ctx.onTouch){
+        for( touch in touches ){
+            pos = [ touch locationInView:self.view ];
+            
+            ctx.onTouch( pos.x, pos.y, 1 );
+        }
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch;
+    CGPoint pos;
+    
+    if(ctx.onTouch){
+        for( touch in touches ){
+            pos = [ touch locationInView:self.view ];
+            
+            ctx.onTouch( pos.x, pos.y, 2 );
+        }
+    }
+}
+
+
 @end

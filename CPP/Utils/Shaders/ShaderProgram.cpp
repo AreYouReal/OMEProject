@@ -81,7 +81,7 @@ void ShaderProgram::checkCompileErrors(GLuint object, bool program){
             glGetProgramiv(object, GL_INFO_LOG_LENGTH, &length);
             string errorLog(length, ' ');
             glGetProgramInfoLog(object, length, &length, &errorLog[0]);
-            OME::Utils::LOG("Error! Program failed to link. {0}\n", errorLog.c_str());
+            OME::Utils::LOG("Error! Program failed to link. %s\n", errorLog.c_str());
         }
     }else{ // VERTEX or FRAGMENT
         glGetShaderiv(object, GL_COMPILE_STATUS, &status);
@@ -90,7 +90,7 @@ void ShaderProgram::checkCompileErrors(GLuint object, bool program){
             glGetShaderiv(object, GL_INFO_LOG_LENGTH, &length);
             string errorLog(length, ' ');
             glGetShaderInfoLog(object, length, &length, &errorLog[0]);
-            OME::Utils::LOG("Error! Shader failed to compile. {0}\n", errorLog.c_str());
+            OME::Utils::LOG("Error! Shader failed to compile. %s\n", errorLog.c_str());
         }
     
     }

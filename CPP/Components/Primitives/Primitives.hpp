@@ -13,11 +13,13 @@ namespace OME {
         virtual void draw() override;
         
         virtual string type() override{
-            return typeid(this).name();
+            return typeid(Primitives).name();
         }
         
+        
+                unsigned int primitive;
     private:
-        unsigned int primitive;
+
         char mvp;
         char aPosition;
         char aColor;

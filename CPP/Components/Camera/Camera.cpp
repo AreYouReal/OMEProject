@@ -37,13 +37,13 @@ namespace OME {
     
 #pragma mark IComponent Interface
     bool Camera::init(){
-//        transform = static_cast<Transform*>(go->getComponent(Transform->g));
-//        if(transform == nullptr){
-//            OME::Utils::LOG("Camera initialization failed!\n");
-//            return false;
-//        }else{
-//            return true;
-//        }
+        transform = static_cast<Transform*>(go->getComponent(typeid(Transform).name()));
+        if(transform == nullptr){
+            OME::Utils::LOG("Camera initialization failed!\n");
+            return false;
+        }else{
+            return true;
+        }
         return true;
     }
     

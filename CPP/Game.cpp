@@ -29,15 +29,18 @@ namespace OME {
     GameObject *camObj;
     
     GameObject *primGO;
+    Primitives *prm;
     
     int Game::StartUp(OME::Context *ctx){
         
         Camera *cam = Camera::instance();
         camObj = cam->go;
+        cam->init();
+        cam->camInit(640, 480, 90, 1, 100);
         
         primGO = new GameObject();
-        Primitives *primitives = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
-        primitives->init();
+        prm = (Primitives*)primGO->addComponent(up<Primitives>(new Primitives()));
+        prm->init();
         
         ctx->userData = malloc (sizeof(UserData));
         
@@ -74,10 +77,18 @@ namespace OME {
         glViewport(0, 0, currentCtx->width, currentCtx->height);
         glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
         glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
+        
+        prm->draw();
     }
     
-    void Game::OnTouch     (const int, const int, const int){
-        
+    void Game::OnTouch     (const int x, const int y, const int type){
+        if(prm != nullptr){
+            if(type == 0){
+                prm->primitive++;
+                prm->primitive = prm->primitive%7;
+            }
+
+        }
     }
     
     void Game::OnDestroy   (){
