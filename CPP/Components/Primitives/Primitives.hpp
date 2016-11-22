@@ -17,12 +17,9 @@ namespace OME {
         }
         
         
-                unsigned int primitive;
+        unsigned int primitive;
+    
     private:
-
-        char mvp;
-        char aPosition;
-        char aColor;
         
         void renderPrimitive();
         

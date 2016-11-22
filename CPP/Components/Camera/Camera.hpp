@@ -32,10 +32,8 @@ namespace OME {
         mat4 getViewMatrix();
         mat4 getProjectionMatrix();
         mat4 getNormalMatrix();       
-        
-        virtual void setPosition(const vec3& position){}
-        virtual void rotate(float yaw, float pitch){}
-        virtual void move(const vec3& offsetPos){}
+
+        void setWindthAndHeight(const int, const int);
         
     private:
         

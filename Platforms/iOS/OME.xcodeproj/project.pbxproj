@@ -16,6 +16,7 @@
 		7626526117F10E6C007CCD43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523517F10E6C007CCD43 /* Foundation.framework */; };
 		7626526217F10E6C007CCD43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523917F10E6C007CCD43 /* UIKit.framework */; };
 		F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F314A1721DCCA4D4008657AE /* Utils.cpp */; };
+		F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F325BF0A1DE4487900519F0E /* Cube.cpp */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
 		F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F41DC2223D00563510 /* InfoPlist.strings */; };
 		F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F71DC2224600563510 /* OME-Info.plist */; };
@@ -196,6 +197,8 @@
 		7626525F17F10E6C007CCD43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F314A1721DCCA4D4008657AE /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = ../../CPP/Utils/Utils.cpp; sourceTree = SOURCE_ROOT; };
 		F314A1731DCCA4D4008657AE /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = ../../CPP/Utils/Utils.hpp; sourceTree = SOURCE_ROOT; };
+		F325BF0A1DE4487900519F0E /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = Primitives/Cube.cpp; sourceTree = "<group>"; };
+		F325BF0B1DE4487900519F0E /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cube.hpp; path = Primitives/Cube.hpp; sourceTree = "<group>"; };
 		F32AA2F21DC2223800563510 /* OMETests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OMETests-Info.plist"; path = "OMETests/OMETests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F32AA2F51DC2223D00563510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OMETests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		F32AA2F71DC2224600563510 /* OME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OME-Info.plist"; path = "OME/OME-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -1080,6 +1083,8 @@
 			children = (
 				F35C99BD1DD581C300451CB3 /* Primitives.cpp */,
 				F35C99BE1DD581C300451CB3 /* Primitives.hpp */,
+				F325BF0A1DE4487900519F0E /* Cube.cpp */,
+				F325BF0B1DE4487900519F0E /* Cube.hpp */,
 			);
 			name = Primitives;
 			sourceTree = "<group>";
@@ -1355,6 +1360,7 @@
 				F359E53A1DD3685D00C86972 /* pngerror.c in Sources */,
 				F35C99BF1DD581C300451CB3 /* Primitives.cpp in Sources */,
 				F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */,
+				F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */,
 				F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */,
 				F35274071DD465C100ED870D /* Transform.cpp in Sources */,
 				F359E53F1DD3685D00C86972 /* pngrio.c in Sources */,

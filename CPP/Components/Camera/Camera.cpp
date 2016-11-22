@@ -34,6 +34,11 @@ namespace OME {
         return glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
     }
     
+    void Camera::setWindthAndHeight(const int width, const int height){
+        mWidth = width;
+        mHeight = height;
+    }
+    
     
 #pragma mark IComponent Interface
     bool Camera::init(){

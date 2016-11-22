@@ -36,7 +36,7 @@ namespace OME {
         Camera *cam = Camera::instance();
         camObj = cam->go;
         cam->init();
-        camObj->transform()->mPosition = vec3(0, 0, 3);
+        camObj->transform()->mPosition = vec3(0, 0, 1.5f);
         cam->camInit(640, 480, 90, 0.1f, 1000.0f);
         
         primGO = new GameObject();
@@ -75,6 +75,7 @@ namespace OME {
     }
     
     void Game::OnDraw(){
+        Camera::instance()->setWindthAndHeight(currentCtx->width, currentCtx->height);
         glViewport(0, 0, currentCtx->width, currentCtx->height);
         glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
         glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
