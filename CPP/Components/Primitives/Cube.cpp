@@ -47,15 +47,35 @@ GLushort cubeIndices[] = {
 namespace OME {
     
     Cube::Cube(){
-    
+        
     }
     Cube::~Cube(){
-    
+        glDeleteBuffers(1, &vertexColorBuffer);
+        glDeleteBuffers(1, &indexBuffer);
     }
     
     bool Cube::init(){
         
         program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
+        
+        int size = 24 * sizeof(float);
+        
+        glGenBuffers(1, &vertexColorBuffer);
+        
+        glBindBuffer(GL_ARRAY_BUFFER, vertexColorBuffer);
+        glBufferData(GL_ARRAY_BUFFER, size + size, 0, GL_STATIC_DRAW );
+        glBufferSubData(GL_ARRAY_BUFFER, 0, size, cubeVerts);
+        glBufferSubData(GL_ARRAY_BUFFER, size, size, cubeColors);
+        
+        unsigned int indexSize = sizeof(unsigned short) * 36;
+        
+        glGenBuffers(1, &indexBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexSize, 0, GL_STATIC_DRAW);
+        glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indexSize, cubeIndices);
+        
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
         
         
         return false;
@@ -88,6 +108,12 @@ namespace OME {
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         
-        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, cubeIndices);
+        glBindBuffer(GL_ARRAY_BUFFER, vertexColorBuffer);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
+        
+        glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, (void*)0);
+        
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     }
 }

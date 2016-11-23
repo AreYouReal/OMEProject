@@ -21,6 +21,8 @@ namespace OME {
         
         ShaderProgram program;
         
+        unsigned int vertexColorBuffer;
+        unsigned int indexBuffer;
         
     };
 }
