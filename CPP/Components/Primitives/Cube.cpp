@@ -82,8 +82,8 @@ namespace OME {
         program.setUniform("uViewMatrix",       viewMat);
         program.setUniform("uProjectionMatrix", projMatrix);
         
-        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, cubeVerts);
-        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, cubeColors);
+        glVertexAttribPointer(ShaderProgram::VERTEX_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, 0, cubeVerts);
+        glVertexAttribPointer(ShaderProgram::COLOR_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, 0, cubeColors);
         
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);

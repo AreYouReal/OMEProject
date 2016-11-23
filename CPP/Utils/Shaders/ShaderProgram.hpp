@@ -21,6 +21,10 @@ namespace OME {
         
         void setUniform(string name, mat4 mat);
         
+        
+        static const int VERTEX_ATTRIB_LOCATION;
+        static const int COLOR_ATTRIB_LOCATION;
+        
     private:
         
         void checkCompileErrors(GLuint object, bool program);
