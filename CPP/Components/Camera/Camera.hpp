@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IComponent.hpp"
-#include "Singleton.h"
+#include "SingletonComponent.hpp"
 
 #include "../Transform/Transform.hpp"
 
@@ -12,7 +12,7 @@ using mat4 = glm::mat4;
 using vec3 = glm::vec3;
 
 namespace OME {
-    class Camera : public IComponent, public Singleton<Camera>{
+    class Camera : public IComponent, public SingletonComponent<Camera>{
     public:
         
         Camera();

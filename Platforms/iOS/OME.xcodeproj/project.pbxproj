@@ -213,7 +213,6 @@
 		F32AA2FE1DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3001DC222CB00563510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = OME/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		F3462B301DDDB92400167FEA /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = ../../CPP/Utils/Singleton.h; sourceTree = "<group>"; };
 		F3462B361DDDBA6F00167FEA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Camera/Camera.cpp; sourceTree = "<group>"; };
 		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
 		F34C138F1DE6AF9A009AE936 /* uBlock.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.frag; path = ../Android/assets/shaders/uBlock.frag; sourceTree = SOURCE_ROOT; };
@@ -222,6 +221,8 @@
 		F34C13941DE6C204009AE936 /* Grid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Grid.hpp; path = Primitives/Grid.hpp; sourceTree = "<group>"; };
 		F34C13961DE6CE19009AE936 /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.frag; sourceTree = "<group>"; };
 		F34C13971DE6CE19009AE936 /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.vert; sourceTree = "<group>"; };
+		F34C139A1DE6D870009AE936 /* SingletonComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SingletonComponent.hpp; sourceTree = "<group>"; };
+		F34C139B1DE6D8D1009AE936 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = ../../CPP/Utils/Singleton.hpp; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
 		F35274011DD45DC300ED870D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../CPP/GameObject/GameObject.cpp; sourceTree = "<group>"; };
 		F35274021DD45DC300ED870D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = ../../CPP/GameObject/GameObject.hpp; sourceTree = "<group>"; };
@@ -686,13 +687,13 @@
 		F3462B2F1DDDB8CA00167FEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F34C139B1DE6D8D1009AE936 /* Singleton.hpp */,
 				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
 				F359E5181DD365EA00C86972 /* Image */,
 				F3E309991DCDE306000ED6C1 /* Shader */,
 				F3E3099B1DCDE46E000ED6C1 /* Files */,
 				F314A1721DCCA4D4008657AE /* Utils.cpp */,
 				F314A1731DCCA4D4008657AE /* Utils.hpp */,
-				F3462B301DDDB92400167FEA /* Singleton.h */,
 				F3DB21AD1DE4825000804703 /* Time.cpp */,
 				F3DB21AE1DE4825000804703 /* Time.hpp */,
 			);
@@ -711,6 +712,7 @@
 		F35273FD1DD45BF200ED870D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F34C139A1DE6D870009AE936 /* SingletonComponent.hpp */,
 				F3462B351DDDBA4500167FEA /* Camera */,
 				F35C99BC1DD5819400451CB3 /* Primitives */,
 				F35C99B81DD57EF800451CB3 /* Mesh */,

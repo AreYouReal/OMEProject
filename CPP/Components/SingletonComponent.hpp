@@ -4,10 +4,10 @@ namespace OME {
 
 
 template<typename T>
-class Singleton{
+class SingletonComponent{
 public:
     
-    virtual ~Singleton(){}
+    virtual ~SingletonComponent(){}
     
     static T* instance(){
         if(!mInstance){
@@ -29,11 +29,11 @@ public:
     }
 
 protected:
-    Singleton(){}
+    SingletonComponent(){}
     static T* mInstance;
 };
 
 template<typename T>
-T* Singleton<T>::mInstance;
+T* SingletonComponent<T>::mInstance;
     
 }
