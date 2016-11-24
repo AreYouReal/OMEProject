@@ -6,6 +6,7 @@ namespace OME {
 GameObject::GameObject(string name) : mName(name){
     up<Transform> transformComp = up<Transform>(new Transform());
     addComponent(std::move(transformComp));
+    mActive = true;
     OME::Utils::LOG("GO Constructor!\n");
 }
 

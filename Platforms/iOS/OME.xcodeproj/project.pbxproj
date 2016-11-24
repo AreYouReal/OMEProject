@@ -176,6 +176,7 @@
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
 		F38A960B1DCE0E99005BCA83 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = F38A960A1DCE0E99005BCA83 /* spiderman.png */; };
+		F39F50FE1DE73A0E00CD3A67 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
@@ -535,6 +536,8 @@
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
 		F38A960A1DCE0E99005BCA83 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spiderman.png; path = ../Android/assets/images/spiderman.png; sourceTree = SOURCE_ROOT; };
+		F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../../CPP/Scene.cpp; sourceTree = "<group>"; };
+		F39F50FD1DE73A0E00CD3A67 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = ../../CPP/Scene.hpp; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
@@ -680,6 +683,8 @@
 				F30ECA311DCDE16A005F53B6 /* GameObject */,
 				F36F7E381DCCA90E00A335A4 /* Game.cpp */,
 				F36F7E391DCCA90E00A335A4 /* Game.hpp */,
+				F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */,
+				F39F50FD1DE73A0E00CD3A67 /* Scene.hpp */,
 			);
 			name = CPP;
 			sourceTree = SOURCE_ROOT;
@@ -1398,6 +1403,7 @@
 				F359E5451DD3685D00C86972 /* pngwio.c in Sources */,
 				F35275281DD4665100ED870D /* glm.cpp in Sources */,
 				F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */,
+				F39F50FE1DE73A0E00CD3A67 /* Scene.cpp in Sources */,
 				F379BCB11DCF873E005C121E /* Cache.cpp in Sources */,
 				F359E53E1DD3685D00C86972 /* pngread.c in Sources */,
 				F359E5471DD3685D00C86972 /* pngwtran.c in Sources */,

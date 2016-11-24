@@ -10,11 +10,9 @@
 #include "Camera.hpp"
 
 
-#include "Cube.hpp"
-#include "Grid.hpp"
-
-
 #include "Time.hpp"
+
+#include "Scene.hpp"
 
 #ifdef __APPLE__
 #define VERTEX_SHADER "basic.vert"
@@ -29,49 +27,23 @@ using UserData = struct{};
 namespace OME {
     
      OME::Context *Game::currentCtx;
-    
-    GameObject *camObj;
-    
-    GameObject *primGO;
-    Grid *prm;
-    
+
     int Game::StartUp(OME::Context *ctx){
 
-        ctx->userData = malloc (sizeof(UserData));
-        
-        if(!Utils::OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
-            Utils::LOG("Failed to create Window!");
+        if(!initContext(ctx)){
             return 0;
         }
-        currentCtx = ctx;
-        
-        currentCtx->onUpdate   = OnUpdate;
-        currentCtx->onDraw     = OnDraw;
-        currentCtx->onTouch    = OnTouch;
-        currentCtx->onDestroy  = OnDestroy;
-        
-
-        
-        
-        Camera *cam = Camera::instance();
-        camObj = cam->go;
-        cam->init();
-        camObj->transform()->mPosition = vec3(0, 2, 3.0f);
-        cam->camInit(640, 480, 90, 0.1f, 1000.0f);
-        
-        primGO = new GameObject();
-        prm = (Grid*)primGO->addComponent(up<Grid>(new Grid()));
-        prm->init();
-        
-        PngTexture2D pngTexture;
-        pngTexture.loadTexture("spiderman.png");
-
-               
-
-        OME::Utils::LOG("Typeid:  %s", typeid(Camera).name());
-        
         
         initOGL(currentCtx->width, currentCtx->height);
+        
+        initCamera();
+
+        Scene::instance()->init();
+        
+//        PngTexture2D pngTexture;
+//        pngTexture.loadTexture("spiderman.png");
+
+
         
         return 1;
     }
@@ -79,37 +51,20 @@ namespace OME {
     
     void Game::OnUpdate    (const float){
         OME::Time::update();
-        Camera::instance()->update();
-
-        prm->update();
-        
-
+        Scene::instance()->update();
     }
     
     void Game::OnDraw(){
-        Camera::instance()->setWindthAndHeight(currentCtx->width, currentCtx->height);
-        glViewport(0, 0, currentCtx->width, currentCtx->height);
-        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-        glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
-        
-        prm->draw();
+        Camera::instance()->setWindthAndHeight(currentCtx->width, currentCtx->height);        
+        Scene::instance()->draw();
     }
     
     void Game::OnTouch(const int x, const int y, const int type){
-        if(prm != nullptr){
 
-
-        }
     }
     
     void Game::OnDestroy   (){
-        if(camObj){
-            delete camObj;
-        }
-        
-        if(primGO){
-            delete primGO;
-        }
+        Scene::instance()->destroy();
         Utils::LOG("OnDestroy!");
     }
     
@@ -123,6 +78,30 @@ namespace OME {
         glViewport ( 0, 0, w, h );
         glEnable( GL_DEPTH_TEST );
         glEnable( GL_CULL_FACE  );
+    }
+    
+    bool Game::initContext(OME::Context *ctx){
+        ctx->userData = malloc (sizeof(UserData));
+        
+        if(!Utils::OMCreateWindow(ctx, "One More Engine In Action!", ctx->width, ctx->height, WINDOW_RGB | WINDOW_DEPTH)){
+            Utils::LOG("Failed to create Window!");
+            return false;
+        }
+        currentCtx = ctx;
+        
+        currentCtx->onUpdate   = OnUpdate;
+        currentCtx->onDraw     = OnDraw;
+        currentCtx->onTouch    = OnTouch;
+        currentCtx->onDestroy  = OnDestroy;
+        return true;
+    }
+    
+    void Game::initCamera(){
+        Camera *cam = Camera::instance();
+        GameObject *camObj = cam->go;
+        cam->init();
+        camObj->transform()->mPosition = vec3(0, 2, 3.0f);
+        cam->camInit(640, 480, 90, 0.1f, 1000.0f);
     }
 
 }

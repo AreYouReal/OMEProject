@@ -22,6 +22,8 @@ namespace OME {
         static void initOGL(const float, const float);
         
 
+        static bool initContext(OME::Context*);
+        static void initCamera();
         
     };
     
