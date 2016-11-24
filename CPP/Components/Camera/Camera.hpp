@@ -29,9 +29,9 @@ namespace OME {
         
         void camInit(float width, float height, float fov, float near, float far );
         
-        mat4 getViewMatrix();
-        mat4 getProjectionMatrix();
-        mat4 getNormalMatrix();       
+        const mat4& getViewMatrix() const;
+        const mat4& getProjectionMatrix() const;
+        const mat4& getNormalMatrix() const;
 
         void setWindthAndHeight(const int, const int);
         
@@ -42,6 +42,10 @@ namespace OME {
         float mFOV; // in degrees
         float mNearPlane;
         float mFarPlane;
+        
+        
+        mat4 mViewMatrix;
+        mat4 mProjectinoMatrix;
         
         
         Transform *transform;

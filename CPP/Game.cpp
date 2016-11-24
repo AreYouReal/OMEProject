@@ -77,7 +77,11 @@ namespace OME {
     
     void Game::OnUpdate    (const float){
         OME::Time::update();
+        Camera::instance()->update();
+
         prm->update();
+        
+
     }
     
     void Game::OnDraw(){

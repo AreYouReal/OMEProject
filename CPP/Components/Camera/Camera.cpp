@@ -25,13 +25,12 @@ namespace OME {
         OME::Utils::LOG("Camera init done.\n");
     }
     
-    mat4 Camera::getViewMatrix(){
-        vec3 target = transform->mFront + transform->mPosition;
-        return glm::lookAt(transform->mPosition, target, transform->mUp);
+    const mat4& Camera::getViewMatrix() const{
+        return mViewMatrix;
     }
 
-    mat4 Camera::getProjectionMatrix(){
-        return glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
+    const mat4& Camera::getProjectionMatrix() const{
+        return mProjectinoMatrix;
     }
     
     void Camera::setWindthAndHeight(const int width, const int height){
@@ -53,7 +52,10 @@ namespace OME {
     }
     
     void Camera::update(){
-    
+        vec3 target = transform->mFront + transform->mPosition;
+        mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);
+        
+        mProjectinoMatrix = glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
     }
     
     void Camera::draw(){
