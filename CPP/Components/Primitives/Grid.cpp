@@ -4,11 +4,11 @@
 #include "Time.hpp"
 
 #ifdef __APPLE__
-#define VERTEX_SHADER			"grid.vert"
-#define FRAGMENT_SHADER			"grid.frag"
+#define VERTEX_SHADER "grid.vert"
+#define FRAGMENT_SHADER "grid.frag"
 #else
-#define VERTEX_SHADER			"shader/grid.vert"
-#define FRAGMENT_SHADER			"shader/grid.frag"
+#define VERTEX_SHADER "shaders/grid.vert"
+#define FRAGMENT_SHADER "shaders/grid.frag"
 #endif
 
 namespace OME {

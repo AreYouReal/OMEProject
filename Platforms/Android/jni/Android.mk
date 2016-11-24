@@ -42,6 +42,7 @@ $(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Components/Camera/Camera.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/Mesh.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Cube.cpp\
+$(SRC_PATH)/CPP/Components/Primitives/Grid.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Primitives.cpp\
 $(SRC_PATH)/CPP/Components/Transform/Transform.cpp\
 $(SRC_PATH)/CPP/Game.cpp\
