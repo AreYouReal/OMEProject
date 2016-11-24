@@ -11,6 +11,8 @@
 
 
 #include "Cube.hpp"
+#include "Grid.hpp"
+
 
 #include "Time.hpp"
 
@@ -31,7 +33,7 @@ namespace OME {
     GameObject *camObj;
     
     GameObject *primGO;
-    Cube *prm;
+    Grid *prm;
     
     int Game::StartUp(OME::Context *ctx){
 
@@ -54,11 +56,11 @@ namespace OME {
         Camera *cam = Camera::instance();
         camObj = cam->go;
         cam->init();
-        camObj->transform()->mPosition = vec3(0, 0, 3.0f);
+        camObj->transform()->mPosition = vec3(0, 2, 3.0f);
         cam->camInit(640, 480, 90, 0.1f, 1000.0f);
         
         primGO = new GameObject();
-        prm = (Cube*)primGO->addComponent(up<Cube>(new Cube()));
+        prm = (Grid*)primGO->addComponent(up<Grid>(new Grid()));
         prm->init();
         
         PngTexture2D pngTexture;

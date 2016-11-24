@@ -27,6 +27,9 @@
 		F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3462B361DDDBA6F00167FEA /* Camera.cpp */; };
 		F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */ = {isa = PBXBuildFile; fileRef = F34C138F1DE6AF9A009AE936 /* uBlock.frag */; };
 		F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */ = {isa = PBXBuildFile; fileRef = F34C13901DE6AF9A009AE936 /* uBlock.vert */; };
+		F34C13951DE6C204009AE936 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34C13931DE6C204009AE936 /* Grid.cpp */; };
+		F34C13981DE6CE19009AE936 /* grid.frag in Resources */ = {isa = PBXBuildFile; fileRef = F34C13961DE6CE19009AE936 /* grid.frag */; };
+		F34C13991DE6CE19009AE936 /* grid.vert in Resources */ = {isa = PBXBuildFile; fileRef = F34C13971DE6CE19009AE936 /* grid.vert */; };
 		F35274031DD45DC300ED870D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274011DD45DC300ED870D /* GameObject.cpp */; };
 		F35274071DD465C100ED870D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274051DD465C100ED870D /* Transform.cpp */; };
 		F35275161DD4665100ED870D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = F352740A1DD4665100ED870D /* CMakeLists.txt */; };
@@ -215,6 +218,10 @@
 		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
 		F34C138F1DE6AF9A009AE936 /* uBlock.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.frag; path = ../Android/assets/shaders/uBlock.frag; sourceTree = SOURCE_ROOT; };
 		F34C13901DE6AF9A009AE936 /* uBlock.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.vert; path = ../Android/assets/shaders/uBlock.vert; sourceTree = SOURCE_ROOT; };
+		F34C13931DE6C204009AE936 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Grid.cpp; path = Primitives/Grid.cpp; sourceTree = "<group>"; };
+		F34C13941DE6C204009AE936 /* Grid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Grid.hpp; path = Primitives/Grid.hpp; sourceTree = "<group>"; };
+		F34C13961DE6CE19009AE936 /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.frag; sourceTree = "<group>"; };
+		F34C13971DE6CE19009AE936 /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.vert; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
 		F35274011DD45DC300ED870D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../CPP/GameObject/GameObject.cpp; sourceTree = "<group>"; };
 		F35274021DD45DC300ED870D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = ../../CPP/GameObject/GameObject.hpp; sourceTree = "<group>"; };
@@ -1094,6 +1101,8 @@
 				F35C99BE1DD581C300451CB3 /* Primitives.hpp */,
 				F325BF0A1DE4487900519F0E /* Cube.cpp */,
 				F325BF0B1DE4487900519F0E /* Cube.hpp */,
+				F34C13931DE6C204009AE936 /* Grid.cpp */,
+				F34C13941DE6C204009AE936 /* Grid.hpp */,
 			);
 			name = Primitives;
 			sourceTree = "<group>";
@@ -1127,6 +1136,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F34C13961DE6CE19009AE936 /* grid.frag */,
+				F34C13971DE6CE19009AE936 /* grid.vert */,
 				F34C138F1DE6AF9A009AE936 /* uBlock.frag */,
 				F34C13901DE6AF9A009AE936 /* uBlock.vert */,
 				F3E309A01DCDEB1C000ED6C1 /* basic.frag */,
@@ -1338,8 +1349,10 @@
 				F35275721DD4665100ED870D /* normalize_dot.inl in Resources */,
 				F352756E1DD4665100ED870D /* matrix_transform_2d.inl in Resources */,
 				F352757C1DD4665100ED870D /* rotate_vector.inl in Resources */,
+				F34C13991DE6CE19009AE936 /* grid.vert in Resources */,
 				F352755A1DD4665100ED870D /* euler_angles.inl in Resources */,
 				F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */,
+				F34C13981DE6CE19009AE936 /* grid.frag in Resources */,
 				F352751A1DD4665100ED870D /* func_exponential.inl in Resources */,
 				F352751B1DD4665100ED870D /* func_exponential_simd.inl in Resources */,
 			);
@@ -1378,6 +1391,7 @@
 				F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */,
 				F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */,
 				F35274071DD465C100ED870D /* Transform.cpp in Sources */,
+				F34C13951DE6C204009AE936 /* Grid.cpp in Sources */,
 				F359E53F1DD3685D00C86972 /* pngrio.c in Sources */,
 				F359E5451DD3685D00C86972 /* pngwio.c in Sources */,
 				F35275281DD4665100ED870D /* glm.cpp in Sources */,
