@@ -25,12 +25,14 @@ namespace OME {
         static const int VERTEX_ATTRIB_LOCATION;
         static const int COLOR_ATTRIB_LOCATION;
         
+        GLuint id;
+        
     private:
         
         void checkCompileErrors(GLuint object, bool program);
         GLint getUniformLocation(string name);
         
-        GLuint mHandle;
+
         
         map<string, GLint> mUniformLocations;
     };

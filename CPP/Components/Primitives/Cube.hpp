@@ -23,6 +23,10 @@ namespace OME {
         
         unsigned int vertexColorBuffer;
         unsigned int indexBuffer;
+
+        unsigned int UBO;
+        
+        void uniformBufferObject();
         
     };
 }

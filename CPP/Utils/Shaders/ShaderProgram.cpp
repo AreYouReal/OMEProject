@@ -7,13 +7,11 @@ namespace OME {
 const int ShaderProgram::VERTEX_ATTRIB_LOCATION = 0;
 const int ShaderProgram::COLOR_ATTRIB_LOCATION  = 1;
 
-ShaderProgram::ShaderProgram() : mHandle(0){}
-
+ShaderProgram::ShaderProgram() : id(0){}
 
 ShaderProgram::~ShaderProgram(){
-    glDeleteProgram(mHandle);
+    glDeleteProgram(id);
 }
-
 
 bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     up<Cache> vertContent = OME::Utils::loadFile(vertFileName, true);
@@ -48,13 +46,13 @@ bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     checkCompileErrors(fs, false);
     
     
-    mHandle = glCreateProgram();
+    id = glCreateProgram();
     
-    glAttachShader(mHandle, vs);
-    glAttachShader(mHandle, fs);
-    glLinkProgram(mHandle);
+    glAttachShader(id, vs);
+    glAttachShader(id, fs);
+    glLinkProgram(id);
     
-    checkCompileErrors(mHandle, true);
+    checkCompileErrors(id, true);
     
     glDeleteShader(vs);
     glDeleteShader(fs);
@@ -66,8 +64,8 @@ bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
 
 
 void ShaderProgram::use(){
-    if(mHandle){
-        glUseProgram(mHandle);
+    if(id){
+        glUseProgram(id);
     }
 }
 
@@ -104,7 +102,7 @@ void ShaderProgram::checkCompileErrors(GLuint object, bool program){
 
 GLint ShaderProgram::getUniformLocation(string name){
     if(mUniformLocations.find(name) == mUniformLocations.end()){
-        mUniformLocations[name] = glGetUniformLocation(mHandle, name.c_str());
+        mUniformLocations[name] = glGetUniformLocation(id, name.c_str());
     }
     return mUniformLocations[name];
 }

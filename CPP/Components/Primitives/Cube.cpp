@@ -2,12 +2,14 @@
 #include "GameObject.hpp"
 #include "Camera.hpp"
 
+#include "type_ptr.hpp"
+
 #ifdef __APPLE__
-#define VERTEX_SHADER "basic.vert"
-#define FRAGMENT_SHADER "basic.frag"
+#define VERTEX_SHADER "uBlock.vert"
+#define FRAGMENT_SHADER "uBlock.frag"
 #else
-#define VERTEX_SHADER "shaders/basic.vert"
-#define FRAGMENT_SHADER "shaders/basic.frag"
+#define VERTEX_SHADER "shaders/uBlock.vert"
+#define FRAGMENT_SHADER "shaders/uBlock.frag"
 #endif
 
 
@@ -77,6 +79,7 @@ namespace OME {
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
         
+        uniformBufferObject();
         
         return false;
     }
@@ -94,13 +97,27 @@ namespace OME {
         program.use();
         glEnable(GL_DEPTH_TEST);
         
+        glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+        
+
+        
+        
         glm::mat4 modelMatrix   = go->transform()->getMatrix();
         glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
         glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
         
-        program.setUniform("uModelMatrix",      modelMatrix);
-        program.setUniform("uViewMatrix",       viewMat);
-        program.setUniform("uProjectionMatrix", projMatrix);
+        glm::mat4* matrixBuff = (glm::mat4*)glMapBufferRange(GL_UNIFORM_BUFFER, 0, sizeof(glm::mat4*) * (3), GL_MAP_WRITE_BIT);
+        
+        OME::Utils::LOG_GL_ERROR();
+        
+        matrixBuff[0] = modelMatrix;
+        matrixBuff[1] = viewMat;
+        matrixBuff[2] = projMatrix;
+        glUnmapBuffer(GL_UNIFORM_BUFFER);
+        
+//        program.setUniform("uModelMatrix",      modelMatrix);
+//        program.setUniform("uViewMatrix",       viewMat);
+//        program.setUniform("uProjectionMatrix", projMatrix);
         
 
         
@@ -117,5 +134,24 @@ namespace OME {
         
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    }
+    
+    
+    
+    void Cube::uniformBufferObject(){
+        char blockIdx = glGetUniformBlockIndex(program.id, "TransformMatrices");
+        GLint blockSize;
+        glGetActiveUniformBlockiv(program.id, blockIdx, GL_UNIFORM_BLOCK_DATA_SIZE, &blockSize);
+        GLint bindingPoint = 0;
+        glUniformBlockBinding(program.id, blockIdx, bindingPoint);
+        
+        glGenBuffers(1, &UBO );
+        glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+        glBufferData(GL_UNIFORM_BUFFER, blockSize, 0, GL_DYNAMIC_DRAW);
+        glBindBufferBase(GL_UNIFORM_BUFFER, bindingPoint, UBO);
+        
+        
+        
+    
     }
 }

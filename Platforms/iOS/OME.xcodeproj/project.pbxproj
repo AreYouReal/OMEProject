@@ -25,6 +25,8 @@
 		F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FF1DC222CB00563510 /* Main_iPhone.storyboard */; };
 		F32AA30A1DC2230100563510 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32AA3091DC2230100563510 /* Images.xcassets */; };
 		F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3462B361DDDBA6F00167FEA /* Camera.cpp */; };
+		F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */ = {isa = PBXBuildFile; fileRef = F34C138F1DE6AF9A009AE936 /* uBlock.frag */; };
+		F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */ = {isa = PBXBuildFile; fileRef = F34C13901DE6AF9A009AE936 /* uBlock.vert */; };
 		F35274031DD45DC300ED870D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274011DD45DC300ED870D /* GameObject.cpp */; };
 		F35274071DD465C100ED870D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274051DD465C100ED870D /* Transform.cpp */; };
 		F35275161DD4665100ED870D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = F352740A1DD4665100ED870D /* CMakeLists.txt */; };
@@ -211,6 +213,8 @@
 		F3462B301DDDB92400167FEA /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Singleton.h; path = ../../CPP/Utils/Singleton.h; sourceTree = "<group>"; };
 		F3462B361DDDBA6F00167FEA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Camera/Camera.cpp; sourceTree = "<group>"; };
 		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
+		F34C138F1DE6AF9A009AE936 /* uBlock.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.frag; path = ../Android/assets/shaders/uBlock.frag; sourceTree = SOURCE_ROOT; };
+		F34C13901DE6AF9A009AE936 /* uBlock.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.vert; path = ../Android/assets/shaders/uBlock.vert; sourceTree = SOURCE_ROOT; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
 		F35274011DD45DC300ED870D /* GameObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameObject.cpp; path = ../../CPP/GameObject/GameObject.cpp; sourceTree = "<group>"; };
 		F35274021DD45DC300ED870D /* GameObject.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GameObject.hpp; path = ../../CPP/GameObject/GameObject.hpp; sourceTree = "<group>"; };
@@ -623,7 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				F38A96091DCE0E8A005BCA83 /* Images */,
-				F3E3099D1DCDEA00000ED6C1 /* Shaders */,
+				F3E3099D1DCDEA00000ED6C1 /* shaders */,
 				F32AA2FA1DC2225200563510 /* InfoPlist.strings */,
 				F32AA2F71DC2224600563510 /* OME-Info.plist */,
 				F32AA2F81DC2224600563510 /* OME-Prefix.pch */,
@@ -1100,7 +1104,7 @@
 				F38A960A1DCE0E99005BCA83 /* spiderman.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		F3E309991DCDE306000ED6C1 /* Shader */ = {
 			isa = PBXGroup;
@@ -1120,14 +1124,17 @@
 			name = Files;
 			sourceTree = "<group>";
 		};
-		F3E3099D1DCDEA00000ED6C1 /* Shaders */ = {
+		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F34C138F1DE6AF9A009AE936 /* uBlock.frag */,
+				F34C13901DE6AF9A009AE936 /* uBlock.vert */,
 				F3E309A01DCDEB1C000ED6C1 /* basic.frag */,
 				F3E3099E1DCDEAAE000ED6C1 /* basic.vert */,
 			);
-			name = Shaders;
-			sourceTree = "<group>";
+			name = shaders;
+			path = ../Android/assets/shaders;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -1287,6 +1294,7 @@
 				F35275251DD4665100ED870D /* func_trigonometric_simd.inl in Resources */,
 				F35275811DD4665100ED870D /* spline.inl in Resources */,
 				F35275751DD4665100ED870D /* orthonormalize.inl in Resources */,
+				F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */,
 				F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */,
 				F352755C1DD4665100ED870D /* extended_min_max.inl in Resources */,
 				F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */,
@@ -1331,6 +1339,7 @@
 				F352756E1DD4665100ED870D /* matrix_transform_2d.inl in Resources */,
 				F352757C1DD4665100ED870D /* rotate_vector.inl in Resources */,
 				F352755A1DD4665100ED870D /* euler_angles.inl in Resources */,
+				F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */,
 				F352751A1DD4665100ED870D /* func_exponential.inl in Resources */,
 				F352751B1DD4665100ED870D /* func_exponential_simd.inl in Resources */,
 			);
