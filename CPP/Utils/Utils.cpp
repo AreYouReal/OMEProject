@@ -121,9 +121,9 @@ namespace OME {
         va_start(params, formatString);
         vsprintf(buf, formatString.c_str(), params);
 #ifdef ANDROID
-        __android_log_print(ANDROID_LOG_INFO, "OME_LOG:", "%s", buf);
+        __android_log_print(ANDROID_LOG_INFO, "OME_LOG:", "%s\n", buf);
 #else
-        printf("%s", buf);
+        printf("%s\n", buf);
 #endif
         va_end(params);
     }

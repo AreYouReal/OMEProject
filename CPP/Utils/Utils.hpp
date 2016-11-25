@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string>
 
+#include "glm.hpp"
 
 #include "Shortcuts.hpp"
 #include "Cache.hpp"

@@ -166,6 +166,7 @@
 		F359E5461DD3685D00C86972 /* pngwrite.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E5331DD3685D00C86972 /* pngwrite.c */; };
 		F359E5471DD3685D00C86972 /* pngwtran.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E5341DD3685D00C86972 /* pngwtran.c */; };
 		F359E5481DD3685D00C86972 /* pngwutil.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E5351DD3685D00C86972 /* pngwutil.c */; };
+		F35A73421DE7FDE000334680 /* WFObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35A73401DE7FDE000334680 /* WFObj.cpp */; };
 		F35C99BB1DD57F1F00451CB3 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C99B91DD57F1F00451CB3 /* Mesh.cpp */; };
 		F35C99BF1DD581C300451CB3 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C99BD1DD581C300451CB3 /* Primitives.cpp */; };
 		F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3D1DC1F9790089F6C4 /* AppDelegate.mm */; };
@@ -518,6 +519,8 @@
 		F359E5331DD3685D00C86972 /* pngwrite.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwrite.c; path = ../../CPP/3dPart/libpng/pngwrite.c; sourceTree = SOURCE_ROOT; };
 		F359E5341DD3685D00C86972 /* pngwtran.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwtran.c; path = ../../CPP/3dPart/libpng/pngwtran.c; sourceTree = SOURCE_ROOT; };
 		F359E5351DD3685D00C86972 /* pngwutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwutil.c; path = ../../CPP/3dPart/libpng/pngwutil.c; sourceTree = SOURCE_ROOT; };
+		F35A73401DE7FDE000334680 /* WFObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WFObj.cpp; sourceTree = "<group>"; };
+		F35A73411DE7FDE000334680 /* WFObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WFObj.hpp; sourceTree = "<group>"; };
 		F35C99B91DD57F1F00451CB3 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = Mesh/Mesh.cpp; sourceTree = "<group>"; };
 		F35C99BA1DD57F1F00451CB3 /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = Mesh/Mesh.hpp; sourceTree = "<group>"; };
 		F35C99BD1DD581C300451CB3 /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Primitives.cpp; path = Primitives/Primitives.cpp; sourceTree = "<group>"; };
@@ -692,6 +695,7 @@
 		F3462B2F1DDDB8CA00167FEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F35A733F1DE7FDA000334680 /* Meshes */,
 				F34C139B1DE6D8D1009AE936 /* Singleton.hpp */,
 				F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */,
 				F359E5181DD365EA00C86972 /* Image */,
@@ -1092,6 +1096,16 @@
 			path = ../../CPP/3dPart/libpng;
 			sourceTree = "<group>";
 		};
+		F35A733F1DE7FDA000334680 /* Meshes */ = {
+			isa = PBXGroup;
+			children = (
+				F35A73401DE7FDE000334680 /* WFObj.cpp */,
+				F35A73411DE7FDE000334680 /* WFObj.hpp */,
+			);
+			name = Meshes;
+			path = ../../CPP/Utils/Meshes;
+			sourceTree = "<group>";
+		};
 		F35C99B81DD57EF800451CB3 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1407,6 +1421,7 @@
 				F379BCB11DCF873E005C121E /* Cache.cpp in Sources */,
 				F359E53E1DD3685D00C86972 /* pngread.c in Sources */,
 				F359E5471DD3685D00C86972 /* pngwtran.c in Sources */,
+				F35A73421DE7FDE000334680 /* WFObj.cpp in Sources */,
 				F359E5421DD3685D00C86972 /* pngset.c in Sources */,
 				F359E5401DD3685D00C86972 /* pngrtran.c in Sources */,
 				F35C99BB1DD57F1F00451CB3 /* Mesh.cpp in Sources */,
