@@ -40,14 +40,17 @@ $(SRC_PATH)/CPP/3dPart/zlib/uncompr.c\
 $(SRC_PATH)/CPP/3dPart/zlib/unzip.c\
 $(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Components/Camera/Camera.cpp\
-$(SRC_PATH)/CPP/Components/Mesh/Mesh.cpp\
+$(SRC_PATH)/CPP/Components/Mesh/MeshRenderer.cpp\
+$(SRC_PATH)/CPP/Components/Mesh/ObjLoader.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Cube.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Grid.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Primitives.cpp\
 $(SRC_PATH)/CPP/Components/Transform/Transform.cpp\
 $(SRC_PATH)/CPP/Game.cpp\
 $(SRC_PATH)/CPP/GameObject/GameObject.cpp\
+$(SRC_PATH)/CPP/Scene.cpp\
 $(SRC_PATH)/CPP/Utils/Files/Cache.cpp\
+$(SRC_PATH)/CPP/Utils/Meshes/WFObj.cpp\
 $(SRC_PATH)/CPP/Utils/Shaders/ShaderProgram.cpp\
 $(SRC_PATH)/CPP/Utils/Texture2D/PngTexture2D.cpp\
 $(SRC_PATH)/CPP/Utils/Texture2D/Texture2D.cpp\
@@ -72,6 +75,7 @@ $(SRC_PATH)/CPP/Components/Transform\
 $(SRC_PATH)/CPP\
 $(SRC_PATH)/CPP/GameObject\
 $(SRC_PATH)/CPP/Utils/Files\
+$(SRC_PATH)/CPP/Utils/Meshes\
 $(SRC_PATH)/CPP/Utils/Shaders\
 $(SRC_PATH)/CPP/Utils\
 $(SRC_PATH)/CPP/Utils/Texture2D\

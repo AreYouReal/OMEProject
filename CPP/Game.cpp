@@ -57,7 +57,8 @@ namespace OME {
     }
     
     void Game::OnTouch(const int x, const int y, const int type){
-
+        if(type == 0)
+            Scene::instance()->OnTouch();
     }
     
     void Game::OnDestroy   (){

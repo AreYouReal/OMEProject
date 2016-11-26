@@ -5,8 +5,8 @@
 #define VERTEX_SHADER "wiredObj.vert"
 #define FRAGMENT_SHADER "wiredObj.frag"
 #else
-#define VERTEX_SHADER "shader/wiredObj.vert"
-#define FRAGMENT_SHADER "shader/wiredObj.frag"
+#define VERTEX_SHADER "shaders/wiredObj.vert"
+#define FRAGMENT_SHADER "shaders/wiredObj.frag"
 #endif
 
 
@@ -58,13 +58,19 @@ namespace OME {
         
     }
     
+    void ObjLoader::switchModel(){
+        ++modelNum;
+        modelNum = modelNum % 5;
+        loadMesh();
+    }
+    
     
     void ObjLoader::loadMesh(){
         string fileName = "";
 #ifdef __APPLE__
         fileName = Utils::extractPath(getenv("FILESYSTEM"));
 #else
-        filename = "android file path";
+        fileName = "/storage/emulated/0/Android/data/com.areyoureal.ome/files/";
 #endif
         
         fileName = fileName + meshesNames[modelNum];

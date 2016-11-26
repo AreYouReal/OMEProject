@@ -26,6 +26,8 @@ namespace OME {
         virtual bool init() override;
         virtual void draw() override;
         
+        void switchModel();
+        
     private:
         
         ShaderProgram program;

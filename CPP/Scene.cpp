@@ -10,6 +10,9 @@
 
 namespace OME {
 
+    
+    ObjLoader *obj;
+    
     Scene::Scene(){    }
     
     Scene::~Scene(){    }
@@ -24,7 +27,7 @@ namespace OME {
 //        Grid *prm = (Grid*)go->addComponent(up<Grid>(new Grid()));
 //        prm->init();
         
-        ObjLoader *obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
+        obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
         obj->init();
         
         
@@ -48,6 +51,10 @@ namespace OME {
         for(auto& go : mObjects){
             go->destroy();
         }
+    }
+    
+    void Scene::OnTouch(){
+        obj->switchModel();
     }
     
     void Scene::addObject(up<GameObject> go){

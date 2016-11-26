@@ -17,9 +17,12 @@ namespace OME {
         void update();
         void draw();
         void destroy();
+
+        
+        void OnTouch();
         
         void addObject(up<GameObject> go);
-    
+
     private:
         
         std::vector<up<GameObject>> mObjects;
