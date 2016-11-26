@@ -294,5 +294,32 @@ namespace OME {
         return true;
     }
     
+    Mesh* OBJMesh::parseObjModel(string path, bool flatShading){
+        if(!parseFileInfo(path)){
+            return nullptr;
+        }
+        
+        createInterleavedArray();
+        calculateNormal(flatShading);
+        
+        if(objMeshModel.uvs.size()){
+            calculateTangents();
+        }
+        clearMesh();
+        
+        return &objMeshModel;
+    }
+    
+    bool OBJMesh::clearMesh(){
+        objMeshModel.positions.clear();
+        objMeshModel.normals.clear();
+        objMeshModel.uvs.clear();
+        objMeshModel.tangents.clear();
+        objMeshModel.indices.clear();
+        objMeshModel.faces.clear();
+        return true;
+    }
+    
+    
     
 }

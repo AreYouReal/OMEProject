@@ -16,6 +16,15 @@
 		7626526117F10E6C007CCD43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523517F10E6C007CCD43 /* Foundation.framework */; };
 		7626526217F10E6C007CCD43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523917F10E6C007CCD43 /* UIKit.framework */; };
 		F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F314A1721DCCA4D4008657AE /* Utils.cpp */; };
+		F31B199B1DE9744C00B1C174 /* ObjLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31B19991DE9744C00B1C174 /* ObjLoader.cpp */; };
+		F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B199E1DE97C6200B1C174 /* Cube.obj */; };
+		F31B19A41DE97C6200B1C174 /* IsoSphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B199F1DE97C6200B1C174 /* IsoSphere.obj */; };
+		F31B19A51DE97C6200B1C174 /* Monkey.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A01DE97C6200B1C174 /* Monkey.obj */; };
+		F31B19A61DE97C6200B1C174 /* Sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A11DE97C6200B1C174 /* Sphere.obj */; };
+		F31B19A71DE97C6200B1C174 /* Torus.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A21DE97C6200B1C174 /* Torus.obj */; };
+		F31B19AA1DE97E4100B1C174 /* wiredObj.frag in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A81DE97E4100B1C174 /* wiredObj.frag */; };
+		F31B19AB1DE97E4100B1C174 /* wiredObj.vert in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A91DE97E4100B1C174 /* wiredObj.vert */; };
+		F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19AC1DE981DE00B1C174 /* Cone.obj */; };
 		F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F325BF0A1DE4487900519F0E /* Cube.cpp */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
 		F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F41DC2223D00563510 /* InfoPlist.strings */; };
@@ -167,7 +176,7 @@
 		F359E5471DD3685D00C86972 /* pngwtran.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E5341DD3685D00C86972 /* pngwtran.c */; };
 		F359E5481DD3685D00C86972 /* pngwutil.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E5351DD3685D00C86972 /* pngwutil.c */; };
 		F35A73421DE7FDE000334680 /* WFObj.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35A73401DE7FDE000334680 /* WFObj.cpp */; };
-		F35C99BB1DD57F1F00451CB3 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C99B91DD57F1F00451CB3 /* Mesh.cpp */; };
+		F35C99BB1DD57F1F00451CB3 /* MeshRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C99B91DD57F1F00451CB3 /* MeshRenderer.cpp */; };
 		F35C99BF1DD581C300451CB3 /* Primitives.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35C99BD1DD581C300451CB3 /* Primitives.cpp */; };
 		F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3D1DC1F9790089F6C4 /* AppDelegate.mm */; };
 		F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = F36F6D3F1DC1F9790089F6C4 /* FileWrapper.mm */; };
@@ -176,7 +185,6 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
-		F38A960B1DCE0E99005BCA83 /* spiderman.png in Resources */ = {isa = PBXBuildFile; fileRef = F38A960A1DCE0E99005BCA83 /* spiderman.png */; };
 		F39F50FE1DE73A0E00CD3A67 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
@@ -205,6 +213,16 @@
 		7626525F17F10E6C007CCD43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F314A1721DCCA4D4008657AE /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = ../../CPP/Utils/Utils.cpp; sourceTree = SOURCE_ROOT; };
 		F314A1731DCCA4D4008657AE /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = ../../CPP/Utils/Utils.hpp; sourceTree = SOURCE_ROOT; };
+		F31B19991DE9744C00B1C174 /* ObjLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjLoader.cpp; path = Mesh/ObjLoader.cpp; sourceTree = "<group>"; };
+		F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjLoader.hpp; path = Mesh/ObjLoader.hpp; sourceTree = "<group>"; };
+		F31B199E1DE97C6200B1C174 /* Cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cube.obj; path = ../../Assets/ObjModels/Cube.obj; sourceTree = SOURCE_ROOT; };
+		F31B199F1DE97C6200B1C174 /* IsoSphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = IsoSphere.obj; path = ../../Assets/ObjModels/IsoSphere.obj; sourceTree = SOURCE_ROOT; };
+		F31B19A01DE97C6200B1C174 /* Monkey.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Monkey.obj; path = ../../Assets/ObjModels/Monkey.obj; sourceTree = SOURCE_ROOT; };
+		F31B19A11DE97C6200B1C174 /* Sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sphere.obj; path = ../../Assets/ObjModels/Sphere.obj; sourceTree = SOURCE_ROOT; };
+		F31B19A21DE97C6200B1C174 /* Torus.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Torus.obj; path = ../../Assets/ObjModels/Torus.obj; sourceTree = SOURCE_ROOT; };
+		F31B19A81DE97E4100B1C174 /* wiredObj.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = wiredObj.frag; path = ../Android/assets/shaders/wiredObj.frag; sourceTree = SOURCE_ROOT; };
+		F31B19A91DE97E4100B1C174 /* wiredObj.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = wiredObj.vert; path = ../Android/assets/shaders/wiredObj.vert; sourceTree = SOURCE_ROOT; };
+		F31B19AC1DE981DE00B1C174 /* Cone.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cone.obj; sourceTree = "<group>"; };
 		F325BF0A1DE4487900519F0E /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = Primitives/Cube.cpp; sourceTree = "<group>"; };
 		F325BF0B1DE4487900519F0E /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cube.hpp; path = Primitives/Cube.hpp; sourceTree = "<group>"; };
 		F32AA2F21DC2223800563510 /* OMETests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OMETests-Info.plist"; path = "OMETests/OMETests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -221,8 +239,8 @@
 		F34C13901DE6AF9A009AE936 /* uBlock.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.vert; path = ../Android/assets/shaders/uBlock.vert; sourceTree = SOURCE_ROOT; };
 		F34C13931DE6C204009AE936 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Grid.cpp; path = Primitives/Grid.cpp; sourceTree = "<group>"; };
 		F34C13941DE6C204009AE936 /* Grid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Grid.hpp; path = Primitives/Grid.hpp; sourceTree = "<group>"; };
-		F34C13961DE6CE19009AE936 /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.frag; sourceTree = "<group>"; };
-		F34C13971DE6CE19009AE936 /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.vert; sourceTree = "<group>"; };
+		F34C13961DE6CE19009AE936 /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grid.frag; path = ../Android/assets/shaders/grid.frag; sourceTree = SOURCE_ROOT; };
+		F34C13971DE6CE19009AE936 /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grid.vert; path = ../Android/assets/shaders/grid.vert; sourceTree = SOURCE_ROOT; };
 		F34C139A1DE6D870009AE936 /* SingletonComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SingletonComponent.hpp; sourceTree = "<group>"; };
 		F34C139B1DE6D8D1009AE936 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = ../../CPP/Utils/Singleton.hpp; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
@@ -521,8 +539,8 @@
 		F359E5351DD3685D00C86972 /* pngwutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = pngwutil.c; path = ../../CPP/3dPart/libpng/pngwutil.c; sourceTree = SOURCE_ROOT; };
 		F35A73401DE7FDE000334680 /* WFObj.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WFObj.cpp; sourceTree = "<group>"; };
 		F35A73411DE7FDE000334680 /* WFObj.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = WFObj.hpp; sourceTree = "<group>"; };
-		F35C99B91DD57F1F00451CB3 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mesh.cpp; path = Mesh/Mesh.cpp; sourceTree = "<group>"; };
-		F35C99BA1DD57F1F00451CB3 /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Mesh.hpp; path = Mesh/Mesh.hpp; sourceTree = "<group>"; };
+		F35C99B91DD57F1F00451CB3 /* MeshRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MeshRenderer.cpp; path = Mesh/MeshRenderer.cpp; sourceTree = "<group>"; };
+		F35C99BA1DD57F1F00451CB3 /* MeshRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MeshRenderer.hpp; path = Mesh/MeshRenderer.hpp; sourceTree = "<group>"; };
 		F35C99BD1DD581C300451CB3 /* Primitives.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Primitives.cpp; path = Primitives/Primitives.cpp; sourceTree = "<group>"; };
 		F35C99BE1DD581C300451CB3 /* Primitives.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Primitives.hpp; path = Primitives/Primitives.hpp; sourceTree = "<group>"; };
 		F36F6D3C1DC1F9790089F6C4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OME/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -538,7 +556,6 @@
 		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
-		F38A960A1DCE0E99005BCA83 /* spiderman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spiderman.png; path = ../Android/assets/images/spiderman.png; sourceTree = SOURCE_ROOT; };
 		F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../../CPP/Scene.cpp; sourceTree = "<group>"; };
 		F39F50FD1DE73A0E00CD3A67 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = ../../CPP/Scene.hpp; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
@@ -640,7 +657,7 @@
 		7626524017F10E6C007CCD43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F38A96091DCE0E8A005BCA83 /* Images */,
+				F31B199C1DE97C6200B1C174 /* Assets */,
 				F3E3099D1DCDEA00000ED6C1 /* shaders */,
 				F32AA2FA1DC2225200563510 /* InfoPlist.strings */,
 				F32AA2F71DC2224600563510 /* OME-Info.plist */,
@@ -692,6 +709,29 @@
 			name = CPP;
 			sourceTree = SOURCE_ROOT;
 		};
+		F31B199C1DE97C6200B1C174 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F31B199D1DE97C6200B1C174 /* ObjModels */,
+			);
+			name = Assets;
+			path = ../../../Assets;
+			sourceTree = SOURCE_ROOT;
+		};
+		F31B199D1DE97C6200B1C174 /* ObjModels */ = {
+			isa = PBXGroup;
+			children = (
+				F31B19AC1DE981DE00B1C174 /* Cone.obj */,
+				F31B199E1DE97C6200B1C174 /* Cube.obj */,
+				F31B199F1DE97C6200B1C174 /* IsoSphere.obj */,
+				F31B19A01DE97C6200B1C174 /* Monkey.obj */,
+				F31B19A11DE97C6200B1C174 /* Sphere.obj */,
+				F31B19A21DE97C6200B1C174 /* Torus.obj */,
+			);
+			name = ObjModels;
+			path = ../../Assets/ObjModels;
+			sourceTree = SOURCE_ROOT;
+		};
 		F3462B2F1DDDB8CA00167FEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +767,8 @@
 				F35C99B81DD57EF800451CB3 /* Mesh */,
 				F35274041DD465A400ED870D /* Transform */,
 				F35273FF1DD45C0D00ED870D /* IComponent.hpp */,
+				F31B19991DE9744C00B1C174 /* ObjLoader.cpp */,
+				F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */,
 			);
 			name = Components;
 			path = ../../CPP/Components;
@@ -1109,8 +1151,8 @@
 		F35C99B81DD57EF800451CB3 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
-				F35C99B91DD57F1F00451CB3 /* Mesh.cpp */,
-				F35C99BA1DD57F1F00451CB3 /* Mesh.hpp */,
+				F35C99B91DD57F1F00451CB3 /* MeshRenderer.cpp */,
+				F35C99BA1DD57F1F00451CB3 /* MeshRenderer.hpp */,
 			);
 			name = Mesh;
 			sourceTree = "<group>";
@@ -1127,14 +1169,6 @@
 			);
 			name = Primitives;
 			sourceTree = "<group>";
-		};
-		F38A96091DCE0E8A005BCA83 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				F38A960A1DCE0E99005BCA83 /* spiderman.png */,
-			);
-			name = Images;
-			sourceTree = SOURCE_ROOT;
 		};
 		F3E309991DCDE306000ED6C1 /* Shader */ = {
 			isa = PBXGroup;
@@ -1157,6 +1191,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F31B19A81DE97E4100B1C174 /* wiredObj.frag */,
+				F31B19A91DE97E4100B1C174 /* wiredObj.vert */,
 				F34C13961DE6CE19009AE936 /* grid.frag */,
 				F34C13971DE6CE19009AE936 /* grid.vert */,
 				F34C138F1DE6AF9A009AE936 /* uBlock.frag */,
@@ -1258,9 +1294,11 @@
 				F352757E1DD4665100ED870D /* simd_mat4.inl in Resources */,
 				F35275481DD4665100ED870D /* quaternion.inl in Resources */,
 				F32AA2FC1DC2225200563510 /* InfoPlist.strings in Resources */,
+				F31B19A71DE97C6200B1C174 /* Torus.obj in Resources */,
 				F352755E1DD4665100ED870D /* fast_square_root.inl in Resources */,
 				F352756D1DD4665100ED870D /* matrix_query.inl in Resources */,
 				F352752C1DD4665100ED870D /* type_mat2x2.inl in Resources */,
+				F31B19A61DE97C6200B1C174 /* Sphere.obj in Resources */,
 				F352755D1DD4665100ED870D /* fast_exponential.inl in Resources */,
 				F35275361DD4665100ED870D /* type_vec.inl in Resources */,
 				F35275451DD4665100ED870D /* matrix_transform.inl in Resources */,
@@ -1271,9 +1309,11 @@
 				F35275561DD4665100ED870D /* common.inl in Resources */,
 				F35275331DD4665100ED870D /* type_mat4x3.inl in Resources */,
 				F35275821DD4665100ED870D /* std_based_type.inl in Resources */,
+				F31B19A41DE97C6200B1C174 /* IsoSphere.obj in Resources */,
 				F352757D1DD4665100ED870D /* scalar_relational.inl in Resources */,
 				F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */,
 				F35275501DD4665100ED870D /* vec1.inl in Resources */,
+				F31B19AB1DE97E4100B1C174 /* wiredObj.vert in Resources */,
 				F352756B1DD4665100ED870D /* matrix_major_storage.inl in Resources */,
 				F32AA30A1DC2230100563510 /* Images.xcassets in Resources */,
 				F35275341DD4665100ED870D /* type_mat4x4.inl in Resources */,
@@ -1293,7 +1333,6 @@
 				F35275241DD4665100ED870D /* func_trigonometric.inl in Resources */,
 				F352751F1DD4665100ED870D /* func_integer_simd.inl in Resources */,
 				F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */,
-				F38A960B1DCE0E99005BCA83 /* spiderman.png in Resources */,
 				F352756A1DD4665100ED870D /* matrix_interpolation.inl in Resources */,
 				F352752E1DD4665100ED870D /* type_mat2x4.inl in Resources */,
 				F35275621DD4665100ED870D /* handed_coordinate_space.inl in Resources */,
@@ -1306,6 +1345,7 @@
 				F35275641DD4665100ED870D /* integer.inl in Resources */,
 				F35275401DD4665100ED870D /* epsilon.inl in Resources */,
 				F35275441DD4665100ED870D /* matrix_inverse.inl in Resources */,
+				F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */,
 				F35275581DD4665100ED870D /* component_wise.inl in Resources */,
 				F352753F1DD4665100ED870D /* constants.inl in Resources */,
 				F35275841DD4665100ED870D /* transform.inl in Resources */,
@@ -1313,6 +1353,7 @@
 				F35275851DD4665100ED870D /* transform2.inl in Resources */,
 				F352753A1DD4665100ED870D /* type_vec4.inl in Resources */,
 				F35275601DD4665100ED870D /* float_notmalize.inl in Resources */,
+				F31B19A51DE97C6200B1C174 /* Monkey.obj in Resources */,
 				F35275591DD4665100ED870D /* dual_quaternion.inl in Resources */,
 				F35275571DD4665100ED870D /* compatibility.inl in Resources */,
 				F35275711DD4665100ED870D /* normal.inl in Resources */,
@@ -1333,6 +1374,7 @@
 				F35275791DD4665100ED870D /* quaternion.inl in Resources */,
 				F35275761DD4665100ED870D /* perpendicular.inl in Resources */,
 				F35275411DD4665100ED870D /* functions.inl in Resources */,
+				F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */,
 				F35275511DD4665100ED870D /* associated_min_max.inl in Resources */,
 				F35275371DD4665100ED870D /* type_vec1.inl in Resources */,
 				F352751E1DD4665100ED870D /* func_integer.inl in Resources */,
@@ -1358,6 +1400,7 @@
 				F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */,
 				F352753E1DD4665100ED870D /* color_space.inl in Resources */,
 				F35275191DD4665100ED870D /* func_common_simd.inl in Resources */,
+				F31B19AA1DE97E4100B1C174 /* wiredObj.frag in Resources */,
 				F35275201DD4665100ED870D /* func_matrix.inl in Resources */,
 				F35275741DD4665100ED870D /* optimum_pow.inl in Resources */,
 				F352751C1DD4665100ED870D /* func_geometric.inl in Resources */,
@@ -1397,6 +1440,7 @@
 				F359E5411DD3685D00C86972 /* pngrutil.c in Sources */,
 				F3DB21AF1DE4825000804703 /* Time.cpp in Sources */,
 				F359E5391DD3685D00C86972 /* png.c in Sources */,
+				F31B199B1DE9744C00B1C174 /* ObjLoader.cpp in Sources */,
 				F359E5461DD3685D00C86972 /* pngwrite.c in Sources */,
 				F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */,
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
@@ -1424,7 +1468,7 @@
 				F35A73421DE7FDE000334680 /* WFObj.cpp in Sources */,
 				F359E5421DD3685D00C86972 /* pngset.c in Sources */,
 				F359E5401DD3685D00C86972 /* pngrtran.c in Sources */,
-				F35C99BB1DD57F1F00451CB3 /* Mesh.cpp in Sources */,
+				F35C99BB1DD57F1F00451CB3 /* MeshRenderer.cpp in Sources */,
 				F359E53C1DD3685D00C86972 /* pngmem.c in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,
 				F359E5481DD3685D00C86972 /* pngwutil.c in Sources */,

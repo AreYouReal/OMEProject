@@ -49,8 +49,8 @@ namespace OME {
         int indexCount;
     
     public:
-        OBJMesh();
-        ~OBJMesh();
+        OBJMesh(){};
+        ~OBJMesh(){};
         
         Mesh* parseObjModel(string path, bool flatShading = false);
         

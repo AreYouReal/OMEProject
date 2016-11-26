@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Mesh.hpp"
+#include "MeshRenderer.hpp"
 #include "ShaderProgram.hpp"
 
 namespace OME {
-    class Cube : public Mesh{
+    class Cube : public MeshRenderer{
     public:
         Cube();
         virtual ~Cube();

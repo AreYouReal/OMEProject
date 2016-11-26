@@ -128,7 +128,7 @@ namespace OME {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexBuffer);
         
         glVertexAttribPointer(ShaderProgram::VERTEX_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, 0, 0);
-        glVertexAttribPointer(ShaderProgram::COLOR_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, 0, (void*)(24*sizeof(float)));
+        glVertexAttribPointer(ShaderProgram::NORMAL_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, 0, (void*)(24*sizeof(float)));
         
         glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_SHORT, (void*)0);
         

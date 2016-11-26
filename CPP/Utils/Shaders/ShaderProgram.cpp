@@ -4,8 +4,9 @@
 
 namespace OME {
 
-const int ShaderProgram::VERTEX_ATTRIB_LOCATION = 0;
-const int ShaderProgram::COLOR_ATTRIB_LOCATION  = 1;
+const int ShaderProgram::VERTEX_ATTRIB_LOCATION     = 0;
+const int ShaderProgram::NORMAL_ATTRIB_LOCATION      = 1;
+const int ShaderProgram::TEXCOORD_ATTRIB_LOCATION   = 2;
 
 ShaderProgram::ShaderProgram() : id(0){}
 

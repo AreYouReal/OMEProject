@@ -9,7 +9,6 @@
 
 #include "Camera.hpp"
 
-
 #include "Time.hpp"
 
 #include "Scene.hpp"
@@ -43,8 +42,6 @@ namespace OME {
 //        PngTexture2D pngTexture;
 //        pngTexture.loadTexture("spiderman.png");
 
-
-        
         return 1;
     }
     

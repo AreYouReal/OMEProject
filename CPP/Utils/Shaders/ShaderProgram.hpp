@@ -23,7 +23,8 @@ namespace OME {
         
         
         static const int VERTEX_ATTRIB_LOCATION;
-        static const int COLOR_ATTRIB_LOCATION;
+        static const int NORMAL_ATTRIB_LOCATION;
+        static const int TEXCOORD_ATTRIB_LOCATION;
         
         GLuint id;
         

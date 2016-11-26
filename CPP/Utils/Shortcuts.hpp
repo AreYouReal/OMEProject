@@ -3,8 +3,12 @@
 #include <memory>
 #include <vector>
 #include <map>
+#include <string>
 
 namespace OME {
+    
+    using string = std::string;
+    
     template<typename T>
     using sp = std::shared_ptr<T>;
     
@@ -21,6 +25,7 @@ namespace OME {
     
     template<typename T, typename V>
     using map = std::map<T, V>;
+
 }
 
 

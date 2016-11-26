@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Mesh.hpp"
+#include "MeshRenderer.hpp"
 
 #include "ShaderProgram.hpp"
 
 namespace OME {
-    class Grid : public Mesh{
+    class Grid : public MeshRenderer{
         public:
         
         virtual bool init() override;

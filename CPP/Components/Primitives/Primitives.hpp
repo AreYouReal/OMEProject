@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Mesh.hpp"
+#include "MeshRenderer.hpp"
 #include "ShaderProgram.hpp"
 
 namespace OME {
-    class Primitives : public Mesh{
+    class Primitives : public MeshRenderer{
     public:
         Primitives();
         virtual ~Primitives();
