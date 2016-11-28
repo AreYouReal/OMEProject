@@ -30,6 +30,8 @@ namespace OME {
         virtual bool init() override;
         virtual void draw() override;
         
+        virtual void destroy() override;
+        
         
         
     private:
@@ -43,6 +45,8 @@ namespace OME {
         void buildMesh(Lib3dsMesh* mesh);
         
         void renderNodes(Lib3dsFile* file, Lib3dsNode* node);
+        
+        bool clear(Lib3dsFile* file);
         
         
     };
