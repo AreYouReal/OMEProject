@@ -21,6 +21,8 @@ namespace OME {
         
         file = load3dsModel(filename);
         
+
+        
         return true;
     }
     
@@ -68,6 +70,9 @@ namespace OME {
     }
     
     void Loader3DS::buildMesh(Lib3dsMesh *mesh){
+        
+        Utils::LOG("BUILD MESH: %s", mesh->name);
+        
         int sizeMeshVert = 0;
         int sizeMeshTexture = 0;
         int sizeMeshNormal = 0;
@@ -123,14 +128,7 @@ namespace OME {
         indexNumber = faceIndexNum;
         
         
-        // Cache the information in the User data structure
-        userData->indexNum     = indexNumber;
-        userData->vertexSize	  = sizeMeshVert;
-        userData->normalOffset = sizeMeshVert + sizeMeshTexture;
-        userData->vbo	  = vId;
-        userData->ibo	  = iId;
-        userData->vao		  = VAOid;
-        userData->textureId    = 0;
+
         
         // Create and Bind the VBO. Fill the VBO with Vertex position, texture, normal information.
         glGenBuffers( 1, (GLuint *)&vId );
@@ -152,6 +150,20 @@ namespace OME {
         glGenVertexArrays(1, &VAOid);
         glBindVertexArray(VAOid);
         glBindBuffer( GL_ARRAY_BUFFER, vId );
+        
+        
+        // Cache the information in the User data structure
+        userData->indexNum     = indexNumber;
+        userData->vertexSize	  = sizeMeshVert;
+        userData->normalOffset = sizeMeshVert + sizeMeshTexture;
+        userData->vbo	  = vId;
+        userData->ibo	  = iId;
+        userData->vao		  = VAOid;
+        userData->textureId    = 0;
+        
+        
+        
+        
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
@@ -162,6 +174,7 @@ namespace OME {
         glBindBuffer( GL_ELEMENT_ARRAY_BUFFER, iId );
         glBindVertexArray(0);
         
+        Utils::LOG("VAO: %d", userData->vao);
 
         
         delete []faceIndex;
