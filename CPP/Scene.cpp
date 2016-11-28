@@ -4,6 +4,7 @@
 #include "Cube.hpp"
 #include "Grid.hpp"
 #include "ObjLoader.hpp"
+#include "Loader3DS.hpp"
 
 #include "Camera.hpp"
 
@@ -12,6 +13,8 @@ namespace OME {
 
     
     ObjLoader *obj;
+    
+    Loader3DS *ds;
     
     Scene::Scene(){    }
     
@@ -27,9 +30,11 @@ namespace OME {
 //        Grid *prm = (Grid*)go->addComponent(up<Grid>(new Grid()));
 //        prm->init();
         
-        obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
-        obj->init();
+//        obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
+//        obj->init();
         
+        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
+        ds->init();
         
         addObject(std::move(go));
         return true;

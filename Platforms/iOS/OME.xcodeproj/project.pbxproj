@@ -16,6 +16,29 @@
 		7626526117F10E6C007CCD43 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523517F10E6C007CCD43 /* Foundation.framework */; };
 		7626526217F10E6C007CCD43 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7626523917F10E6C007CCD43 /* UIKit.framework */; };
 		F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F314A1721DCCA4D4008657AE /* Utils.cpp */; };
+		F31570A21DEBF02700068D22 /* lib3ds_atmosphere.c in Sources */ = {isa = PBXBuildFile; fileRef = F315708E1DEBF02700068D22 /* lib3ds_atmosphere.c */; };
+		F31570A31DEBF02700068D22 /* lib3ds_background.c in Sources */ = {isa = PBXBuildFile; fileRef = F315708F1DEBF02700068D22 /* lib3ds_background.c */; };
+		F31570A41DEBF02700068D22 /* lib3ds_camera.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570901DEBF02700068D22 /* lib3ds_camera.c */; };
+		F31570A51DEBF02700068D22 /* lib3ds_chunk.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570911DEBF02700068D22 /* lib3ds_chunk.c */; };
+		F31570A61DEBF02700068D22 /* lib3ds_chunktable.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570921DEBF02700068D22 /* lib3ds_chunktable.c */; };
+		F31570A71DEBF02700068D22 /* lib3ds_file.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570931DEBF02700068D22 /* lib3ds_file.c */; };
+		F31570A81DEBF02700068D22 /* lib3ds_io.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570951DEBF02700068D22 /* lib3ds_io.c */; };
+		F31570A91DEBF02700068D22 /* lib3ds_light.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570961DEBF02700068D22 /* lib3ds_light.c */; };
+		F31570AA1DEBF02700068D22 /* lib3ds_material.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570971DEBF02700068D22 /* lib3ds_material.c */; };
+		F31570AB1DEBF02700068D22 /* lib3ds_math.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570981DEBF02700068D22 /* lib3ds_math.c */; };
+		F31570AC1DEBF02700068D22 /* lib3ds_matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570991DEBF02700068D22 /* lib3ds_matrix.c */; };
+		F31570AD1DEBF02700068D22 /* lib3ds_mesh.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709A1DEBF02700068D22 /* lib3ds_mesh.c */; };
+		F31570AE1DEBF02700068D22 /* lib3ds_node.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709B1DEBF02700068D22 /* lib3ds_node.c */; };
+		F31570AF1DEBF02700068D22 /* lib3ds_quat.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709C1DEBF02700068D22 /* lib3ds_quat.c */; };
+		F31570B01DEBF02700068D22 /* lib3ds_shadow.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709D1DEBF02700068D22 /* lib3ds_shadow.c */; };
+		F31570B11DEBF02700068D22 /* lib3ds_track.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709E1DEBF02700068D22 /* lib3ds_track.c */; };
+		F31570B21DEBF02700068D22 /* lib3ds_util.c in Sources */ = {isa = PBXBuildFile; fileRef = F315709F1DEBF02700068D22 /* lib3ds_util.c */; };
+		F31570B31DEBF02700068D22 /* lib3ds_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570A01DEBF02700068D22 /* lib3ds_vector.c */; };
+		F31570B41DEBF02700068D22 /* lib3ds_viewport.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570A11DEBF02700068D22 /* lib3ds_viewport.c */; };
+		F31570B71DEBF41B00068D22 /* Loader3DS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31570B51DEBF41B00068D22 /* Loader3DS.cpp */; };
+		F31570BA1DEC092700068D22 /* 3ds.frag in Resources */ = {isa = PBXBuildFile; fileRef = F31570B81DEC092700068D22 /* 3ds.frag */; };
+		F31570BB1DEC092700068D22 /* 3ds.vert in Resources */ = {isa = PBXBuildFile; fileRef = F31570B91DEC092700068D22 /* 3ds.vert */; };
+		F31570BE1DEC1DB300068D22 /* car.3DS in Resources */ = {isa = PBXBuildFile; fileRef = F31570BD1DEC1DB300068D22 /* car.3DS */; };
 		F31B199B1DE9744C00B1C174 /* ObjLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31B19991DE9744C00B1C174 /* ObjLoader.cpp */; };
 		F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B199E1DE97C6200B1C174 /* Cube.obj */; };
 		F31B19A41DE97C6200B1C174 /* IsoSphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B199F1DE97C6200B1C174 /* IsoSphere.obj */; };
@@ -213,6 +236,32 @@
 		7626525F17F10E6C007CCD43 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F314A1721DCCA4D4008657AE /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Utils.cpp; path = ../../CPP/Utils/Utils.cpp; sourceTree = SOURCE_ROOT; };
 		F314A1731DCCA4D4008657AE /* Utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Utils.hpp; path = ../../CPP/Utils/Utils.hpp; sourceTree = SOURCE_ROOT; };
+		F315708D1DEBF02700068D22 /* lib3ds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib3ds.h; sourceTree = "<group>"; };
+		F315708E1DEBF02700068D22 /* lib3ds_atmosphere.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_atmosphere.c; sourceTree = "<group>"; };
+		F315708F1DEBF02700068D22 /* lib3ds_background.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_background.c; sourceTree = "<group>"; };
+		F31570901DEBF02700068D22 /* lib3ds_camera.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_camera.c; sourceTree = "<group>"; };
+		F31570911DEBF02700068D22 /* lib3ds_chunk.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_chunk.c; sourceTree = "<group>"; };
+		F31570921DEBF02700068D22 /* lib3ds_chunktable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_chunktable.c; sourceTree = "<group>"; };
+		F31570931DEBF02700068D22 /* lib3ds_file.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_file.c; sourceTree = "<group>"; };
+		F31570941DEBF02700068D22 /* lib3ds_impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lib3ds_impl.h; sourceTree = "<group>"; };
+		F31570951DEBF02700068D22 /* lib3ds_io.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_io.c; sourceTree = "<group>"; };
+		F31570961DEBF02700068D22 /* lib3ds_light.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_light.c; sourceTree = "<group>"; };
+		F31570971DEBF02700068D22 /* lib3ds_material.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_material.c; sourceTree = "<group>"; };
+		F31570981DEBF02700068D22 /* lib3ds_math.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_math.c; sourceTree = "<group>"; };
+		F31570991DEBF02700068D22 /* lib3ds_matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_matrix.c; sourceTree = "<group>"; };
+		F315709A1DEBF02700068D22 /* lib3ds_mesh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_mesh.c; sourceTree = "<group>"; };
+		F315709B1DEBF02700068D22 /* lib3ds_node.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_node.c; sourceTree = "<group>"; };
+		F315709C1DEBF02700068D22 /* lib3ds_quat.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_quat.c; sourceTree = "<group>"; };
+		F315709D1DEBF02700068D22 /* lib3ds_shadow.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_shadow.c; sourceTree = "<group>"; };
+		F315709E1DEBF02700068D22 /* lib3ds_track.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_track.c; sourceTree = "<group>"; };
+		F315709F1DEBF02700068D22 /* lib3ds_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_util.c; sourceTree = "<group>"; };
+		F31570A01DEBF02700068D22 /* lib3ds_vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_vector.c; sourceTree = "<group>"; };
+		F31570A11DEBF02700068D22 /* lib3ds_viewport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_viewport.c; sourceTree = "<group>"; };
+		F31570B51DEBF41B00068D22 /* Loader3DS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Loader3DS.cpp; path = Mesh/Loader3DS.cpp; sourceTree = "<group>"; };
+		F31570B61DEBF41B00068D22 /* Loader3DS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Loader3DS.hpp; path = Mesh/Loader3DS.hpp; sourceTree = "<group>"; };
+		F31570B81DEC092700068D22 /* 3ds.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.frag; sourceTree = "<group>"; };
+		F31570B91DEC092700068D22 /* 3ds.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.vert; sourceTree = "<group>"; };
+		F31570BD1DEC1DB300068D22 /* car.3DS */ = {isa = PBXFileReference; lastKnownFileType = file; path = car.3DS; sourceTree = "<group>"; };
 		F31B19991DE9744C00B1C174 /* ObjLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjLoader.cpp; path = Mesh/ObjLoader.cpp; sourceTree = "<group>"; };
 		F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjLoader.hpp; path = Mesh/ObjLoader.hpp; sourceTree = "<group>"; };
 		F31B199E1DE97C6200B1C174 /* Cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Cube.obj; path = ../../Assets/ObjModels/Cube.obj; sourceTree = SOURCE_ROOT; };
@@ -709,9 +758,48 @@
 			name = CPP;
 			sourceTree = SOURCE_ROOT;
 		};
+		F315708C1DEBF02700068D22 /* lib3ds */ = {
+			isa = PBXGroup;
+			children = (
+				F315708D1DEBF02700068D22 /* lib3ds.h */,
+				F315708E1DEBF02700068D22 /* lib3ds_atmosphere.c */,
+				F315708F1DEBF02700068D22 /* lib3ds_background.c */,
+				F31570901DEBF02700068D22 /* lib3ds_camera.c */,
+				F31570911DEBF02700068D22 /* lib3ds_chunk.c */,
+				F31570921DEBF02700068D22 /* lib3ds_chunktable.c */,
+				F31570931DEBF02700068D22 /* lib3ds_file.c */,
+				F31570941DEBF02700068D22 /* lib3ds_impl.h */,
+				F31570951DEBF02700068D22 /* lib3ds_io.c */,
+				F31570961DEBF02700068D22 /* lib3ds_light.c */,
+				F31570971DEBF02700068D22 /* lib3ds_material.c */,
+				F31570981DEBF02700068D22 /* lib3ds_math.c */,
+				F31570991DEBF02700068D22 /* lib3ds_matrix.c */,
+				F315709A1DEBF02700068D22 /* lib3ds_mesh.c */,
+				F315709B1DEBF02700068D22 /* lib3ds_node.c */,
+				F315709C1DEBF02700068D22 /* lib3ds_quat.c */,
+				F315709D1DEBF02700068D22 /* lib3ds_shadow.c */,
+				F315709E1DEBF02700068D22 /* lib3ds_track.c */,
+				F315709F1DEBF02700068D22 /* lib3ds_util.c */,
+				F31570A01DEBF02700068D22 /* lib3ds_vector.c */,
+				F31570A11DEBF02700068D22 /* lib3ds_viewport.c */,
+			);
+			name = lib3ds;
+			path = ../../CPP/3dPart/lib3ds;
+			sourceTree = "<group>";
+		};
+		F31570BC1DEC1DB300068D22 /* 3DSModels */ = {
+			isa = PBXGroup;
+			children = (
+				F31570BD1DEC1DB300068D22 /* car.3DS */,
+			);
+			name = 3DSModels;
+			path = ../../Assets/3DSModels;
+			sourceTree = SOURCE_ROOT;
+		};
 		F31B199C1DE97C6200B1C174 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				F31570BC1DEC1DB300068D22 /* 3DSModels */,
 				F31B199D1DE97C6200B1C174 /* ObjModels */,
 			);
 			name = Assets;
@@ -767,8 +855,6 @@
 				F35C99B81DD57EF800451CB3 /* Mesh */,
 				F35274041DD465A400ED870D /* Transform */,
 				F35273FF1DD45C0D00ED870D /* IComponent.hpp */,
-				F31B19991DE9744C00B1C174 /* ObjLoader.cpp */,
-				F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */,
 			);
 			name = Components;
 			path = ../../CPP/Components;
@@ -786,6 +872,7 @@
 		F35274081DD4663600ED870D /* 3dPart */ = {
 			isa = PBXGroup;
 			children = (
+				F315708C1DEBF02700068D22 /* lib3ds */,
 				F35274091DD4664000ED870D /* glm */,
 				F359E51C1DD3684C00C86972 /* libpng */,
 			);
@@ -1151,6 +1238,10 @@
 		F35C99B81DD57EF800451CB3 /* Mesh */ = {
 			isa = PBXGroup;
 			children = (
+				F31B19991DE9744C00B1C174 /* ObjLoader.cpp */,
+				F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */,
+				F31570B51DEBF41B00068D22 /* Loader3DS.cpp */,
+				F31570B61DEBF41B00068D22 /* Loader3DS.hpp */,
 				F35C99B91DD57F1F00451CB3 /* MeshRenderer.cpp */,
 				F35C99BA1DD57F1F00451CB3 /* MeshRenderer.hpp */,
 			);
@@ -1191,6 +1282,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F31570B81DEC092700068D22 /* 3ds.frag */,
+				F31570B91DEC092700068D22 /* 3ds.vert */,
 				F31B19A81DE97E4100B1C174 /* wiredObj.frag */,
 				F31B19A91DE97E4100B1C174 /* wiredObj.vert */,
 				F34C13961DE6CE19009AE936 /* grid.frag */,
@@ -1366,6 +1459,7 @@
 				F352752B1DD4665100ED870D /* type_mat.inl in Resources */,
 				F35275251DD4665100ED870D /* func_trigonometric_simd.inl in Resources */,
 				F35275811DD4665100ED870D /* spline.inl in Resources */,
+				F31570BA1DEC092700068D22 /* 3ds.frag in Resources */,
 				F35275751DD4665100ED870D /* orthonormalize.inl in Resources */,
 				F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */,
 				F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */,
@@ -1377,6 +1471,7 @@
 				F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */,
 				F35275511DD4665100ED870D /* associated_min_max.inl in Resources */,
 				F35275371DD4665100ED870D /* type_vec1.inl in Resources */,
+				F31570BB1DEC092700068D22 /* 3ds.vert in Resources */,
 				F352751E1DD4665100ED870D /* func_integer.inl in Resources */,
 				F35275391DD4665100ED870D /* type_vec3.inl in Resources */,
 				F35275301DD4665100ED870D /* type_mat3x3.inl in Resources */,
@@ -1385,6 +1480,7 @@
 				F35275661DD4665100ED870D /* io.inl in Resources */,
 				F35275551DD4665100ED870D /* color_space_YCoCg.inl in Resources */,
 				F352752F1DD4665100ED870D /* type_mat3x2.inl in Resources */,
+				F31570BE1DEC1DB300068D22 /* car.3DS in Resources */,
 				F35275861DD4665100ED870D /* type_aligned.inl in Resources */,
 				F35275291DD4665100ED870D /* type_gentype.inl in Resources */,
 				F352752A1DD4665100ED870D /* type_half.inl in Resources */,
@@ -1439,23 +1535,38 @@
 				F359E5441DD3685D00C86972 /* pngtrans.c in Sources */,
 				F359E5411DD3685D00C86972 /* pngrutil.c in Sources */,
 				F3DB21AF1DE4825000804703 /* Time.cpp in Sources */,
+				F31570A61DEBF02700068D22 /* lib3ds_chunktable.c in Sources */,
 				F359E5391DD3685D00C86972 /* png.c in Sources */,
+				F31570AE1DEBF02700068D22 /* lib3ds_node.c in Sources */,
+				F31570A91DEBF02700068D22 /* lib3ds_light.c in Sources */,
 				F31B199B1DE9744C00B1C174 /* ObjLoader.cpp in Sources */,
+				F31570A71DEBF02700068D22 /* lib3ds_file.c in Sources */,
+				F31570AB1DEBF02700068D22 /* lib3ds_math.c in Sources */,
 				F359E5461DD3685D00C86972 /* pngwrite.c in Sources */,
+				F31570B71DEBF41B00068D22 /* Loader3DS.cpp in Sources */,
+				F31570B31DEBF02700068D22 /* lib3ds_vector.c in Sources */,
+				F31570A41DEBF02700068D22 /* lib3ds_camera.c in Sources */,
 				F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */,
+				F31570AF1DEBF02700068D22 /* lib3ds_quat.c in Sources */,
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
 				F35275171DD4665100ED870D /* dummy.cpp in Sources */,
+				F31570B11DEBF02700068D22 /* lib3ds_track.c in Sources */,
+				F31570AA1DEBF02700068D22 /* lib3ds_material.c in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,
 				F36F6D431DC1F9790089F6C4 /* AppDelegate.mm in Sources */,
 				F35274031DD45DC300ED870D /* GameObject.cpp in Sources */,
 				F359E51B1DD366B400C86972 /* PngTexture2D.cpp in Sources */,
 				F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */,
 				F359E53A1DD3685D00C86972 /* pngerror.c in Sources */,
+				F31570AD1DEBF02700068D22 /* lib3ds_mesh.c in Sources */,
+				F31570AC1DEBF02700068D22 /* lib3ds_matrix.c in Sources */,
 				F35C99BF1DD581C300451CB3 /* Primitives.cpp in Sources */,
 				F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */,
 				F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */,
 				F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */,
 				F35274071DD465C100ED870D /* Transform.cpp in Sources */,
+				F31570A31DEBF02700068D22 /* lib3ds_background.c in Sources */,
+				F31570B01DEBF02700068D22 /* lib3ds_shadow.c in Sources */,
 				F34C13951DE6C204009AE936 /* Grid.cpp in Sources */,
 				F359E53F1DD3685D00C86972 /* pngrio.c in Sources */,
 				F359E5451DD3685D00C86972 /* pngwio.c in Sources */,
@@ -1467,13 +1578,18 @@
 				F359E5471DD3685D00C86972 /* pngwtran.c in Sources */,
 				F35A73421DE7FDE000334680 /* WFObj.cpp in Sources */,
 				F359E5421DD3685D00C86972 /* pngset.c in Sources */,
+				F31570B21DEBF02700068D22 /* lib3ds_util.c in Sources */,
 				F359E5401DD3685D00C86972 /* pngrtran.c in Sources */,
 				F35C99BB1DD57F1F00451CB3 /* MeshRenderer.cpp in Sources */,
+				F31570A21DEBF02700068D22 /* lib3ds_atmosphere.c in Sources */,
+				F31570A51DEBF02700068D22 /* lib3ds_chunk.c in Sources */,
+				F31570A81DEBF02700068D22 /* lib3ds_io.c in Sources */,
 				F359E53C1DD3685D00C86972 /* pngmem.c in Sources */,
 				F36F6D451DC1F9790089F6C4 /* main.m in Sources */,
 				F359E5481DD3685D00C86972 /* pngwutil.c in Sources */,
 				F359E53D1DD3685D00C86972 /* pngpread.c in Sources */,
 				F359E53B1DD3685D00C86972 /* pngget.c in Sources */,
+				F31570B41DEBF02700068D22 /* lib3ds_viewport.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

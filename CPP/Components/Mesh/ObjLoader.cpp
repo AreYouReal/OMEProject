@@ -77,7 +77,7 @@ namespace OME {
         
         objMeshModel = wfObj.parseObjModel(fileName);
         indexCount = wfObj.indexTotal();
-        stride = (2 * sizeof(vec3) + sizeof(vec2) + sizeof(vec4) );
+        stride = (2 * sizeof(vec3) ) + sizeof(vec2) + sizeof(vec4);
         offset = (GLvoid*)(sizeof(vec3) + sizeof(vec2));
         offsetTexCoord = (GLvoid*)(sizeof(vec3));
         
@@ -94,7 +94,7 @@ namespace OME {
         glEnableVertexAttribArray(ShaderProgram::TEXCOORD_ATTRIB_LOCATION);
         glVertexAttribPointer(ShaderProgram::VERTEX_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, 0);
         glVertexAttribPointer(ShaderProgram::NORMAL_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, offsetTexCoord);
-        glVertexAttribPointer(ShaderProgram::TEXCOORD_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, offset);
+        glVertexAttribPointer(ShaderProgram::TEXCOORD_ATTRIB_LOCATION, 2, GL_FLOAT, GL_FALSE, stride, offset);
         glBindVertexArray(0);
         
         objMeshModel->vertices.clear();
