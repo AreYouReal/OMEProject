@@ -40,6 +40,10 @@ namespace OME {
 
         Lib3dsFile* load3dsModel(string filename);
         
+        void buildMesh(Lib3dsMesh* mesh);
+        
+        void renderNodes(Lib3dsFile* file, Lib3dsNode* node);
+        
         
     };
 }
