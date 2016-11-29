@@ -15,7 +15,7 @@
 
 namespace OME {
     
-    string meshesNames[] = {"Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
+    string meshesNames[] = {"GUARD.obj", "Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
     
     
     int stride;
@@ -51,7 +51,7 @@ namespace OME {
         
         glBindVertexArray(vao);
         
-        glDrawArrays(GL_LINES, 0, indexCount);
+        glDrawArrays(GL_TRIANGLES, 0, indexCount);
         
         glBindVertexArray(0);
         

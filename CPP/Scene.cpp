@@ -30,11 +30,11 @@ namespace OME {
 //        Grid *prm = (Grid*)go->addComponent(up<Grid>(new Grid()));
 //        prm->init();
         
-//        obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
-//        obj->init();
+        obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
+        obj->init();
         
-        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
-        ds->init();
+//        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
+//        ds->init();
         
         addObject(std::move(go));
         return true;
@@ -59,8 +59,8 @@ namespace OME {
     }
     
     void Scene::OnTouch(){
-        if(obj)
-            obj->switchModel();
+//        if(obj)
+//            obj->switchModel();
     }
     
     void Scene::addObject(up<GameObject> go){
