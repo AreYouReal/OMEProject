@@ -9,6 +9,25 @@ LOCAL_CFLAGS    += -std=c++11
 LOCAL_SRC_FILES := $(LOCAL_PATH)/Android.cpp \
 $(SRC_PATH)/CPP/3dPart/glm/detail/dummy.cpp\
 $(SRC_PATH)/CPP/3dPart/glm/detail/glm.cpp\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_atmosphere.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_background.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_camera.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_chunk.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_chunktable.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_file.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_io.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_light.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_material.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_math.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_matrix.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_mesh.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_node.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_quat.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_shadow.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_track.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_util.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_vector.c\
+$(SRC_PATH)/CPP/3dPart/lib3ds/lib3ds_viewport.c\
 $(SRC_PATH)/CPP/3dPart/libpng/png.c\
 $(SRC_PATH)/CPP/3dPart/libpng/pngerror.c\
 $(SRC_PATH)/CPP/3dPart/libpng/pngget.c\
@@ -40,6 +59,7 @@ $(SRC_PATH)/CPP/3dPart/zlib/uncompr.c\
 $(SRC_PATH)/CPP/3dPart/zlib/unzip.c\
 $(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Components/Camera/Camera.cpp\
+$(SRC_PATH)/CPP/Components/Mesh/Loader3DS.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/MeshRenderer.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/ObjLoader.cpp\
 $(SRC_PATH)/CPP/Components/Primitives/Cube.cpp\
@@ -65,6 +85,7 @@ $(SRC_PATH)/CPP/3dPart/glm/detail\
 $(SRC_PATH)/CPP/3dPart/glm/gtc\
 $(SRC_PATH)/CPP/3dPart/glm/gtx\
 $(SRC_PATH)/CPP/3dPart/glm/simd\
+$(SRC_PATH)/CPP/3dPart/lib3ds\
 $(SRC_PATH)/CPP/3dPart/libpng\
 $(SRC_PATH)/CPP/3dPart/zlib\
 $(SRC_PATH)/CPP/Components/Camera\
@@ -76,8 +97,8 @@ $(SRC_PATH)/CPP\
 $(SRC_PATH)/CPP/GameObject\
 $(SRC_PATH)/CPP/Utils/Files\
 $(SRC_PATH)/CPP/Utils/Meshes\
-$(SRC_PATH)/CPP/Utils/Shaders\
 $(SRC_PATH)/CPP/Utils\
+$(SRC_PATH)/CPP/Utils/Shaders\
 $(SRC_PATH)/CPP/Utils/Texture2D\
 
 

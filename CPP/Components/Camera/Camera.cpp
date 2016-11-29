@@ -3,8 +3,12 @@
 
 #include "../../3dPart/glm/gtx/transform.hpp"
 
+#include "OMConstants.h"
+
+using vec2 = glm::vec2;
 using vec3 = glm::vec3;
 using mat4 = glm::mat4;
+
 
 namespace OME {
     
@@ -38,6 +42,30 @@ namespace OME {
         mHeight = height;
     }
     
+    void Camera::onTouch(const int x, const int y, const int event){
+        TOUCH_EVENT touchEvent = (TOUCH_EVENT)event;
+        switch (touchEvent) {
+            case TOUCH_EVENT::DOWN :
+                mPrevTouch.x = x;
+                mPrevTouch.y = y;
+                break;
+            case TOUCH_EVENT::MOVED :
+                mDeltaTouch.x = (x - mPrevTouch.x)/100;
+                mDeltaTouch.y = (y - mPrevTouch.y) * mTouchSensetivity;
+                mPrevTouch.x = x;
+                mPrevTouch.y = y;
+                
+                Utils::LOG("Delta: [%f, %f]", mDeltaTouch.x, mDeltaTouch.y);
+                break;
+            case TOUCH_EVENT::UP :
+                mPrevTouch = mDeltaTouch = vec2(0.0f);
+                break;
+                
+            default:
+                break;
+        }
+    
+    }
     
 #pragma mark IComponent Interface
     bool Camera::init(){
@@ -52,6 +80,19 @@ namespace OME {
     }
     
     void Camera::update(){
+        
+        if(mDeltaTouch.x != 0.0f){
+            vec3 newRotation = transform->mRotation;
+            newRotation.y += mDeltaTouch.x;
+            transform->mRotation = newRotation;
+            transform->mFront = vec3(cosf(newRotation.y), 0.0f, sinf(newRotation.y));
+        }
+        
+        if(mDeltaTouch.y != 0.0f){
+            transform->mPosition += (transform->mFront * mDeltaTouch.y);
+        }
+        
+        
         vec3 target = transform->mFront + transform->mPosition;
         mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);
         
@@ -60,7 +101,7 @@ namespace OME {
     
     void Camera::draw(){
         glViewport(0, 0, mWidth, mHeight);
-        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
     }
     

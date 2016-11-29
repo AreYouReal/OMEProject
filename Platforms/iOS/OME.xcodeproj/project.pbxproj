@@ -561,6 +561,7 @@
 		F35275131DD4665100ED870D /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
 		F35275141DD4665100ED870D /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
 		F35275151DD4665100ED870D /* vector_relational.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector_relational.hpp; sourceTree = "<group>"; };
+		F3544CDC1DED3BDF00EB6E38 /* OMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMConstants.h; path = ../../CPP/Utils/OMConstants.h; sourceTree = "<group>"; };
 		F356AC9D1DC220E000DE529C /* OMETests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMETests.m; path = OMETests/OMETests.m; sourceTree = SOURCE_ROOT; };
 		F359E5191DD366B400C86972 /* PngTexture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PngTexture2D.cpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.cpp; sourceTree = "<group>"; };
 		F359E51A1DD366B400C86972 /* PngTexture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PngTexture2D.hpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.hpp; sourceTree = "<group>"; };
@@ -833,6 +834,7 @@
 				F314A1731DCCA4D4008657AE /* Utils.hpp */,
 				F3DB21AD1DE4825000804703 /* Time.cpp */,
 				F3DB21AE1DE4825000804703 /* Time.hpp */,
+				F3544CDC1DED3BDF00EB6E38 /* OMConstants.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";

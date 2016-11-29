@@ -8,6 +8,7 @@
 
 #include "glm.hpp"
 
+using vec2 = glm::vec2;
 using mat4 = glm::mat4;
 using vec3 = glm::vec3;
 
@@ -34,6 +35,9 @@ namespace OME {
         const mat4& getNormalMatrix() const;
 
         void setWindthAndHeight(const int, const int);
+
+        
+        void onTouch(const int, const int, const int);
         
     private:
         
@@ -49,6 +53,12 @@ namespace OME {
         
         
         Transform *transform;
+        
+        
+        // TOUCH RELATED
+        vec2 mPrevTouch{0.0f};
+        vec2 mDeltaTouch{0.0f};
+        float mTouchSensetivity = 10;
         
     };
 }

@@ -17,7 +17,18 @@ namespace OME {
     bool Loader3DS::init(){
         program.loadShaders( VERTEX_SHADER, FRAGMENT_SHADER );
     
-        string filename = Utils::extractPath(getenv("FILESYSTEM")) + "car.3DS";
+        string path;
+        string dsFileName = "car.3DS";
+        
+#ifdef __APPLE__
+        path = Utils::extractPath(getenv("FILESYSTEM"));
+#else
+#ifdef ANDROID
+        path = "/storage/emulated/0/Android/data/com.areyoureal.ome/files/";
+#endif
+#endif
+        
+        string filename = path + dsFileName;
         
         file = load3dsModel(filename);
         
@@ -110,7 +121,7 @@ namespace OME {
             // MESH NORMALS
         
         idx = 0;
-        faceIndex = new unsigned short(mesh->nfaces * 3);
+        faceIndex = new unsigned short[mesh->nfaces * 3];
         for(int i = 0; i < mesh->nfaces; ++i){
             faceIndex[idx++] = mesh->faces[i].index[0];
             faceIndex[idx++] = mesh->faces[i].index[1];
@@ -233,6 +244,9 @@ namespace OME {
             program.setUniform("projection", projMatrix);
             
             glBindVertexArray(userData->vao);
+            
+            
+            
             
             glDrawElements(GL_LINES, userData->indexNum, GL_UNSIGNED_SHORT, 0);
             

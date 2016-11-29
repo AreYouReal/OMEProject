@@ -125,10 +125,10 @@ int32_t handleInput(struct android_app* pApp, AInputEvent* event) {
                             if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 0);
                          break;
                          case AMOTION_EVENT_ACTION_UP:
-                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 1);
+                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 2);
                          break;
                          case AMOTION_EVENT_ACTION_MOVE:
-                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 2);
+                            if(context->onTouch) context->onTouch(AMotionEvent_getX(event, 0), AMotionEvent_getY(event, 0), 1);
                          break;
                     }
                 break;

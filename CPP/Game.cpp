@@ -57,6 +57,7 @@ namespace OME {
     }
     
     void Game::OnTouch(const int x, const int y, const int type){
+        Camera::instance()->onTouch(x, y, type);
         if(type == 0)
             Scene::instance()->OnTouch();
     }
