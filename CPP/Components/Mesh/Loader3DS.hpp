@@ -9,6 +9,7 @@
 
 #include "lib3ds.h"
 
+// TODO: NORMALS GENERATION DOESN'T WORK!!!
 
 struct lib3dsUserData{
     GLint vbo = 0, ibo = 0;

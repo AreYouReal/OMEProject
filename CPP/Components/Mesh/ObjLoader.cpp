@@ -15,7 +15,7 @@
 
 namespace OME {
     
-    string meshesNames[] = {"GUARD.obj", "Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
+    string meshesNames[] = {"Ninja.obj","GUARD.obj", "Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
     
     
     int stride;
@@ -48,14 +48,11 @@ namespace OME {
         program.setUniform("view",       viewMat);
         program.setUniform("projection", projMatrix);
         
-        
         glBindVertexArray(vao);
         
         glDrawArrays(GL_TRIANGLES, 0, indexCount);
         
         glBindVertexArray(0);
-        
-        
     }
     
     void ObjLoader::switchModel(){
@@ -99,9 +96,4 @@ namespace OME {
         
         objMeshModel->vertices.clear();
     }
-    
-    
-    
-    
-    
 }

@@ -115,6 +115,8 @@ namespace OME {
         }
 
         
+        
+        // TODO: NORMALS GENERATION DOESN'T WORK!!!
         meshNormal = new float[mesh->nvertices * 3];
             // MESH NORMALS
         
@@ -135,9 +137,6 @@ namespace OME {
         sizeFaceIndex = sizeof(unsigned short) * faceIndexNum;
         sizeMeshNormal = sizeof(float) * mesh->nfaces * 3;
         indexNumber = faceIndexNum;
-        
-        
-
         
         // Create and Bind the VBO. Fill the VBO with Vertex position, texture, normal information.
         glGenBuffers( 1, (GLuint *)&vId );
