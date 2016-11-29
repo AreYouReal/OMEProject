@@ -75,6 +75,11 @@ void ShaderProgram::setUniform(string name, mat4 mat){
     int uniformLoc = getUniformLocation(name);
     glUniformMatrix4fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(mat));
 }
+    
+void ShaderProgram::setUniform(string name, vec4 v4){
+    int uniformLoc = getUniformLocation(name);
+    glUniform4fv(uniformLoc, 1, glm::value_ptr(v4));
+}
 
 #pragma mark Helpers
 void ShaderProgram::checkCompileErrors(GLuint object, bool program){

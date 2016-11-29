@@ -31,9 +31,7 @@ namespace OME {
         string filename = path + dsFileName;
         
         file = load3dsModel(filename);
-        
 
-        
         return true;
     }
     
@@ -171,10 +169,7 @@ namespace OME {
         userData->ibo	  = iId;
         userData->vao		  = VAOid;
         userData->textureId    = 0;
-        
-        
-        
-        
+
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
@@ -243,9 +238,20 @@ namespace OME {
             program.setUniform("view",       viewMat);
             program.setUniform("projection", projMatrix);
             
+            
+            Lib3dsMaterial *material = nullptr;
+            if(mesh->nfaces){
+                material = file->materials[mesh->faces[0].material];
+                
+                vec4 Ka(material->ambient[0], material->ambient[1], material->ambient[2], 1.0f);
+//                vec4 Ka(material->diffuse[0], material->diffuse[1], material->diffuse[2], 1.0f);
+//                vec4 Ka(material->specular[0], material->specular[1], material->specular[2], 1.0f);
+                program.setUniform("Ka", Ka);
+                
+            }
+            
+            
             glBindVertexArray(userData->vao);
-            
-            
             
             
             glDrawElements(GL_LINES, userData->indexNum, GL_UNSIGNED_SHORT, 0);

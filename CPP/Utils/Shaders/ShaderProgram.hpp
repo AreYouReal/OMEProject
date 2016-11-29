@@ -5,6 +5,7 @@
 #include "glm.hpp"
 
 using vec3 = glm::vec3;
+using vec4 = glm::vec4;
 using mat4 = glm::mat4;
 
 namespace OME {
@@ -20,7 +21,7 @@ namespace OME {
         // Set uniforms goes here...
         
         void setUniform(string name, mat4 mat);
-        
+        void setUniform(string name, vec4 v4);
         
         static const int VERTEX_ATTRIB_LOCATION;
         static const int NORMAL_ATTRIB_LOCATION;
