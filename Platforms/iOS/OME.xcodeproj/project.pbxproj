@@ -215,6 +215,7 @@
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
+		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -619,6 +620,8 @@
 		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.frag; path = ../Android/assets/shaders/basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
 		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
+		F3F79D4C1DEDC4650002CA39 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		F3F79D4D1DEDC4650002CA39 /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -857,6 +860,7 @@
 		F35273FD1DD45BF200ED870D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F3F79D4B1DEDC4520002CA39 /* Light */,
 				F34C139A1DE6D870009AE936 /* SingletonComponent.hpp */,
 				F3462B351DDDBA4500167FEA /* Camera */,
 				F35C99BC1DD5819400451CB3 /* Primitives */,
@@ -1305,6 +1309,15 @@
 			path = ../Android/assets/shaders;
 			sourceTree = SOURCE_ROOT;
 		};
+		F3F79D4B1DEDC4520002CA39 /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				F3F79D4C1DEDC4650002CA39 /* Light.cpp */,
+				F3F79D4D1DEDC4650002CA39 /* Light.hpp */,
+			);
+			path = Light;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1560,6 +1573,7 @@
 				F31570AF1DEBF02700068D22 /* lib3ds_quat.c in Sources */,
 				F36F6D461DC1F9790089F6C4 /* ViewController.mm in Sources */,
 				F35275171DD4665100ED870D /* dummy.cpp in Sources */,
+				F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */,
 				F31570B11DEBF02700068D22 /* lib3ds_track.c in Sources */,
 				F31570AA1DEBF02700068D22 /* lib3ds_material.c in Sources */,
 				F36F6D441DC1F9790089F6C4 /* FileWrapper.mm in Sources */,
