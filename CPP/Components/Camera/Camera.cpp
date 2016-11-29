@@ -54,8 +54,6 @@ namespace OME {
                 mDeltaTouch.y = (y - mPrevTouch.y) * mTouchSensetivity;
                 mPrevTouch.x = x;
                 mPrevTouch.y = y;
-                
-                Utils::LOG("Delta: [%f, %f]", mDeltaTouch.x, mDeltaTouch.y);
                 break;
             case TOUCH_EVENT::UP :
                 mPrevTouch = mDeltaTouch = vec2(0.0f);
