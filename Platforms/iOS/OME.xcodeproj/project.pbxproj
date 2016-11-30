@@ -210,12 +210,13 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
-		F39F50FE1DE73A0E00CD3A67 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
 		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
+		F3FC91FD1DEEFFDA00E3DE96 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */; };
+		F3FC92001DEF00DC00E3DE96 /* Illuminator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FE1DEF00DC00E3DE96 /* Illuminator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -611,8 +612,6 @@
 		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
-		F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Scene.cpp; path = ../../CPP/Scene.cpp; sourceTree = "<group>"; };
-		F39F50FD1DE73A0E00CD3A67 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Scene.hpp; path = ../../CPP/Scene.hpp; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
@@ -622,6 +621,10 @@
 		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
 		F3F79D4C1DEDC4650002CA39 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		F3F79D4D1DEDC4650002CA39 /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
+		F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		F3FC91FC1DEEFFDA00E3DE96 /* Scene.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
+		F3FC91FE1DEF00DC00E3DE96 /* Illuminator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Illuminator.cpp; sourceTree = "<group>"; };
+		F3FC91FF1DEF00DC00E3DE96 /* Illuminator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Illuminator.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -754,14 +757,13 @@
 		F311599F1DC3640F0012690A /* CPP */ = {
 			isa = PBXGroup;
 			children = (
+				F3FC91FA1DEEFFDA00E3DE96 /* Scene */,
 				F3462B2F1DDDB8CA00167FEA /* Utils */,
 				F35274081DD4663600ED870D /* 3dPart */,
 				F35273FD1DD45BF200ED870D /* Components */,
 				F30ECA311DCDE16A005F53B6 /* GameObject */,
 				F36F7E381DCCA90E00A335A4 /* Game.cpp */,
 				F36F7E391DCCA90E00A335A4 /* Game.hpp */,
-				F39F50FC1DE73A0E00CD3A67 /* Scene.cpp */,
-				F39F50FD1DE73A0E00CD3A67 /* Scene.hpp */,
 			);
 			name = CPP;
 			sourceTree = SOURCE_ROOT;
@@ -1318,6 +1320,18 @@
 			path = Light;
 			sourceTree = "<group>";
 		};
+		F3FC91FA1DEEFFDA00E3DE96 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */,
+				F3FC91FC1DEEFFDA00E3DE96 /* Scene.hpp */,
+				F3FC91FE1DEF00DC00E3DE96 /* Illuminator.cpp */,
+				F3FC91FF1DEF00DC00E3DE96 /* Illuminator.hpp */,
+			);
+			name = Scene;
+			path = ../../CPP/Scene;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1568,6 +1582,7 @@
 				F359E5461DD3685D00C86972 /* pngwrite.c in Sources */,
 				F31570B71DEBF41B00068D22 /* Loader3DS.cpp in Sources */,
 				F31570B31DEBF02700068D22 /* lib3ds_vector.c in Sources */,
+				F3FC91FD1DEEFFDA00E3DE96 /* Scene.cpp in Sources */,
 				F31570A41DEBF02700068D22 /* lib3ds_camera.c in Sources */,
 				F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */,
 				F31570AF1DEBF02700068D22 /* lib3ds_quat.c in Sources */,
@@ -1590,13 +1605,13 @@
 				F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */,
 				F35274071DD465C100ED870D /* Transform.cpp in Sources */,
 				F31570A31DEBF02700068D22 /* lib3ds_background.c in Sources */,
+				F3FC92001DEF00DC00E3DE96 /* Illuminator.cpp in Sources */,
 				F31570B01DEBF02700068D22 /* lib3ds_shadow.c in Sources */,
 				F34C13951DE6C204009AE936 /* Grid.cpp in Sources */,
 				F359E53F1DD3685D00C86972 /* pngrio.c in Sources */,
 				F359E5451DD3685D00C86972 /* pngwio.c in Sources */,
 				F35275281DD4665100ED870D /* glm.cpp in Sources */,
 				F314A1741DCCA4D4008657AE /* Utils.cpp in Sources */,
-				F39F50FE1DE73A0E00CD3A67 /* Scene.cpp in Sources */,
 				F379BCB11DCF873E005C121E /* Cache.cpp in Sources */,
 				F359E53E1DD3685D00C86972 /* pngread.c in Sources */,
 				F359E5471DD3685D00C86972 /* pngwtran.c in Sources */,

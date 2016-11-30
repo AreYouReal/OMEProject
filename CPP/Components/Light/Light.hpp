@@ -22,6 +22,7 @@ namespace OME {
         
         virtual bool init() override;
         virtual void update() override;
+        virtual void destroy() override;
         
         LightType lightType();
         

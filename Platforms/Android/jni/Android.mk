@@ -59,6 +59,7 @@ $(SRC_PATH)/CPP/3dPart/zlib/uncompr.c\
 $(SRC_PATH)/CPP/3dPart/zlib/unzip.c\
 $(SRC_PATH)/CPP/3dPart/zlib/zutil.c\
 $(SRC_PATH)/CPP/Components/Camera/Camera.cpp\
+$(SRC_PATH)/CPP/Components/Light/Light.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/Loader3DS.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/MeshRenderer.cpp\
 $(SRC_PATH)/CPP/Components/Mesh/ObjLoader.cpp\
@@ -68,7 +69,8 @@ $(SRC_PATH)/CPP/Components/Primitives/Primitives.cpp\
 $(SRC_PATH)/CPP/Components/Transform/Transform.cpp\
 $(SRC_PATH)/CPP/Game.cpp\
 $(SRC_PATH)/CPP/GameObject/GameObject.cpp\
-$(SRC_PATH)/CPP/Scene.cpp\
+$(SRC_PATH)/CPP/Scene/Illuminator.cpp\
+$(SRC_PATH)/CPP/Scene/Scene.cpp\
 $(SRC_PATH)/CPP/Utils/Files/Cache.cpp\
 $(SRC_PATH)/CPP/Utils/Meshes/WFObj.cpp\
 $(SRC_PATH)/CPP/Utils/Shaders/ShaderProgram.cpp\
@@ -90,11 +92,13 @@ $(SRC_PATH)/CPP/3dPart/libpng\
 $(SRC_PATH)/CPP/3dPart/zlib\
 $(SRC_PATH)/CPP/Components/Camera\
 $(SRC_PATH)/CPP/Components\
+$(SRC_PATH)/CPP/Components/Light\
 $(SRC_PATH)/CPP/Components/Mesh\
 $(SRC_PATH)/CPP/Components/Primitives\
 $(SRC_PATH)/CPP/Components/Transform\
 $(SRC_PATH)/CPP\
 $(SRC_PATH)/CPP/GameObject\
+$(SRC_PATH)/CPP/Scene\
 $(SRC_PATH)/CPP/Utils/Files\
 $(SRC_PATH)/CPP/Utils/Meshes\
 $(SRC_PATH)/CPP/Utils\

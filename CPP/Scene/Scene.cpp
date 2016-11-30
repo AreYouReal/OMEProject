@@ -6,6 +6,8 @@
 #include "ObjLoader.hpp"
 #include "Loader3DS.hpp"
 
+#include "Light.hpp"
+
 #include "Camera.hpp"
 
 
@@ -35,6 +37,10 @@ namespace OME {
         
 //        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
 //        ds->init();
+        
+        Light *light = (Light*)go->addComponent(up<Light>(new Light()));
+        light->init();
+        
         
         addObject(std::move(go));
         return true;
