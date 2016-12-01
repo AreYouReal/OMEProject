@@ -50,6 +50,7 @@ namespace OME {
         
         mat4 mViewMatrix;
         mat4 mProjectinoMatrix;
+        mat4 mNormalMatrix;
         
         
         Transform *transform;

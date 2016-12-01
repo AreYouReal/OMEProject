@@ -37,6 +37,10 @@ namespace OME {
         return mProjectinoMatrix;
     }
     
+    const mat4& Camera::getNormalMatrix() const{
+        return mNormalMatrix;
+    }
+    
     void Camera::setWindthAndHeight(const int width, const int height){
         mWidth = width;
         mHeight = height;
@@ -90,10 +94,9 @@ namespace OME {
             transform->mPosition += (transform->mFront * mDeltaTouch.y);
         }
         
-        
         vec3 target = transform->mFront + transform->mPosition;
         mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);
-        
+        mNormalMatrix = glm::transpose(glm::inverse(mViewMatrix));
         mProjectinoMatrix = glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
     }
     

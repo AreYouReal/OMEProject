@@ -11,6 +11,9 @@ namespace OME {
         void addLight(Light* lightComp);
         void removeLight(Light* lightComp);
         
+        Light* getLight(int pos = 0);
+        
+        
     private:
         
         std::vector<Light*> mLights;

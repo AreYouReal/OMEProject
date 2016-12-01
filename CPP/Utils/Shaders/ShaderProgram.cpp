@@ -18,12 +18,12 @@ bool ShaderProgram::loadShaders( string vertFileName, string fragFilename ){
     up<Cache> vertContent = OME::Utils::loadFile(vertFileName, true);
     up<Cache> fragContent = OME::Utils::loadFile(fragFilename, true);
 
-    OME::Utils::LOG("Vertex shader content: %s\n", vertContent->content);
-    OME::Utils::LOG("Vertex shader size: %d\n", vertContent->size);
-    
-    
-    OME::Utils::LOG("Fragment shader content: %s\n", fragContent->content);
-    OME::Utils::LOG("Fragment shader size: %d\n", fragContent->size);
+//    OME::Utils::LOG("Vertex shader content: %s\n", vertContent->content);
+//    OME::Utils::LOG("Vertex shader size: %d\n", vertContent->size);
+//    
+//    
+//    OME::Utils::LOG("Fragment shader content: %s\n", fragContent->content);
+//    OME::Utils::LOG("Fragment shader size: %d\n", fragContent->size);
     
     if(!vertContent || !fragContent){
         return false;
@@ -69,16 +69,25 @@ void ShaderProgram::use(){
         glUseProgram(id);
     }
 }
-
     
 void ShaderProgram::setUniform(string name, mat4 mat){
     int uniformLoc = getUniformLocation(name);
     glUniformMatrix4fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(mat));
 }
     
+void ShaderProgram::setUniform(string name, vec3 v3){
+    int uniformLoc = getUniformLocation(name);
+    glUniform3fv(uniformLoc, 1, glm::value_ptr(v3));
+}
+    
 void ShaderProgram::setUniform(string name, vec4 v4){
     int uniformLoc = getUniformLocation(name);
     glUniform4fv(uniformLoc, 1, glm::value_ptr(v4));
+}
+    
+void ShaderProgram::setUniform(string name, float val){
+    int uniformLoc = getUniformLocation(name);
+    glUniform1f(uniformLoc, val);
 }
 
 #pragma mark Helpers

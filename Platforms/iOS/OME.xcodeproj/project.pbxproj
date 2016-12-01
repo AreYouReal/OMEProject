@@ -214,6 +214,8 @@
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
+		F3EF4DEF1DF064DC0062BCE0 /* gouraud.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */; };
+		F3EF4DF01DF064DC0062BCE0 /* gouraud.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */; };
 		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
 		F3FC91FD1DEEFFDA00E3DE96 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */; };
 		F3FC92001DEF00DC00E3DE96 /* Illuminator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FE1DEF00DC00E3DE96 /* Illuminator.cpp */; };
@@ -619,6 +621,8 @@
 		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.frag; path = ../Android/assets/shaders/basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
 		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
+		F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.frag; sourceTree = "<group>"; };
+		F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.vert; sourceTree = "<group>"; };
 		F3F79D4C1DEDC4650002CA39 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		F3F79D4D1DEDC4650002CA39 /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 		F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
@@ -1296,6 +1300,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */,
+				F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */,
 				F31570B81DEC092700068D22 /* 3ds.frag */,
 				F31570B91DEC092700068D22 /* 3ds.vert */,
 				F31B19A81DE97E4100B1C174 /* wiredObj.frag */,
@@ -1516,6 +1522,7 @@
 				F35275661DD4665100ED870D /* io.inl in Resources */,
 				F35275551DD4665100ED870D /* color_space_YCoCg.inl in Resources */,
 				F352752F1DD4665100ED870D /* type_mat3x2.inl in Resources */,
+				F3EF4DF01DF064DC0062BCE0 /* gouraud.vert in Resources */,
 				F31570BE1DEC1DB300068D22 /* car.3DS in Resources */,
 				F35275861DD4665100ED870D /* type_aligned.inl in Resources */,
 				F35275291DD4665100ED870D /* type_gentype.inl in Resources */,
@@ -1532,6 +1539,7 @@
 				F3544CE21DEDA01A00EB6E38 /* Ninja.obj in Resources */,
 				F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */,
 				F352753E1DD4665100ED870D /* color_space.inl in Resources */,
+				F3EF4DEF1DF064DC0062BCE0 /* gouraud.frag in Resources */,
 				F35275191DD4665100ED870D /* func_common_simd.inl in Resources */,
 				F31B19AA1DE97E4100B1C174 /* wiredObj.frag in Resources */,
 				F35275201DD4665100ED870D /* func_matrix.inl in Resources */,

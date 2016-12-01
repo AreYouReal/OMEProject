@@ -21,6 +21,13 @@ namespace OME {
         }
     
     }
+
     
+    Light* Illuminator::getLight(int pos){
+        if(pos < 0 || pos >= mLights.size())
+            return nullptr;
+        
+        return mLights[pos];
+    }
     
 }

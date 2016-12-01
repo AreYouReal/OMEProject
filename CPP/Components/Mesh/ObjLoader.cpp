@@ -2,11 +2,11 @@
 
 
 #ifdef __APPLE__
-#define VERTEX_SHADER "wiredObj.vert"
-#define FRAGMENT_SHADER "wiredObj.frag"
+#define VERTEX_SHADER "gouraud.vert"
+#define FRAGMENT_SHADER "gouraud.frag"
 #else
-#define VERTEX_SHADER "shaders/wiredObj.vert"
-#define FRAGMENT_SHADER "shaders/wiredObj.frag"
+#define VERTEX_SHADER "shaders/gouraud.vert"
+#define FRAGMENT_SHADER "shaders/gouraud.frag"
 #endif
 
 
@@ -43,10 +43,33 @@ namespace OME {
         glm::mat4 modelMatrix   = go->transform()->getMatrix();
         glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
         glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
+        glm::mat4 normalMatrix  = Camera::instance()->getNormalMatrix();
         
-        program.setUniform("model",      modelMatrix);
-        program.setUniform("view",       viewMat);
-        program.setUniform("projection", projMatrix);
+        
+        program.setUniform("transform.model",      modelMatrix);
+        program.setUniform("transform.view",       viewMat);
+        program.setUniform("transform.projection", projMatrix);
+        program.setUniform("transform.normal",     normalMatrix);
+        
+        glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
+        glm::vec3 matDiffuse(0.5f, 0.3f, 0.7f);
+        glm::vec3 matSpecular(1.0f, 1.0f, 0.0f);
+        float shininess = 40;
+        
+        program.setUniform("material.ambient", matAmbient);
+        program.setUniform("material.diffuse", matDiffuse);
+        program.setUniform("material.specular", matSpecular);
+        program.setUniform("material.shininess", shininess);
+        
+        glm::vec3 lightPos(0.0f, 10.0f, 10.0f);
+        glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
+        glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
+        glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
+        
+        program.setUniform("light.position", lightPos);
+        program.setUniform("light.ambient", lightAmbient);
+        program.setUniform("light.diffuse", lightDiffuse);
+        program.setUniform("light.specular", lightSpecular);
         
         glBindVertexArray(vao);
         

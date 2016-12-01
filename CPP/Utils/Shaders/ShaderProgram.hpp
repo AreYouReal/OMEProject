@@ -21,7 +21,9 @@ namespace OME {
         // Set uniforms goes here...
         
         void setUniform(string name, mat4 mat);
+        void setUniform(string name, vec3 v3);
         void setUniform(string name, vec4 v4);
+        void setUniform(string name, float val);
         
         static const int VERTEX_ATTRIB_LOCATION;
         static const int NORMAL_ATTRIB_LOCATION;
