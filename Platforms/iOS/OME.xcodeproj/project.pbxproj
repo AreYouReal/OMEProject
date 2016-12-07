@@ -210,6 +210,8 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
+		F3935AA71DF8051B00167E9C /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3935AA51DF8051B00167E9C /* phong.frag */; };
+		F3935AA81DF8051B00167E9C /* phong.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3935AA61DF8051B00167E9C /* phong.vert */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
 		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
@@ -614,6 +616,8 @@
 		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
+		F3935AA51DF8051B00167E9C /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
+		F3935AA61DF8051B00167E9C /* phong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.vert; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
@@ -1300,6 +1304,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F3935AA51DF8051B00167E9C /* phong.frag */,
+				F3935AA61DF8051B00167E9C /* phong.vert */,
 				F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */,
 				F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */,
 				F31570B81DEC092700068D22 /* 3ds.frag */,
@@ -1517,6 +1523,7 @@
 				F352751E1DD4665100ED870D /* func_integer.inl in Resources */,
 				F35275391DD4665100ED870D /* type_vec3.inl in Resources */,
 				F35275301DD4665100ED870D /* type_mat3x3.inl in Resources */,
+				F3935AA81DF8051B00167E9C /* phong.vert in Resources */,
 				F35275471DD4665100ED870D /* packing.inl in Resources */,
 				F35275801DD4665100ED870D /* simd_vec4.inl in Resources */,
 				F35275661DD4665100ED870D /* io.inl in Resources */,
@@ -1549,6 +1556,7 @@
 				F35275671DD4665100ED870D /* log_base.inl in Resources */,
 				F352758A1DD4665100ED870D /* wrap.inl in Resources */,
 				F35275381DD4665100ED870D /* type_vec2.inl in Resources */,
+				F3935AA71DF8051B00167E9C /* phong.frag in Resources */,
 				F352753B1DD4665100ED870D /* type_vec4_simd.inl in Resources */,
 				F35275221DD4665100ED870D /* func_packing.inl in Resources */,
 				F35275721DD4665100ED870D /* normalize_dot.inl in Resources */,

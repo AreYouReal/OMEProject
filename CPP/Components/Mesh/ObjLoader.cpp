@@ -2,11 +2,15 @@
 
 
 #ifdef __APPLE__
-#define VERTEX_SHADER "gouraud.vert"
-#define FRAGMENT_SHADER "gouraud.frag"
+#define G_VERTEX_SHADER "gouraud.vert"
+#define G_FRAGMENT_SHADER "gouraud.frag"
+#define P_VERTEX_SHADER "phong.vert"
+#define P_FRAGMENT_SHADER "phong.frag"
 #else
-#define VERTEX_SHADER "shaders/gouraud.vert"
-#define FRAGMENT_SHADER "shaders/gouraud.frag"
+#define G_VERTEX_SHADER "shaders/gouraud.vert"
+#define G_FRAGMENT_SHADER "shaders/gouraud.frag"
+#define P_VERTEX_SHADER "shaders/phong.vert"
+#define P_FRAGMENT_SHADER "shaders/phong.frag"
 #endif
 
 
@@ -30,7 +34,9 @@ namespace OME {
     
     
     bool ObjLoader::init(){
-        program.loadShaders(VERTEX_SHADER, FRAGMENT_SHADER);
+        gouraud.loadShaders(G_VERTEX_SHADER, G_FRAGMENT_SHADER);
+        phong.loadShaders(P_VERTEX_SHADER, P_FRAGMENT_SHADER);
+        program = gouraud;
         
         loadMesh();
         
@@ -53,7 +59,7 @@ namespace OME {
         
         glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
         glm::vec3 matDiffuse(0.5f, 0.3f, 0.7f);
-        glm::vec3 matSpecular(1.0f, 1.0f, 0.0f);
+        glm::vec3 matSpecular(1.0f, 1.0f, 1.0f);
         float shininess = 40;
         
         program.setUniform("material.ambient", matAmbient);
@@ -80,9 +86,19 @@ namespace OME {
     }
     
     void ObjLoader::switchModel(){
-        ++modelNum;
-        modelNum = modelNum % 5;
-        loadMesh();
+
+        static bool perVertex = false;
+        perVertex = !perVertex;
+        if(perVertex){
+            program = gouraud;
+        }else{
+            program = phong;
+        }
+        
+        
+//        ++modelNum;
+//        modelNum = modelNum % 5;
+//        loadMesh();
     }
     
     

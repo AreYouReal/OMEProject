@@ -65,8 +65,8 @@ namespace OME {
     }
     
     void Scene::OnTouch(){
-//        if(obj)
-//            obj->switchModel();
+        if(obj)
+            obj->switchModel();
     }
     
     void Scene::addObject(up<GameObject> go){

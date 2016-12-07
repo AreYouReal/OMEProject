@@ -30,6 +30,9 @@ namespace OME {
         
     private:
         
+        ShaderProgram gouraud;
+        ShaderProgram phong;
+        
         ShaderProgram program;
         
         int modelNum = 0;
