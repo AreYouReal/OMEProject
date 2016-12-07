@@ -38,17 +38,17 @@ out vec4 finalColor;
 vec3 gouraud(){
     vec3 normal = normalize(vec3(transform.normal * vec4(aNormal, 0.0)));
     vec3 eye = vec3( transform.model * transform.view * vec4(aPosition, 1.0));
-    vec3 light = normalize(light.position - eye);
+    vec3 lightDir = normalize(light.position - eye);
     
-    float cosAngle = max(0.0, dot(normal, light));
+    float cosAngle = max(0.0, dot(normal, lightDir));
     
     vec3 V = normalize(-eye);
-    vec3 R = reflect(-light, normal);
+    vec3 R = reflect(-lightDir, normal);
     float intensity = pow( max(0.0, dot(V, R)), material.shininess);
 
-    vec3 ambient = material.ambient; // * light.ambient
-    vec3 diffuse = cosAngle * material.diffuse; // * light.diffuse
-    vec3 specular = intensity * material.specular; // * light.specular
+    vec3 ambient = material.ambient * light.ambient;
+    vec3 diffuse = cosAngle * material.diffuse * light.diffuse;
+    vec3 specular = intensity * material.specular * light.specular;
     
     return ambient + diffuse + specular;
 }

@@ -60,6 +60,7 @@ namespace OME {
         program.setUniform("material.diffuse", matDiffuse);
         program.setUniform("material.specular", matSpecular);
         program.setUniform("material.shininess", shininess);
+
         
         glm::vec3 lightPos(0.0f, 10.0f, 10.0f);
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
