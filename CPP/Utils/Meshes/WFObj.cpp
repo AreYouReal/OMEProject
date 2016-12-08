@@ -34,7 +34,11 @@ namespace OME {
             if(!flatShading){
                 for(int i = 0; i < objMeshModel.faces.size(); ++i){
                     int index = objMeshModel.faces[i].vertexIndex;
-                    objMeshModel.vertices[i].normal = glm::normalize(objMeshModel.normals[index]);
+                    objMeshModel.vertices[i].normal = objMeshModel.normals[index];
+                }
+                
+                for(int i = 0; i < objMeshModel.vertices.size(); ++i){
+                    objMeshModel.vertices[i].normal = glm::normalize(objMeshModel.vertices[i].normal);
                 }
             }
             return true;
@@ -132,13 +136,13 @@ namespace OME {
         for(unsigned int i = 0; i < objMeshModel.positions.size(); ++i){
             objMeshModel.tangents[i] = vec4(glm::normalize(tan1Accum[i]), 1.0);
             // It is advise to store the BiTangents into an array also instead of calclating at fly time in vertex shader.
-            Utils::LOG("\nT: %f, %f, %f", objMeshModel.tangents[i].x, objMeshModel.tangents[i].y, objMeshModel.tangents[i].z);
+//            Utils::LOG("\nT: %f, %f, %f", objMeshModel.tangents[i].x, objMeshModel.tangents[i].y, objMeshModel.tangents[i].z);
         }
         
         for(int i = 0; i < objMeshModel.faces.size(); ++i){
             int index = objMeshModel.faces[i].vertexIndex;
             objMeshModel.vertices[i].tangent = objMeshModel.tangents[index];
-            Utils::LOG("\nP: %f, %f, %f", objMeshModel.vertices[i].tangent.x, objMeshModel.vertices[i].tangent.y, objMeshModel.vertices[i].tangent.z);
+//            Utils::LOG("\nP: %f, %f, %f", objMeshModel.vertices[i].tangent.x, objMeshModel.vertices[i].tangent.y, objMeshModel.vertices[i].tangent.z);
         }
         
         tan1Accum.clear();

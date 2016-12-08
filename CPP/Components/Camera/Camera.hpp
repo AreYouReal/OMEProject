@@ -10,6 +10,7 @@
 
 using vec2 = glm::vec2;
 using mat4 = glm::mat4;
+using mat3 = glm::mat3;
 using vec3 = glm::vec3;
 
 namespace OME {
@@ -32,7 +33,7 @@ namespace OME {
         
         const mat4& getViewMatrix() const;
         const mat4& getProjectionMatrix() const;
-        const mat4& getNormalMatrix() const;
+        const mat3& getNormalMatrix() const;
 
         void setWindthAndHeight(const int, const int);
 
@@ -50,7 +51,7 @@ namespace OME {
         
         mat4 mViewMatrix;
         mat4 mProjectinoMatrix;
-        mat4 mNormalMatrix;
+        mat3 mNormalMatrix;
         
         
         Transform *transform;

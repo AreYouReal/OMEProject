@@ -7,6 +7,7 @@
 using vec3 = glm::vec3;
 using vec4 = glm::vec4;
 using mat4 = glm::mat4;
+using mat3 = glm::mat3;
 
 namespace OME {
     class ShaderProgram{
@@ -21,6 +22,7 @@ namespace OME {
         // Set uniforms goes here...
         
         void setUniform(string name, mat4 mat);
+        void setUniform(string name, mat3 mat);
         void setUniform(string name, vec3 v3);
         void setUniform(string name, vec4 v4);
         void setUniform(string name, float val);

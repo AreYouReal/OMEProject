@@ -75,6 +75,11 @@ void ShaderProgram::setUniform(string name, mat4 mat){
     glUniformMatrix4fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(mat));
 }
     
+void ShaderProgram::setUniform(string name, mat3 mat){
+    int uniformLoc = getUniformLocation(name);
+    glUniformMatrix3fv(uniformLoc, 1, GL_FALSE, glm::value_ptr(mat));
+}
+    
 void ShaderProgram::setUniform(string name, vec3 v3){
     int uniformLoc = getUniformLocation(name);
     glUniform3fv(uniformLoc, 1, glm::value_ptr(v3));

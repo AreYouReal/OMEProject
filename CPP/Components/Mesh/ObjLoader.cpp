@@ -19,7 +19,7 @@
 
 namespace OME {
     
-    string meshesNames[] = {"Ninja.obj","GUARD.obj", "Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
+    string meshesNames[] = {"Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
     
     
     int stride;
@@ -49,7 +49,7 @@ namespace OME {
         glm::mat4 modelMatrix   = go->transform()->getMatrix();
         glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
         glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
-        glm::mat4 normalMatrix  = Camera::instance()->getNormalMatrix();
+        glm::mat3 normalMatrix  = Camera::instance()->getNormalMatrix();
         
         
         program.setUniform("transform.model",      modelMatrix);
@@ -57,9 +57,9 @@ namespace OME {
         program.setUniform("transform.projection", projMatrix);
         program.setUniform("transform.normal",     normalMatrix);
         
-        glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
+        glm::vec3 matAmbient(0.3f, 0.3f, 0.3f);
         glm::vec3 matDiffuse(0.5f, 0.5f, 0.5f);
-        glm::vec3 matSpecular(1.0f, 1.0f, 1.0f);
+        glm::vec3 matSpecular(1.0f, 0.0f, 0.0f);
         float shininess = 40;
         
         program.setUniform("material.ambient", matAmbient);
@@ -90,18 +90,18 @@ namespace OME {
     
     void ObjLoader::switchModel(){
 
-        static bool perVertex = false;
-        perVertex = !perVertex;
-        if(perVertex){
-            program = gouraud;
-        }else{
-            program = phong;
-        }
+//        static bool perVertex = false;
+//        perVertex = !perVertex;
+//        if(perVertex){
+//            program = gouraud;
+//        }else{
+//            program = phong;
+//        }
         
         
-//        ++modelNum;
-//        modelNum = modelNum % 5;
-//        loadMesh();
+        ++modelNum;
+        modelNum = modelNum % 5;
+        loadMesh();
     }
     
     
