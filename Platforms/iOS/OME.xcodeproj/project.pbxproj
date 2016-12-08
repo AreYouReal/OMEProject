@@ -183,6 +183,7 @@
 		F352758A1DD4665100ED870D /* wrap.inl in Resources */ = {isa = PBXBuildFile; fileRef = F35274FA1DD4665100ED870D /* wrap.inl */; };
 		F3544CE01DED9CA000EB6E38 /* GUARD.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CDF1DED9CA000EB6E38 /* GUARD.obj */; };
 		F3544CE21DEDA01A00EB6E38 /* Ninja.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CE11DEDA01A00EB6E38 /* Ninja.obj */; };
+		F355617F1DF983AA00292D37 /* SemiHollowCylinder.obj in Resources */ = {isa = PBXBuildFile; fileRef = F355617E1DF983AA00292D37 /* SemiHollowCylinder.obj */; };
 		F356AC9F1DC2218000DE529C /* OMETests.m in Sources */ = {isa = PBXBuildFile; fileRef = F356AC9D1DC220E000DE529C /* OMETests.m */; };
 		F359E51B1DD366B400C86972 /* PngTexture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F359E5191DD366B400C86972 /* PngTexture2D.cpp */; };
 		F359E5391DD3685D00C86972 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = F359E51F1DD3685D00C86972 /* png.c */; };
@@ -572,6 +573,7 @@
 		F3544CDC1DED3BDF00EB6E38 /* OMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMConstants.h; path = ../../CPP/Utils/OMConstants.h; sourceTree = "<group>"; };
 		F3544CDF1DED9CA000EB6E38 /* GUARD.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GUARD.obj; sourceTree = "<group>"; };
 		F3544CE11DEDA01A00EB6E38 /* Ninja.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ninja.obj; sourceTree = "<group>"; };
+		F355617E1DF983AA00292D37 /* SemiHollowCylinder.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SemiHollowCylinder.obj; sourceTree = "<group>"; };
 		F356AC9D1DC220E000DE529C /* OMETests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OMETests.m; path = OMETests/OMETests.m; sourceTree = SOURCE_ROOT; };
 		F359E5191DD366B400C86972 /* PngTexture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PngTexture2D.cpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.cpp; sourceTree = "<group>"; };
 		F359E51A1DD366B400C86972 /* PngTexture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = PngTexture2D.hpp; path = ../../../CPP/Utils/Texture2D/PngTexture2D.hpp; sourceTree = "<group>"; };
@@ -827,6 +829,7 @@
 		F31B199D1DE97C6200B1C174 /* ObjModels */ = {
 			isa = PBXGroup;
 			children = (
+				F355617E1DF983AA00292D37 /* SemiHollowCylinder.obj */,
 				F3544CE11DEDA01A00EB6E38 /* Ninja.obj */,
 				F3544CDF1DED9CA000EB6E38 /* GUARD.obj */,
 				F31B19AC1DE981DE00B1C174 /* Cone.obj */,
@@ -1527,6 +1530,7 @@
 				F35275471DD4665100ED870D /* packing.inl in Resources */,
 				F35275801DD4665100ED870D /* simd_vec4.inl in Resources */,
 				F35275661DD4665100ED870D /* io.inl in Resources */,
+				F355617F1DF983AA00292D37 /* SemiHollowCylinder.obj in Resources */,
 				F35275551DD4665100ED870D /* color_space_YCoCg.inl in Resources */,
 				F352752F1DD4665100ED870D /* type_mat3x2.inl in Resources */,
 				F3EF4DF01DF064DC0062BCE0 /* gouraud.vert in Resources */,

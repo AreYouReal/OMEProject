@@ -51,7 +51,7 @@ vec3 gouraud(){
     vec3 diffuse = cosAngle * material.diffuse * light.diffuse;
     vec3 specular = intensity * material.specular * light.specular;
     
-    return normal;
+    return ambient + diffuse + specular;
 }
 
 void main() {

@@ -19,7 +19,7 @@
 
 namespace OME {
     
-    string meshesNames[] = {"Cone.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj"};
+    string meshesNames[] = {"SemiHollowCylinder.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj", "Cone.obj"};
     
     
     int stride;
@@ -36,7 +36,7 @@ namespace OME {
     bool ObjLoader::init(){
         gouraud.loadShaders(G_VERTEX_SHADER, G_FRAGMENT_SHADER);
         phong.loadShaders(P_VERTEX_SHADER, P_FRAGMENT_SHADER);
-        program = gouraud;
+        program = phong;
         
         loadMesh();
         
@@ -100,7 +100,7 @@ namespace OME {
         
         
         ++modelNum;
-        modelNum = modelNum % 5;
+        modelNum = modelNum % 6;
         loadMesh();
     }
     
@@ -133,8 +133,8 @@ namespace OME {
         glEnableVertexAttribArray(ShaderProgram::NORMAL_ATTRIB_LOCATION);
         glEnableVertexAttribArray(ShaderProgram::TEXCOORD_ATTRIB_LOCATION);
         glVertexAttribPointer(ShaderProgram::VERTEX_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, 0);
-        glVertexAttribPointer(ShaderProgram::NORMAL_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, offsetTexCoord);
-        glVertexAttribPointer(ShaderProgram::TEXCOORD_ATTRIB_LOCATION, 2, GL_FLOAT, GL_FALSE, stride, offset);
+        glVertexAttribPointer(ShaderProgram::NORMAL_ATTRIB_LOCATION, 3, GL_FLOAT, GL_FALSE, stride, offset);
+        glVertexAttribPointer(ShaderProgram::TEXCOORD_ATTRIB_LOCATION, 2, GL_FLOAT, GL_FALSE, stride, offsetTexCoord);
         glBindVertexArray(0);
         
         objMeshModel->vertices.clear();

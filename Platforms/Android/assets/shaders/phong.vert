@@ -6,7 +6,7 @@ struct uTransform{
     mat4 model;
     mat4 view;
     mat4 projection;
-    mat4 normal;
+    mat3 normal;
 };
 
 struct uMaterial{
@@ -35,7 +35,7 @@ out vec3 normalCoord;
 out vec3 eyeCoord;
 
 void main() {
-    normalCoord = vec3(transform.normal * vec4(aNormal, 0.0));
+    normalCoord = vec3(transform.normal * aNormal);
     eyeCoord = vec3(transform.view * transform.model * aPosition);
     gl_Position   = transform.projection * transform.view *  transform.model * aPosition;
 }
