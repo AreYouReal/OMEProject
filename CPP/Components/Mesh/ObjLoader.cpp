@@ -58,7 +58,7 @@ namespace OME {
         program.setUniform("transform.normal",     normalMatrix);
         
         glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
-        glm::vec3 matDiffuse(0.5f, 0.3f, 0.7f);
+        glm::vec3 matDiffuse(0.5f, 0.5f, 0.5f);
         glm::vec3 matSpecular(1.0f, 1.0f, 1.0f);
         float shininess = 40;
         
@@ -68,12 +68,15 @@ namespace OME {
         program.setUniform("material.shininess", shininess);
 
         
-        glm::vec3 lightPos(0.0f, 10.0f, 10.0f);
+        glm::vec4 lightPos(10.0f, 10.0f, 10.0f, 1.0f);
+        
+        glm::vec3 lightInViewPos = viewMat * lightPos;
+        
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
         glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
         glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
         
-        program.setUniform("light.position", lightPos);
+        program.setUniform("light.position", lightInViewPos);
         program.setUniform("light.ambient", lightAmbient);
         program.setUniform("light.diffuse", lightDiffuse);
         program.setUniform("light.specular", lightSpecular);

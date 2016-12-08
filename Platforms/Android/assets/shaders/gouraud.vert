@@ -38,6 +38,7 @@ out vec4 finalColor;
 vec3 gouraud(){
     vec3 normal = normalize(vec3(transform.normal * vec4(aNormal, 0.0)));
     vec3 eye = vec3( transform.model * transform.view * vec4(aPosition, 1.0));
+
     vec3 lightDir = normalize(light.position - eye);
     
     float cosAngle = max(0.0, dot(normal, lightDir));

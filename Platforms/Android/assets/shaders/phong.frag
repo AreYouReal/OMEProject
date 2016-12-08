@@ -6,6 +6,7 @@ struct uMaterial{
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
+    float shininess;
 };
 
 struct uLight{
@@ -13,7 +14,7 @@ struct uLight{
     vec3 ambient;
     vec3 diffuse;
     vec3 specular;
-    float shininess;
+
 };
 
 in vec3 normalCoord;
@@ -35,7 +36,7 @@ vec3 phongShading(){
     // Specular intensity
     vec3 V = -nEyeCoord;
     vec3 R = reflect(-nLightVec, nNorm);
-    float sIntensity = pow( max(0.0, dot(R, V)), light.shininess);
+    float sIntensity = pow( max(0.0, dot(R, V)), material.shininess);
     
     vec3 ambient = material.ambient * light.ambient;
     vec3 diffuse = cosAngle * material.diffuse * light.diffuse;
