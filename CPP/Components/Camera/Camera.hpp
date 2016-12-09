@@ -1,5 +1,7 @@
 #pragma once
 
+#include <stack>
+
 #include "IComponent.hpp"
 #include "SingletonComponent.hpp"
 
@@ -7,6 +9,8 @@
 
 
 #include "glm.hpp"
+
+
 
 using vec2 = glm::vec2;
 using mat4 = glm::mat4;
@@ -33,12 +37,15 @@ namespace OME {
         
         const mat4& getViewMatrix() const;
         const mat4& getProjectionMatrix() const;
-        const mat3& getNormalMatrix() const;
+        const mat3& getNormalMatrix();
 
         void setWindthAndHeight(const int, const int);
 
         
         void onTouch(const int, const int, const int);
+        
+        void pushMatrix(const mat4 modelMatrix);
+        void popMatrix();
         
     private:
         
@@ -53,6 +60,7 @@ namespace OME {
         mat4 mProjectinoMatrix;
         mat3 mNormalMatrix;
         
+        std::stack<mat4> mMStack;
         
         Transform *transform;
         

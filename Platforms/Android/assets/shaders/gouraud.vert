@@ -25,7 +25,7 @@ struct uLight{
 
 //   SHADER
 
-layout(location = 0) in vec3        aPosition;
+layout(location = 0) in vec4        aPosition;
 layout(location = 1) in vec3        aNormal;
 layout(location = 2) in vec2        aTexCoord;
 
@@ -37,7 +37,7 @@ out vec4 finalColor;
 
 vec3 gouraud(){
     vec3 normal = normalize(transform.normal * aNormal);
-    vec3 eye = vec3( transform.model * transform.view * vec4(aPosition, 1.0));
+    vec3 eye = vec3( transform.view * transform.model * aPosition);
 
     vec3 lightDir = normalize(light.position - eye);
     
@@ -58,6 +58,6 @@ void main() {
     
     finalColor = vec4(gouraud(), 1.0);
     
-    gl_Position   = transform.projection * transform.view *  transform.model * vec4(aPosition, 1.0);
+    gl_Position   = transform.projection * transform.view *  transform.model *aPosition;
     gl_PointSize = 5.0;
 }

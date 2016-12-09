@@ -25,6 +25,9 @@ namespace OME {
     bool Scene::init(){
         
         // TODO: Wrong direction! TEMP solution
+        GameObject *camGO = Camera::instance()->go;
+        camGO->transform()->mPosition -= vec3(0, 2, 1);
+        
         addObject(up<GameObject>( Camera::instance()->go ));
 
         up<GameObject> go = up<GameObject>(new GameObject());

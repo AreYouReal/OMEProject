@@ -1,5 +1,6 @@
 #include "ObjLoader.hpp"
 
+#include "Time.hpp"
 
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
@@ -44,13 +45,26 @@ namespace OME {
     }
     
     void ObjLoader::draw(){
+        static float rot = 0.0f;
+        rot += 1.0f * Time::deltaTime();
+        if(rot > 360.0f){
+            rot = 0.0f;
+        }
+        
+        
+        go->transform()->mRotation = vec3(0.0f, rot, 0.0f);
+        
+        Camera::instance()->pushMatrix(go->transform()->getMatrix());
+        
+
+        
+        
         program.use();
     
         glm::mat4 modelMatrix   = go->transform()->getMatrix();
         glm::mat4 viewMat       = Camera::instance()->getViewMatrix();
         glm::mat4 projMatrix    = Camera::instance()->getProjectionMatrix();
         glm::mat3 normalMatrix  = Camera::instance()->getNormalMatrix();
-        
         
         program.setUniform("transform.model",      modelMatrix);
         program.setUniform("transform.view",       viewMat);
@@ -86,6 +100,8 @@ namespace OME {
         glDrawArrays(GL_TRIANGLES, 0, indexCount);
         
         glBindVertexArray(0);
+        
+        Camera::instance()->popMatrix();
     }
     
     void ObjLoader::switchModel(){

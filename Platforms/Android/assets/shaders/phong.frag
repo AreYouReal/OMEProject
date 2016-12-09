@@ -29,7 +29,7 @@ vec3 phongShading(){
     vec3 nNorm = normalize(normalCoord);
     vec3 nEyeCoord = normalize(eyeCoord);
     vec3 nLightVec = normalize( light.position - eyeCoord);
-    
+        
     // Diffuse intensity
     float cosAngle = max(0.0, dot( nNorm, nLightVec));
 

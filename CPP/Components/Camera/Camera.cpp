@@ -9,6 +9,7 @@
 
 using vec2 = glm::vec2;
 using vec3 = glm::vec3;
+using mat3 = glm::mat3;
 using mat4 = glm::mat4;
 
 
@@ -39,7 +40,12 @@ namespace OME {
         return mProjectinoMatrix;
     }
     
-    const mat3& Camera::getNormalMatrix() const{
+    const mat3& Camera::getNormalMatrix(){
+        mat4 modelM(1.0f);
+        if(!mMStack.empty()){
+            modelM = mMStack.top();
+        }
+        mNormalMatrix = glm::inverseTranspose(mat3( mViewMatrix * modelM));
         return mNormalMatrix;
     }
     
@@ -98,7 +104,6 @@ namespace OME {
         
         vec3 target = transform->mFront + transform->mPosition;
         mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);
-        mNormalMatrix = glm::inverseTranspose(mat3(mViewMatrix));
         mProjectinoMatrix = glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
     }
     
@@ -110,6 +115,19 @@ namespace OME {
     
     void Camera::destroy(){
         
+    }
+    
+    
+    void Camera::pushMatrix(const mat4 modelMatrix){
+        if(mMStack.empty()){
+            mMStack.push(modelMatrix);
+        }else{
+            mMStack.push(mMStack.top() * modelMatrix);
+        }
+    }
+    
+    void Camera::popMatrix(){
+        mMStack.pop();
     }
 
 
