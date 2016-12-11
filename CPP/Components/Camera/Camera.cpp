@@ -62,7 +62,7 @@ namespace OME {
                 mPrevTouch.y = y;
                 break;
             case TOUCH_EVENT::MOVED :
-                mDeltaTouch.x = (x - mPrevTouch.x)/100;
+                mDeltaTouch.x = (x - mPrevTouch.x) * mTouchSensetivity;
                 mDeltaTouch.y = (y - mPrevTouch.y) * mTouchSensetivity;
                 mPrevTouch.x = x;
                 mPrevTouch.y = y;
@@ -91,11 +91,12 @@ namespace OME {
     
     void Camera::update(){
         
+        
         if(mDeltaTouch.x != 0.0f){
             vec3 newRotation = transform->mRotation;
             newRotation.y += mDeltaTouch.x;
             transform->mRotation = newRotation;
-            transform->mFront = vec3(cosf(newRotation.y), 0.0f, sinf(newRotation.y));
+            transform->mFront = vec3(-sinf(newRotation.y), 0.0f, -cosf(newRotation.y));
         }
         
         if(mDeltaTouch.y != 0.0f){

@@ -68,7 +68,7 @@ namespace OME {
         // TOUCH RELATED
         vec2 mPrevTouch{0.0f};
         vec2 mDeltaTouch{0.0f};
-        float mTouchSensetivity = 0.1;
+        float mTouchSensetivity = 0.01;
         
     };
 }

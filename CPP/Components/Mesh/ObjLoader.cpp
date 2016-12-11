@@ -51,13 +51,9 @@ namespace OME {
             rot = 0.0f;
         }
         
-        
-        go->transform()->mRotation = vec3(0.0f, rot, 0.0f);
+        go->transform()->mRotation = vec3(rot/2, 0.0f, rot);
         
         Camera::instance()->pushMatrix(go->transform()->getMatrix());
-        
-
-        
         
         program.use();
     
@@ -71,9 +67,9 @@ namespace OME {
         program.setUniform("transform.projection", projMatrix);
         program.setUniform("transform.normal",     normalMatrix);
         
-        glm::vec3 matAmbient(0.3f, 0.3f, 0.3f);
-        glm::vec3 matDiffuse(0.5f, 0.5f, 0.5f);
-        glm::vec3 matSpecular(1.0f, 0.0f, 0.0f);
+        glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
+        glm::vec3 matDiffuse(0.7f, 0.7f, 0.5f);
+        glm::vec3 matSpecular(1.0f, 1.0f, 1.0f);
         float shininess = 40;
         
         program.setUniform("material.ambient", matAmbient);
@@ -106,13 +102,13 @@ namespace OME {
     
     void ObjLoader::switchModel(){
 
-//        static bool perVertex = false;
-//        perVertex = !perVertex;
-//        if(perVertex){
-//            program = gouraud;
-//        }else{
-//            program = phong;
-//        }
+        static bool perVertex = false;
+        perVertex = !perVertex;
+        if(perVertex){
+            program = gouraud;
+        }else{
+            program = phong;
+        }
         
         
         ++modelNum;
