@@ -22,6 +22,7 @@ namespace OME {
     
     string meshesNames[] = {"SemiHollowCylinder.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj", "Cone.obj"};
     
+    float direction = 0.0f;
     
     int stride;
     GLvoid* offset;
@@ -45,13 +46,13 @@ namespace OME {
     }
     
     void ObjLoader::draw(){
-        static float rot = 0.0f;
-        rot += 1.0f * Time::deltaTime();
-        if(rot > 360.0f){
-            rot = 0.0f;
-        }
-        
-        go->transform()->mRotation = vec3(rot/2, 0.0f, rot);
+//        static float rot = 0.0f;
+//        rot += 1.0f * Time::deltaTime();
+//        if(rot > 360.0f){
+//            rot = 0.0f;
+//        }
+//        
+//        go->transform()->mRotation = vec3(rot/2, 0.0f, rot);
         
         Camera::instance()->pushMatrix(go->transform()->getMatrix());
         
@@ -76,6 +77,9 @@ namespace OME {
         program.setUniform("material.diffuse", matDiffuse);
         program.setUniform("material.specular", matSpecular);
         program.setUniform("material.shininess", shininess);
+        
+        
+        program.setUniform("directionLight", direction);
 
         
         glm::vec4 lightPos(10.0f, 10.0f, 10.0f, 1.0f);
@@ -102,18 +106,24 @@ namespace OME {
     
     void ObjLoader::switchModel(){
 
-        static bool perVertex = false;
-        perVertex = !perVertex;
-        if(perVertex){
-            program = gouraud;
+//        static bool perVertex = false;
+//        perVertex = !perVertex;
+//        if(perVertex){
+//            program = gouraud;
+//        }else{
+//            program = phong;
+//        }
+        
+        
+        if(direction > 0.0f){
+            direction = -2.0f;
         }else{
-            program = phong;
+            direction = 2.0f;
         }
         
-        
-        ++modelNum;
-        modelNum = modelNum % 6;
-        loadMesh();
+//        ++modelNum;
+//        modelNum = modelNum % 6;
+//        loadMesh();
     }
     
     

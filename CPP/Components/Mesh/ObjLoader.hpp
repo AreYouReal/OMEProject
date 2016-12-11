@@ -35,7 +35,7 @@ namespace OME {
         
         ShaderProgram program;
         
-        int modelNum = 0;
+        int modelNum = 3;
         
         void loadMesh();
         

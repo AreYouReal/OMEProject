@@ -22,13 +22,22 @@ in vec3 eyeCoord;
 
 uniform uLight      light;
 uniform uMaterial   material;
+uniform float       directionLight;
 
 out vec4 fragColor;
 
 vec3 phongShading(){
     vec3 nNorm = normalize(normalCoord);
     vec3 nEyeCoord = normalize(eyeCoord);
-    vec3 nLightVec = normalize( light.position - eyeCoord);
+    
+    vec3 nLightVec;
+    if(directionLight > 0.0f){
+        nLightVec = normalize( light.position - eyeCoord);
+    }else{
+        nLightVec = normalize( light.position );
+    }
+    
+    
         
     // Diffuse intensity
     float cosAngle = max(0.0, dot( nNorm, nLightVec));
