@@ -187,6 +187,10 @@
 		F352B0F61DFEEC7100ED383C /* gouraud.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E81DFEEC7100ED383C /* gouraud.vert */; };
 		F352B0F71DFEEC7100ED383C /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E91DFEEC7100ED383C /* phong.frag */; };
 		F352B0F81DFEEC7100ED383C /* phong.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0EA1DFEEC7100ED383C /* phong.vert */; };
+		F352B0FE1DFEEFD100ED383C /* gouraud.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0FA1DFEEFD100ED383C /* gouraud.frag */; };
+		F352B0FF1DFEEFD100ED383C /* gouraud.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0FB1DFEEFD100ED383C /* gouraud.vert */; };
+		F352B1001DFEEFD100ED383C /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0FC1DFEEFD100ED383C /* phong.frag */; };
+		F352B1011DFEEFD100ED383C /* phong.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0FD1DFEEFD100ED383C /* phong.vert */; };
 		F3544CE01DED9CA000EB6E38 /* GUARD.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CDF1DED9CA000EB6E38 /* GUARD.obj */; };
 		F3544CE21DEDA01A00EB6E38 /* Ninja.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CE11DEDA01A00EB6E38 /* Ninja.obj */; };
 		F355617F1DF983AA00292D37 /* SemiHollowCylinder.obj in Resources */ = {isa = PBXBuildFile; fileRef = F355617E1DF983AA00292D37 /* SemiHollowCylinder.obj */; };
@@ -576,6 +580,10 @@
 		F352B0E81DFEEC7100ED383C /* gouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.vert; sourceTree = "<group>"; };
 		F352B0E91DFEEC7100ED383C /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
 		F352B0EA1DFEEC7100ED383C /* phong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.vert; sourceTree = "<group>"; };
+		F352B0FA1DFEEFD100ED383C /* gouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.frag; sourceTree = "<group>"; };
+		F352B0FB1DFEEFD100ED383C /* gouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.vert; sourceTree = "<group>"; };
+		F352B0FC1DFEEFD100ED383C /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
+		F352B0FD1DFEEFD100ED383C /* phong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.vert; sourceTree = "<group>"; };
 		F3544CDC1DED3BDF00EB6E38 /* OMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMConstants.h; path = ../../CPP/Utils/OMConstants.h; sourceTree = "<group>"; };
 		F3544CDF1DED9CA000EB6E38 /* GUARD.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GUARD.obj; sourceTree = "<group>"; };
 		F3544CE11DEDA01A00EB6E38 /* Ninja.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ninja.obj; sourceTree = "<group>"; };
@@ -1236,6 +1244,17 @@
 			path = one_light;
 			sourceTree = "<group>";
 		};
+		F352B0F91DFEEFD100ED383C /* multi_light */ = {
+			isa = PBXGroup;
+			children = (
+				F352B0FA1DFEEFD100ED383C /* gouraud.frag */,
+				F352B0FB1DFEEFD100ED383C /* gouraud.vert */,
+				F352B0FC1DFEEFD100ED383C /* phong.frag */,
+				F352B0FD1DFEEFD100ED383C /* phong.vert */,
+			);
+			path = multi_light;
+			sourceTree = "<group>";
+		};
 		F359E5181DD365EA00C86972 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1335,6 +1354,7 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
+				F352B0F91DFEEFD100ED383C /* multi_light */,
 				F352B0DB1DFEEC7100ED383C /* beginner */,
 				F352B0E61DFEEC7100ED383C /* one_light */,
 			);
@@ -1468,6 +1488,7 @@
 				F35275561DD4665100ED870D /* common.inl in Resources */,
 				F35275331DD4665100ED870D /* type_mat4x3.inl in Resources */,
 				F35275821DD4665100ED870D /* std_based_type.inl in Resources */,
+				F352B0FF1DFEEFD100ED383C /* gouraud.vert in Resources */,
 				F31B19A41DE97C6200B1C174 /* IsoSphere.obj in Resources */,
 				F352757D1DD4665100ED870D /* scalar_relational.inl in Resources */,
 				F352B0ED1DFEEC7100ED383C /* basic.frag in Resources */,
@@ -1486,6 +1507,7 @@
 				F352B0F81DFEEC7100ED383C /* phong.vert in Resources */,
 				F352756F1DD4665100ED870D /* mixed_product.inl in Resources */,
 				F352751D1DD4665100ED870D /* func_geometric_simd.inl in Resources */,
+				F352B1011DFEEFD100ED383C /* phong.vert in Resources */,
 				F35275771DD4665100ED870D /* polar_coordinates.inl in Resources */,
 				F35275161DD4665100ED870D /* CMakeLists.txt in Resources */,
 				F352754F1DD4665100ED870D /* ulp.inl in Resources */,
@@ -1498,6 +1520,7 @@
 				F352756A1DD4665100ED870D /* matrix_interpolation.inl in Resources */,
 				F352752E1DD4665100ED870D /* type_mat2x4.inl in Resources */,
 				F352B0EE1DFEEC7100ED383C /* basic.vert in Resources */,
+				F352B0FE1DFEEFD100ED383C /* gouraud.frag in Resources */,
 				F35275621DD4665100ED870D /* handed_coordinate_space.inl in Resources */,
 				F352757B1DD4665100ED870D /* rotate_normalized_axis.inl in Resources */,
 				F352B0F21DFEEC7100ED383C /* uBlock.vert in Resources */,
@@ -1506,6 +1529,7 @@
 				F35275891DD4665100ED870D /* vector_query.inl in Resources */,
 				F35275611DD4665100ED870D /* gradient_paint.inl in Resources */,
 				F352753C1DD4665100ED870D /* bitfield.inl in Resources */,
+				F352B1001DFEEFD100ED383C /* phong.frag in Resources */,
 				F35275641DD4665100ED870D /* integer.inl in Resources */,
 				F35275401DD4665100ED870D /* epsilon.inl in Resources */,
 				F352B0F71DFEEC7100ED383C /* phong.frag in Resources */,
