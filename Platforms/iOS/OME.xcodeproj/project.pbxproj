@@ -36,8 +36,6 @@
 		F31570B31DEBF02700068D22 /* lib3ds_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570A01DEBF02700068D22 /* lib3ds_vector.c */; };
 		F31570B41DEBF02700068D22 /* lib3ds_viewport.c in Sources */ = {isa = PBXBuildFile; fileRef = F31570A11DEBF02700068D22 /* lib3ds_viewport.c */; };
 		F31570B71DEBF41B00068D22 /* Loader3DS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31570B51DEBF41B00068D22 /* Loader3DS.cpp */; };
-		F31570BA1DEC092700068D22 /* 3ds.frag in Resources */ = {isa = PBXBuildFile; fileRef = F31570B81DEC092700068D22 /* 3ds.frag */; };
-		F31570BB1DEC092700068D22 /* 3ds.vert in Resources */ = {isa = PBXBuildFile; fileRef = F31570B91DEC092700068D22 /* 3ds.vert */; };
 		F31570BE1DEC1DB300068D22 /* car.3DS in Resources */ = {isa = PBXBuildFile; fileRef = F31570BD1DEC1DB300068D22 /* car.3DS */; };
 		F31B199B1DE9744C00B1C174 /* ObjLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F31B19991DE9744C00B1C174 /* ObjLoader.cpp */; };
 		F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B199E1DE97C6200B1C174 /* Cube.obj */; };
@@ -45,8 +43,6 @@
 		F31B19A51DE97C6200B1C174 /* Monkey.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A01DE97C6200B1C174 /* Monkey.obj */; };
 		F31B19A61DE97C6200B1C174 /* Sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A11DE97C6200B1C174 /* Sphere.obj */; };
 		F31B19A71DE97C6200B1C174 /* Torus.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A21DE97C6200B1C174 /* Torus.obj */; };
-		F31B19AA1DE97E4100B1C174 /* wiredObj.frag in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A81DE97E4100B1C174 /* wiredObj.frag */; };
-		F31B19AB1DE97E4100B1C174 /* wiredObj.vert in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A91DE97E4100B1C174 /* wiredObj.vert */; };
 		F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19AC1DE981DE00B1C174 /* Cone.obj */; };
 		F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F325BF0A1DE4487900519F0E /* Cube.cpp */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
@@ -57,11 +53,7 @@
 		F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2FF1DC222CB00563510 /* Main_iPhone.storyboard */; };
 		F32AA30A1DC2230100563510 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F32AA3091DC2230100563510 /* Images.xcassets */; };
 		F3462B381DDDBA6F00167FEA /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3462B361DDDBA6F00167FEA /* Camera.cpp */; };
-		F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */ = {isa = PBXBuildFile; fileRef = F34C138F1DE6AF9A009AE936 /* uBlock.frag */; };
-		F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */ = {isa = PBXBuildFile; fileRef = F34C13901DE6AF9A009AE936 /* uBlock.vert */; };
 		F34C13951DE6C204009AE936 /* Grid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34C13931DE6C204009AE936 /* Grid.cpp */; };
-		F34C13981DE6CE19009AE936 /* grid.frag in Resources */ = {isa = PBXBuildFile; fileRef = F34C13961DE6CE19009AE936 /* grid.frag */; };
-		F34C13991DE6CE19009AE936 /* grid.vert in Resources */ = {isa = PBXBuildFile; fileRef = F34C13971DE6CE19009AE936 /* grid.vert */; };
 		F35274031DD45DC300ED870D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274011DD45DC300ED870D /* GameObject.cpp */; };
 		F35274071DD465C100ED870D /* Transform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F35274051DD465C100ED870D /* Transform.cpp */; };
 		F35275161DD4665100ED870D /* CMakeLists.txt in Resources */ = {isa = PBXBuildFile; fileRef = F352740A1DD4665100ED870D /* CMakeLists.txt */; };
@@ -181,6 +173,20 @@
 		F35275881DD4665100ED870D /* vector_angle.inl in Resources */ = {isa = PBXBuildFile; fileRef = F35274F61DD4665100ED870D /* vector_angle.inl */; };
 		F35275891DD4665100ED870D /* vector_query.inl in Resources */ = {isa = PBXBuildFile; fileRef = F35274F81DD4665100ED870D /* vector_query.inl */; };
 		F352758A1DD4665100ED870D /* wrap.inl in Resources */ = {isa = PBXBuildFile; fileRef = F35274FA1DD4665100ED870D /* wrap.inl */; };
+		F352B0EB1DFEEC7100ED383C /* 3ds.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0DC1DFEEC7100ED383C /* 3ds.frag */; };
+		F352B0EC1DFEEC7100ED383C /* 3ds.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0DD1DFEEC7100ED383C /* 3ds.vert */; };
+		F352B0ED1DFEEC7100ED383C /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0DE1DFEEC7100ED383C /* basic.frag */; };
+		F352B0EE1DFEEC7100ED383C /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0DF1DFEEC7100ED383C /* basic.vert */; };
+		F352B0EF1DFEEC7100ED383C /* grid.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E01DFEEC7100ED383C /* grid.frag */; };
+		F352B0F01DFEEC7100ED383C /* grid.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E11DFEEC7100ED383C /* grid.vert */; };
+		F352B0F11DFEEC7100ED383C /* uBlock.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E21DFEEC7100ED383C /* uBlock.frag */; };
+		F352B0F21DFEEC7100ED383C /* uBlock.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E31DFEEC7100ED383C /* uBlock.vert */; };
+		F352B0F31DFEEC7100ED383C /* wiredObj.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E41DFEEC7100ED383C /* wiredObj.frag */; };
+		F352B0F41DFEEC7100ED383C /* wiredObj.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E51DFEEC7100ED383C /* wiredObj.vert */; };
+		F352B0F51DFEEC7100ED383C /* gouraud.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E71DFEEC7100ED383C /* gouraud.frag */; };
+		F352B0F61DFEEC7100ED383C /* gouraud.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E81DFEEC7100ED383C /* gouraud.vert */; };
+		F352B0F71DFEEC7100ED383C /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = F352B0E91DFEEC7100ED383C /* phong.frag */; };
+		F352B0F81DFEEC7100ED383C /* phong.vert in Resources */ = {isa = PBXBuildFile; fileRef = F352B0EA1DFEEC7100ED383C /* phong.vert */; };
 		F3544CE01DED9CA000EB6E38 /* GUARD.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CDF1DED9CA000EB6E38 /* GUARD.obj */; };
 		F3544CE21DEDA01A00EB6E38 /* Ninja.obj in Resources */ = {isa = PBXBuildFile; fileRef = F3544CE11DEDA01A00EB6E38 /* Ninja.obj */; };
 		F355617F1DF983AA00292D37 /* SemiHollowCylinder.obj in Resources */ = {isa = PBXBuildFile; fileRef = F355617E1DF983AA00292D37 /* SemiHollowCylinder.obj */; };
@@ -211,14 +217,8 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
-		F3935AA71DF8051B00167E9C /* phong.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3935AA51DF8051B00167E9C /* phong.frag */; };
-		F3935AA81DF8051B00167E9C /* phong.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3935AA61DF8051B00167E9C /* phong.vert */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
-		F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3E3099E1DCDEAAE000ED6C1 /* basic.vert */; };
-		F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3E309A01DCDEB1C000ED6C1 /* basic.frag */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
-		F3EF4DEF1DF064DC0062BCE0 /* gouraud.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */; };
-		F3EF4DF01DF064DC0062BCE0 /* gouraud.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */; };
 		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
 		F3FC91FD1DEEFFDA00E3DE96 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */; };
 		F3FC92001DEF00DC00E3DE96 /* Illuminator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3FC91FE1DEF00DC00E3DE96 /* Illuminator.cpp */; };
@@ -268,8 +268,6 @@
 		F31570A11DEBF02700068D22 /* lib3ds_viewport.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lib3ds_viewport.c; sourceTree = "<group>"; };
 		F31570B51DEBF41B00068D22 /* Loader3DS.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Loader3DS.cpp; path = Mesh/Loader3DS.cpp; sourceTree = "<group>"; };
 		F31570B61DEBF41B00068D22 /* Loader3DS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Loader3DS.hpp; path = Mesh/Loader3DS.hpp; sourceTree = "<group>"; };
-		F31570B81DEC092700068D22 /* 3ds.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.frag; sourceTree = "<group>"; };
-		F31570B91DEC092700068D22 /* 3ds.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.vert; sourceTree = "<group>"; };
 		F31570BD1DEC1DB300068D22 /* car.3DS */ = {isa = PBXFileReference; lastKnownFileType = file; path = car.3DS; sourceTree = "<group>"; };
 		F31B19991DE9744C00B1C174 /* ObjLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjLoader.cpp; path = Mesh/ObjLoader.cpp; sourceTree = "<group>"; };
 		F31B199A1DE9744C00B1C174 /* ObjLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ObjLoader.hpp; path = Mesh/ObjLoader.hpp; sourceTree = "<group>"; };
@@ -278,8 +276,6 @@
 		F31B19A01DE97C6200B1C174 /* Monkey.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Monkey.obj; path = ../../Assets/ObjModels/Monkey.obj; sourceTree = SOURCE_ROOT; };
 		F31B19A11DE97C6200B1C174 /* Sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sphere.obj; path = ../../Assets/ObjModels/Sphere.obj; sourceTree = SOURCE_ROOT; };
 		F31B19A21DE97C6200B1C174 /* Torus.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Torus.obj; path = ../../Assets/ObjModels/Torus.obj; sourceTree = SOURCE_ROOT; };
-		F31B19A81DE97E4100B1C174 /* wiredObj.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = wiredObj.frag; path = ../Android/assets/shaders/wiredObj.frag; sourceTree = SOURCE_ROOT; };
-		F31B19A91DE97E4100B1C174 /* wiredObj.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = wiredObj.vert; path = ../Android/assets/shaders/wiredObj.vert; sourceTree = SOURCE_ROOT; };
 		F31B19AC1DE981DE00B1C174 /* Cone.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cone.obj; sourceTree = "<group>"; };
 		F325BF0A1DE4487900519F0E /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = Primitives/Cube.cpp; sourceTree = "<group>"; };
 		F325BF0B1DE4487900519F0E /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cube.hpp; path = Primitives/Cube.hpp; sourceTree = "<group>"; };
@@ -293,12 +289,8 @@
 		F32AA3091DC2230100563510 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OME/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		F3462B361DDDBA6F00167FEA /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Camera.cpp; path = Camera/Camera.cpp; sourceTree = "<group>"; };
 		F3462B371DDDBA6F00167FEA /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Camera.hpp; path = Camera/Camera.hpp; sourceTree = "<group>"; };
-		F34C138F1DE6AF9A009AE936 /* uBlock.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.frag; path = ../Android/assets/shaders/uBlock.frag; sourceTree = SOURCE_ROOT; };
-		F34C13901DE6AF9A009AE936 /* uBlock.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = uBlock.vert; path = ../Android/assets/shaders/uBlock.vert; sourceTree = SOURCE_ROOT; };
 		F34C13931DE6C204009AE936 /* Grid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Grid.cpp; path = Primitives/Grid.cpp; sourceTree = "<group>"; };
 		F34C13941DE6C204009AE936 /* Grid.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Grid.hpp; path = Primitives/Grid.hpp; sourceTree = "<group>"; };
-		F34C13961DE6CE19009AE936 /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grid.frag; path = ../Android/assets/shaders/grid.frag; sourceTree = SOURCE_ROOT; };
-		F34C13971DE6CE19009AE936 /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = grid.vert; path = ../Android/assets/shaders/grid.vert; sourceTree = SOURCE_ROOT; };
 		F34C139A1DE6D870009AE936 /* SingletonComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SingletonComponent.hpp; sourceTree = "<group>"; };
 		F34C139B1DE6D8D1009AE936 /* Singleton.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Singleton.hpp; path = ../../CPP/Utils/Singleton.hpp; sourceTree = "<group>"; };
 		F35273FF1DD45C0D00ED870D /* IComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = IComponent.hpp; path = ../../CPP/Components/IComponent.hpp; sourceTree = SOURCE_ROOT; };
@@ -570,6 +562,20 @@
 		F35275131DD4665100ED870D /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
 		F35275141DD4665100ED870D /* vec4.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec4.hpp; sourceTree = "<group>"; };
 		F35275151DD4665100ED870D /* vector_relational.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector_relational.hpp; sourceTree = "<group>"; };
+		F352B0DC1DFEEC7100ED383C /* 3ds.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.frag; sourceTree = "<group>"; };
+		F352B0DD1DFEEC7100ED383C /* 3ds.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 3ds.vert; sourceTree = "<group>"; };
+		F352B0DE1DFEEC7100ED383C /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basic.frag; sourceTree = "<group>"; };
+		F352B0DF1DFEEC7100ED383C /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = basic.vert; sourceTree = "<group>"; };
+		F352B0E01DFEEC7100ED383C /* grid.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.frag; sourceTree = "<group>"; };
+		F352B0E11DFEEC7100ED383C /* grid.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = grid.vert; sourceTree = "<group>"; };
+		F352B0E21DFEEC7100ED383C /* uBlock.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uBlock.frag; sourceTree = "<group>"; };
+		F352B0E31DFEEC7100ED383C /* uBlock.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = uBlock.vert; sourceTree = "<group>"; };
+		F352B0E41DFEEC7100ED383C /* wiredObj.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wiredObj.frag; sourceTree = "<group>"; };
+		F352B0E51DFEEC7100ED383C /* wiredObj.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wiredObj.vert; sourceTree = "<group>"; };
+		F352B0E71DFEEC7100ED383C /* gouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.frag; sourceTree = "<group>"; };
+		F352B0E81DFEEC7100ED383C /* gouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.vert; sourceTree = "<group>"; };
+		F352B0E91DFEEC7100ED383C /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
+		F352B0EA1DFEEC7100ED383C /* phong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.vert; sourceTree = "<group>"; };
 		F3544CDC1DED3BDF00EB6E38 /* OMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = OMConstants.h; path = ../../CPP/Utils/OMConstants.h; sourceTree = "<group>"; };
 		F3544CDF1DED9CA000EB6E38 /* GUARD.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GUARD.obj; sourceTree = "<group>"; };
 		F3544CE11DEDA01A00EB6E38 /* Ninja.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ninja.obj; sourceTree = "<group>"; };
@@ -618,17 +624,11 @@
 		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
-		F3935AA51DF8051B00167E9C /* phong.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.frag; sourceTree = "<group>"; };
-		F3935AA61DF8051B00167E9C /* phong.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = phong.vert; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
-		F3E3099E1DCDEAAE000ED6C1 /* basic.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.vert; path = ../Android/assets/shaders/basic.vert; sourceTree = SOURCE_ROOT; };
-		F3E309A01DCDEB1C000ED6C1 /* basic.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; name = basic.frag; path = ../Android/assets/shaders/basic.frag; sourceTree = SOURCE_ROOT; };
 		F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ShaderProgram.cpp; path = ../../CPP/Utils/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
 		F3E309A31DCDED29000ED6C1 /* ShaderProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = ShaderProgram.hpp; path = ../../CPP/Utils/Shaders/ShaderProgram.hpp; sourceTree = SOURCE_ROOT; };
-		F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.frag; sourceTree = "<group>"; };
-		F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = gouraud.vert; sourceTree = "<group>"; };
 		F3F79D4C1DEDC4650002CA39 /* Light.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
 		F3F79D4D1DEDC4650002CA39 /* Light.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Light.hpp; sourceTree = "<group>"; };
 		F3FC91FB1DEEFFDA00E3DE96 /* Scene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
@@ -1208,6 +1208,34 @@
 			path = simd;
 			sourceTree = "<group>";
 		};
+		F352B0DB1DFEEC7100ED383C /* beginner */ = {
+			isa = PBXGroup;
+			children = (
+				F352B0DC1DFEEC7100ED383C /* 3ds.frag */,
+				F352B0DD1DFEEC7100ED383C /* 3ds.vert */,
+				F352B0DE1DFEEC7100ED383C /* basic.frag */,
+				F352B0DF1DFEEC7100ED383C /* basic.vert */,
+				F352B0E01DFEEC7100ED383C /* grid.frag */,
+				F352B0E11DFEEC7100ED383C /* grid.vert */,
+				F352B0E21DFEEC7100ED383C /* uBlock.frag */,
+				F352B0E31DFEEC7100ED383C /* uBlock.vert */,
+				F352B0E41DFEEC7100ED383C /* wiredObj.frag */,
+				F352B0E51DFEEC7100ED383C /* wiredObj.vert */,
+			);
+			path = beginner;
+			sourceTree = "<group>";
+		};
+		F352B0E61DFEEC7100ED383C /* one_light */ = {
+			isa = PBXGroup;
+			children = (
+				F352B0E71DFEEC7100ED383C /* gouraud.frag */,
+				F352B0E81DFEEC7100ED383C /* gouraud.vert */,
+				F352B0E91DFEEC7100ED383C /* phong.frag */,
+				F352B0EA1DFEEC7100ED383C /* phong.vert */,
+			);
+			path = one_light;
+			sourceTree = "<group>";
+		};
 		F359E5181DD365EA00C86972 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -1307,20 +1335,8 @@
 		F3E3099D1DCDEA00000ED6C1 /* shaders */ = {
 			isa = PBXGroup;
 			children = (
-				F3935AA51DF8051B00167E9C /* phong.frag */,
-				F3935AA61DF8051B00167E9C /* phong.vert */,
-				F3EF4DED1DF064DC0062BCE0 /* gouraud.frag */,
-				F3EF4DEE1DF064DC0062BCE0 /* gouraud.vert */,
-				F31570B81DEC092700068D22 /* 3ds.frag */,
-				F31570B91DEC092700068D22 /* 3ds.vert */,
-				F31B19A81DE97E4100B1C174 /* wiredObj.frag */,
-				F31B19A91DE97E4100B1C174 /* wiredObj.vert */,
-				F34C13961DE6CE19009AE936 /* grid.frag */,
-				F34C13971DE6CE19009AE936 /* grid.vert */,
-				F34C138F1DE6AF9A009AE936 /* uBlock.frag */,
-				F34C13901DE6AF9A009AE936 /* uBlock.vert */,
-				F3E309A01DCDEB1C000ED6C1 /* basic.frag */,
-				F3E3099E1DCDEAAE000ED6C1 /* basic.vert */,
+				F352B0DB1DFEEC7100ED383C /* beginner */,
+				F352B0E61DFEEC7100ED383C /* one_light */,
 			);
 			name = shaders;
 			path = ../Android/assets/shaders;
@@ -1448,16 +1464,16 @@
 				F35275451DD4665100ED870D /* matrix_transform.inl in Resources */,
 				F35275701DD4665100ED870D /* norm.inl in Resources */,
 				F352754E1DD4665100ED870D /* type_ptr.inl in Resources */,
-				F3E309A11DCDEB1C000ED6C1 /* basic.frag in Resources */,
 				F35275351DD4665100ED870D /* type_mat4x4_simd.inl in Resources */,
 				F35275561DD4665100ED870D /* common.inl in Resources */,
 				F35275331DD4665100ED870D /* type_mat4x3.inl in Resources */,
 				F35275821DD4665100ED870D /* std_based_type.inl in Resources */,
 				F31B19A41DE97C6200B1C174 /* IsoSphere.obj in Resources */,
 				F352757D1DD4665100ED870D /* scalar_relational.inl in Resources */,
+				F352B0ED1DFEEC7100ED383C /* basic.frag in Resources */,
 				F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */,
 				F35275501DD4665100ED870D /* vec1.inl in Resources */,
-				F31B19AB1DE97E4100B1C174 /* wiredObj.vert in Resources */,
+				F352B0F51DFEEC7100ED383C /* gouraud.frag in Resources */,
 				F352756B1DD4665100ED870D /* matrix_major_storage.inl in Resources */,
 				F32AA30A1DC2230100563510 /* Images.xcassets in Resources */,
 				F35275341DD4665100ED870D /* type_mat4x4.inl in Resources */,
@@ -1467,6 +1483,7 @@
 				F35275531DD4665100ED870D /* closest_point.inl in Resources */,
 				F35275231DD4665100ED870D /* func_packing_simd.inl in Resources */,
 				F35275631DD4665100ED870D /* hash.inl in Resources */,
+				F352B0F81DFEEC7100ED383C /* phong.vert in Resources */,
 				F352756F1DD4665100ED870D /* mixed_product.inl in Resources */,
 				F352751D1DD4665100ED870D /* func_geometric_simd.inl in Resources */,
 				F35275771DD4665100ED870D /* polar_coordinates.inl in Resources */,
@@ -1475,12 +1492,15 @@
 				F35275321DD4665100ED870D /* type_mat4x2.inl in Resources */,
 				F35275871DD4665100ED870D /* type_trait.inl in Resources */,
 				F35275241DD4665100ED870D /* func_trigonometric.inl in Resources */,
+				F352B0F41DFEEC7100ED383C /* wiredObj.vert in Resources */,
+				F352B0F61DFEEC7100ED383C /* gouraud.vert in Resources */,
 				F352751F1DD4665100ED870D /* func_integer_simd.inl in Resources */,
-				F3E3099F1DCDEAAE000ED6C1 /* basic.vert in Resources */,
 				F352756A1DD4665100ED870D /* matrix_interpolation.inl in Resources */,
 				F352752E1DD4665100ED870D /* type_mat2x4.inl in Resources */,
+				F352B0EE1DFEEC7100ED383C /* basic.vert in Resources */,
 				F35275621DD4665100ED870D /* handed_coordinate_space.inl in Resources */,
 				F352757B1DD4665100ED870D /* rotate_normalized_axis.inl in Resources */,
+				F352B0F21DFEEC7100ED383C /* uBlock.vert in Resources */,
 				F352757F1DD4665100ED870D /* simd_quat.inl in Resources */,
 				F35275831DD4665100ED870D /* string_cast.inl in Resources */,
 				F35275891DD4665100ED870D /* vector_query.inl in Resources */,
@@ -1488,6 +1508,7 @@
 				F352753C1DD4665100ED870D /* bitfield.inl in Resources */,
 				F35275641DD4665100ED870D /* integer.inl in Resources */,
 				F35275401DD4665100ED870D /* epsilon.inl in Resources */,
+				F352B0F71DFEEC7100ED383C /* phong.frag in Resources */,
 				F35275441DD4665100ED870D /* matrix_inverse.inl in Resources */,
 				F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */,
 				F35275581DD4665100ED870D /* component_wise.inl in Resources */,
@@ -1510,30 +1531,29 @@
 				F352752B1DD4665100ED870D /* type_mat.inl in Resources */,
 				F35275251DD4665100ED870D /* func_trigonometric_simd.inl in Resources */,
 				F35275811DD4665100ED870D /* spline.inl in Resources */,
-				F31570BA1DEC092700068D22 /* 3ds.frag in Resources */,
 				F35275751DD4665100ED870D /* orthonormalize.inl in Resources */,
-				F34C13911DE6AF9A009AE936 /* uBlock.frag in Resources */,
+				F352B0EF1DFEEC7100ED383C /* grid.frag in Resources */,
 				F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */,
+				F352B0F31DFEEC7100ED383C /* wiredObj.frag in Resources */,
 				F352755C1DD4665100ED870D /* extended_min_max.inl in Resources */,
 				F32AA3021DC222CB00563510 /* Main_iPhone.storyboard in Resources */,
 				F35275791DD4665100ED870D /* quaternion.inl in Resources */,
 				F35275761DD4665100ED870D /* perpendicular.inl in Resources */,
+				F352B0F11DFEEC7100ED383C /* uBlock.frag in Resources */,
 				F35275411DD4665100ED870D /* functions.inl in Resources */,
 				F31B19A31DE97C6200B1C174 /* Cube.obj in Resources */,
 				F35275511DD4665100ED870D /* associated_min_max.inl in Resources */,
 				F35275371DD4665100ED870D /* type_vec1.inl in Resources */,
-				F31570BB1DEC092700068D22 /* 3ds.vert in Resources */,
 				F352751E1DD4665100ED870D /* func_integer.inl in Resources */,
 				F35275391DD4665100ED870D /* type_vec3.inl in Resources */,
 				F35275301DD4665100ED870D /* type_mat3x3.inl in Resources */,
-				F3935AA81DF8051B00167E9C /* phong.vert in Resources */,
 				F35275471DD4665100ED870D /* packing.inl in Resources */,
 				F35275801DD4665100ED870D /* simd_vec4.inl in Resources */,
+				F352B0EB1DFEEC7100ED383C /* 3ds.frag in Resources */,
 				F35275661DD4665100ED870D /* io.inl in Resources */,
 				F355617F1DF983AA00292D37 /* SemiHollowCylinder.obj in Resources */,
 				F35275551DD4665100ED870D /* color_space_YCoCg.inl in Resources */,
 				F352752F1DD4665100ED870D /* type_mat3x2.inl in Resources */,
-				F3EF4DF01DF064DC0062BCE0 /* gouraud.vert in Resources */,
 				F31570BE1DEC1DB300068D22 /* car.3DS in Resources */,
 				F35275861DD4665100ED870D /* type_aligned.inl in Resources */,
 				F35275291DD4665100ED870D /* type_gentype.inl in Resources */,
@@ -1544,15 +1564,14 @@
 				F35275681DD4665100ED870D /* matrix_cross_product.inl in Resources */,
 				F35275781DD4665100ED870D /* projection.inl in Resources */,
 				F35275261DD4665100ED870D /* func_vector_relational.inl in Resources */,
+				F352B0F01DFEEC7100ED383C /* grid.vert in Resources */,
 				F35275211DD4665100ED870D /* func_matrix_simd.inl in Resources */,
 				F35275731DD4665100ED870D /* number_precision.inl in Resources */,
 				F352754A1DD4665100ED870D /* random.inl in Resources */,
 				F3544CE21DEDA01A00EB6E38 /* Ninja.obj in Resources */,
 				F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */,
 				F352753E1DD4665100ED870D /* color_space.inl in Resources */,
-				F3EF4DEF1DF064DC0062BCE0 /* gouraud.frag in Resources */,
 				F35275191DD4665100ED870D /* func_common_simd.inl in Resources */,
-				F31B19AA1DE97E4100B1C174 /* wiredObj.frag in Resources */,
 				F35275201DD4665100ED870D /* func_matrix.inl in Resources */,
 				F35275741DD4665100ED870D /* optimum_pow.inl in Resources */,
 				F352751C1DD4665100ED870D /* func_geometric.inl in Resources */,
@@ -1560,16 +1579,13 @@
 				F35275671DD4665100ED870D /* log_base.inl in Resources */,
 				F352758A1DD4665100ED870D /* wrap.inl in Resources */,
 				F35275381DD4665100ED870D /* type_vec2.inl in Resources */,
-				F3935AA71DF8051B00167E9C /* phong.frag in Resources */,
 				F352753B1DD4665100ED870D /* type_vec4_simd.inl in Resources */,
 				F35275221DD4665100ED870D /* func_packing.inl in Resources */,
 				F35275721DD4665100ED870D /* normalize_dot.inl in Resources */,
 				F352756E1DD4665100ED870D /* matrix_transform_2d.inl in Resources */,
 				F352757C1DD4665100ED870D /* rotate_vector.inl in Resources */,
-				F34C13991DE6CE19009AE936 /* grid.vert in Resources */,
 				F352755A1DD4665100ED870D /* euler_angles.inl in Resources */,
-				F34C13921DE6AF9A009AE936 /* uBlock.vert in Resources */,
-				F34C13981DE6CE19009AE936 /* grid.frag in Resources */,
+				F352B0EC1DFEEC7100ED383C /* 3ds.vert in Resources */,
 				F352751A1DD4665100ED870D /* func_exponential.inl in Resources */,
 				F352751B1DD4665100ED870D /* func_exponential_simd.inl in Resources */,
 			);

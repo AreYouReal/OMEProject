@@ -40,7 +40,9 @@ namespace OME {
         
 //        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
 //        ds->init();
+        addObject(std::move(go));
         
+        go = up<GameObject>(new GameObject());
         Light *light = (Light*)go->addComponent(up<Light>(new Light()));
         light->init();
         

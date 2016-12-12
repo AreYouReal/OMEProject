@@ -6,6 +6,7 @@
 #include <string>
 
 using string = std::string;
+using vec3 = glm::vec3;
 
 namespace OME {
     class Light : public IComponent{
@@ -24,11 +25,18 @@ namespace OME {
         virtual void update() override;
         virtual void destroy() override;
         
-        LightType lightType();
+        const LightType lightType() const;
+        const vec3  ambient() const { return mAmbient; }
+        const vec3  diffuse() const {return mDiffuse; }
+        const vec3  specular() const {return mSpecular; }
         
     private:
         
         LightType mType;
+        
+        vec3    mAmbient;
+        vec3    mDiffuse;
+        vec3    mSpecular;
         
     };
 }

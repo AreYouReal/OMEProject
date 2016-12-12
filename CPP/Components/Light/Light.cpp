@@ -4,7 +4,7 @@
 
 namespace OME {
     
-    Light::Light(LightType type) : mType(type){
+    Light::Light(LightType type) : mType(type), mAmbient(1.0f), mDiffuse(1.0f), mSpecular(1.0f){
         Illuminator::instance()->addLight(this);
     }
 
@@ -20,7 +20,7 @@ namespace OME {
         Illuminator::instance()->removeLight(this);
     }
     
-    Light::LightType Light::lightType(){
+    const Light::LightType Light::lightType() const{
         return mType;
     }
 

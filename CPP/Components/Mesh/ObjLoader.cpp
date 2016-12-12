@@ -8,15 +8,16 @@
 #define P_VERTEX_SHADER "phong.vert"
 #define P_FRAGMENT_SHADER "phong.frag"
 #else
-#define G_VERTEX_SHADER "shaders/gouraud.vert"
-#define G_FRAGMENT_SHADER "shaders/gouraud.frag"
-#define P_VERTEX_SHADER "shaders/phong.vert"
-#define P_FRAGMENT_SHADER "shaders/phong.frag"
+#define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
+#define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
+#define P_VERTEX_SHADER "shaders/one_light/phong.vert"
+#define P_FRAGMENT_SHADER "shaders/one_light/phong.frag"
 #endif
-
 
 #include "GameObject.hpp"
 #include "Camera.hpp"
+
+#include "Illuminator.hpp"
 
 namespace OME {
     
@@ -46,13 +47,19 @@ namespace OME {
     }
     
     void ObjLoader::draw(){
-//        static float rot = 0.0f;
-//        rot += 1.0f * Time::deltaTime();
-//        if(rot > 360.0f){
-//            rot = 0.0f;
-//        }
-//        
+        static float rot = 0.0f;
+        rot += 1.0f * Time::deltaTime();
+        if(rot > 10.0f){
+            rot = 0.0f;
+        }
+//
 //        go->transform()->mRotation = vec3(rot/2, 0.0f, rot);
+        
+        
+        
+        Light *l = Illuminator::instance()->getLight();
+        
+        l->go->transform()->mPosition = vec3(rot, 10.0f, 10.0f);
         
         Camera::instance()->pushMatrix(go->transform()->getMatrix());
         
@@ -78,22 +85,20 @@ namespace OME {
         program.setUniform("material.specular", matSpecular);
         program.setUniform("material.shininess", shininess);
         
-        
-        program.setUniform("directionLight", direction);
 
         
-        glm::vec4 lightPos(10.0f, 10.0f, 10.0f, 1.0f);
+        program.setUniform("directionLight", direction);
         
-        glm::vec3 lightInViewPos = viewMat * lightPos;
+        glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);
         
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
         glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
         glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
         
         program.setUniform("light.position", lightInViewPos);
-        program.setUniform("light.ambient", lightAmbient);
-        program.setUniform("light.diffuse", lightDiffuse);
-        program.setUniform("light.specular", lightSpecular);
+        program.setUniform("light.ambient", l->ambient());
+        program.setUniform("light.diffuse", l->diffuse());
+        program.setUniform("light.specular", l->specular());
         
         glBindVertexArray(vao);
         
