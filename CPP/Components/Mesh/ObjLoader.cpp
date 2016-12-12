@@ -97,9 +97,9 @@ namespace OME {
             glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
             
             program.setUniform("light[0].position", lightInViewPos);
-            program.setUniform("light[0].ambient", l->ambient());
-            program.setUniform("light[0].diffuse", l->diffuse());
-            program.setUniform("light[0].specular", l->specular());
+            program.setUniform("light[0].ambient", lightAmbient);
+            program.setUniform("light[0].diffuse", lightDiffuse);
+            program.setUniform("light[0].specular", lightSpecular);
         
          lightInViewPos = viewMat * vec4(-10.0f, 10.0f, 0.0f, 1.0f);
          lightAmbient = vec3(1.0f, 1.0f, 1.0f);
@@ -107,9 +107,9 @@ namespace OME {
          lightSpecular = vec3(1.0f, 1.0f, 1.0f);
         
         program.setUniform("light[1].position", lightInViewPos);
-        program.setUniform("light[1].ambient", l->ambient());
-        program.setUniform("light[1].diffuse", l->diffuse());
-        program.setUniform("light[1].specular", l->specular());
+        program.setUniform("light[1].ambient", lightAmbient);
+        program.setUniform("light[1].diffuse", lightDiffuse);
+        program.setUniform("light[1].specular", lightSpecular);
         
          lightInViewPos = viewMat * vec4(10.0f, -10.0f, 0.0f, 1.0f);
         lightAmbient = vec3(1.0f, 1.0f, 1.0f);
@@ -117,9 +117,9 @@ namespace OME {
         lightSpecular = vec3(1.0f, 1.0f, 1.0f);
         
         program.setUniform("light[2].position", lightInViewPos);
-        program.setUniform("light[2].ambient", l->ambient());
-        program.setUniform("light[2].diffuse", l->diffuse());
-        program.setUniform("light[2].specular", l->specular());
+        program.setUniform("light[2].ambient", lightAmbient);
+        program.setUniform("light[2].diffuse", lightDiffuse);
+        program.setUniform("light[2].specular", lightSpecular);
         
          lightInViewPos = viewMat * vec4(10.0f, 10.0f, -10.0f, 1.0f);
         lightAmbient = vec3(1.0f, 1.0f, 1.0f);
@@ -127,9 +127,9 @@ namespace OME {
         lightSpecular = vec3(1.0f, 1.0f, 1.0f);
         
         program.setUniform("light[3].position", lightInViewPos);
-        program.setUniform("light[3].ambient", l->ambient());
-        program.setUniform("light[3].diffuse", l->diffuse());
-        program.setUniform("light[3].specular", l->specular());
+        program.setUniform("light[3].ambient", lightAmbient);
+        program.setUniform("light[3].diffuse", lightDiffuse);
+        program.setUniform("light[3].specular", lightSpecular);
 
         
 
