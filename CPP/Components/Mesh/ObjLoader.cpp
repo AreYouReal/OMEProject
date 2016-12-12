@@ -121,10 +121,10 @@ namespace OME {
         program.setUniform("light[2].diffuse", lightDiffuse);
         program.setUniform("light[2].specular", lightSpecular);
         
-         lightInViewPos = viewMat * vec4(10.0f, 10.0f, -10.0f, 1.0f);
-        lightAmbient = vec3(1.0f, 1.0f, 1.0f);
-        lightDiffuse = vec3(.0f, .5f, 0.0f);
-        lightSpecular = vec3(1.0f, 1.0f, 1.0f);
+         lightInViewPos = viewMat * vec4(-10.0f, -10.0f, -10.0f, 1.0f);
+        lightAmbient = vec3(0.0f, .0f, .0f);
+        lightDiffuse = vec3(.0f, .0f, 1.0f);
+        lightSpecular = vec3(.0f, .0f, 1.0f);
         
         program.setUniform("light[3].position", lightInViewPos);
         program.setUniform("light[3].ambient", lightAmbient);
@@ -160,9 +160,9 @@ namespace OME {
             direction = 2.0f;
         }
         
-//        ++modelNum;
-//        modelNum = modelNum % 6;
-//        loadMesh();
+        ++modelNum;
+        modelNum = modelNum % 6;
+        loadMesh();
     }
     
     
