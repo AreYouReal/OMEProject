@@ -29,6 +29,7 @@ layout(location = 0) in vec4        aPosition;
 layout(location = 1) in vec3        aNormal;
 layout(location = 2) in vec2        aTexCoord;
 
+uniform float time;
 uniform uTransform  transform;
 uniform uMaterial   material;
 uniform uLight      light;
@@ -57,7 +58,6 @@ vec3 gouraud(){
 void main() {
     
     finalColor = vec4(gouraud(), 1.0);
-    
     gl_Position   = transform.projection * transform.view *  transform.model *aPosition;
     gl_PointSize = 5.0;
 }

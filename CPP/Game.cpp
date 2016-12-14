@@ -36,7 +36,7 @@ namespace OME {
         initOGL(currentCtx->width, currentCtx->height);
         
         initCamera();
-
+        Time::init();
         Scene::instance()->init();
         
 //        PngTexture2D pngTexture;

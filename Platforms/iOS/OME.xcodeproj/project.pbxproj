@@ -221,6 +221,8 @@
 		F36F7E3A1DCCA90E00A335A4 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F36F7E381DCCA90E00A335A4 /* Game.cpp */; };
 		F379BCB11DCF873E005C121E /* Cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F379BCAF1DCF873E005C121E /* Cache.cpp */; };
 		F38A96061DCE05C6005BCA83 /* Texture2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F38A96041DCE05C6005BCA83 /* Texture2D.cpp */; };
+		F38F459A1E018732006F2947 /* wobble.frag in Resources */ = {isa = PBXBuildFile; fileRef = F38F45981E018732006F2947 /* wobble.frag */; };
+		F38F459B1E018732006F2947 /* wobble.vert in Resources */ = {isa = PBXBuildFile; fileRef = F38F45991E018732006F2947 /* wobble.vert */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
 		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
@@ -632,6 +634,8 @@
 		F379BCB01DCF873E005C121E /* Cache.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cache.hpp; path = ../../CPP/Utils/Files/Cache.hpp; sourceTree = SOURCE_ROOT; };
 		F38A96041DCE05C6005BCA83 /* Texture2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Texture2D.cpp; path = ../../CPP/Utils/Texture2D/Texture2D.cpp; sourceTree = SOURCE_ROOT; };
 		F38A96051DCE05C6005BCA83 /* Texture2D.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Texture2D.hpp; path = ../../CPP/Utils/Texture2D/Texture2D.hpp; sourceTree = SOURCE_ROOT; };
+		F38F45981E018732006F2947 /* wobble.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wobble.frag; sourceTree = "<group>"; };
+		F38F45991E018732006F2947 /* wobble.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = wobble.vert; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
@@ -1236,6 +1240,8 @@
 		F352B0E61DFEEC7100ED383C /* one_light */ = {
 			isa = PBXGroup;
 			children = (
+				F38F45981E018732006F2947 /* wobble.frag */,
+				F38F45991E018732006F2947 /* wobble.vert */,
 				F352B0E71DFEEC7100ED383C /* gouraud.frag */,
 				F352B0E81DFEEC7100ED383C /* gouraud.vert */,
 				F352B0E91DFEEC7100ED383C /* phong.frag */,
@@ -1499,6 +1505,7 @@
 				F32AA30A1DC2230100563510 /* Images.xcassets in Resources */,
 				F35275341DD4665100ED870D /* type_mat4x4.inl in Resources */,
 				F32AA3011DC222CB00563510 /* Main_iPad.storyboard in Resources */,
+				F38F459A1E018732006F2947 /* wobble.frag in Resources */,
 				F35275431DD4665100ED870D /* matrix_access.inl in Resources */,
 				F352757A1DD4665100ED870D /* raw_data.inl in Resources */,
 				F35275531DD4665100ED870D /* closest_point.inl in Resources */,
@@ -1530,6 +1537,7 @@
 				F35275611DD4665100ED870D /* gradient_paint.inl in Resources */,
 				F352753C1DD4665100ED870D /* bitfield.inl in Resources */,
 				F352B1001DFEEFD100ED383C /* phong.frag in Resources */,
+				F38F459B1E018732006F2947 /* wobble.vert in Resources */,
 				F35275641DD4665100ED870D /* integer.inl in Resources */,
 				F35275401DD4665100ED870D /* epsilon.inl in Resources */,
 				F352B0F71DFEEC7100ED383C /* phong.frag in Resources */,

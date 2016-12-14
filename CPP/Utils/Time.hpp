@@ -12,7 +12,9 @@ namespace OME {
         static void update();
         
         static float deltaTime();
-    
+        
+        static float sinceStart();
+        
     private:
         
 

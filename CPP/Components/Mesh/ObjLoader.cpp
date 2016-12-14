@@ -5,13 +5,13 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "phong.vert"
-#define P_FRAGMENT_SHADER "phong.frag"
+#define P_VERTEX_SHADER "wobble.vert"
+#define P_FRAGMENT_SHADER "wobble.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
-#define P_VERTEX_SHADER "shaders/one_light/phong.vert"
-#define P_FRAGMENT_SHADER "shaders/one_light/phong.frag"
+#define P_VERTEX_SHADER "shaders/one_light/wobble.vert"
+#define P_FRAGMENT_SHADER "shaders/one_light/wobble.frag"
 #endif
 
 #include "GameObject.hpp"
@@ -28,6 +28,9 @@ namespace OME {
     int stride;
     GLvoid* offset;
     GLvoid* offsetTexCoord;
+    
+    
+    float time;
     
     ObjLoader::ObjLoader(){
     }
@@ -96,6 +99,9 @@ namespace OME {
         program.setUniform("light.ambient", lightAmbient);
         program.setUniform("light.diffuse", lightDiffuse);
         program.setUniform("light.specular", lightSpecular);
+
+        Utils::LOG("TIME: %f", Time::sinceStart());
+        program.setUniform("time", Time::sinceStart());
         
         glBindVertexArray(vao);
         
@@ -115,13 +121,13 @@ namespace OME {
 //        }else{
 //            program = phong;
 //        }
-        
-        
-        if(direction > 0.0f){
-            direction = -2.0f;
-        }else{
-            direction = 2.0f;
-        }
+//
+//        
+//        if(direction > 0.0f){
+//            direction = -2.0f;
+//        }else{
+//            direction = 2.0f;
+//        }
         
         ++modelNum;
         modelNum = modelNum % 6;
