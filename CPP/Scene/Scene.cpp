@@ -47,6 +47,7 @@ namespace OME {
         go = up<GameObject>(new GameObject());
         Light *light = (Light*)go->addComponent(up<Light>(new Light()));
         light->init();
+        light->go->transform()->mPosition = vec3(0.0f, 10.0f, 0.0f);
         
         
         addObject(std::move(go));

@@ -29,6 +29,7 @@ namespace OME {
     GLvoid* offset;
     GLvoid* offsetTexCoord;
     
+    GLint drawType = GL_LINES;
     
     float time;
     
@@ -62,8 +63,6 @@ namespace OME {
         
         Light *l = Illuminator::instance()->getLight();
         
-        l->go->transform()->mPosition = vec3(10.0f, 10.0f, 10.0f);
-        
         Camera::instance()->pushMatrix(go->transform()->getMatrix());
         
         program.use();
@@ -90,7 +89,7 @@ namespace OME {
         
         program.setUniform("directionLight", direction);
 
-        glm::vec3 lightInViewPos = viewMat * vec4(10.0f, 10.0f, 10.0f, 1.0f);
+        glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
         glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
         glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
@@ -105,7 +104,7 @@ namespace OME {
         
         glBindVertexArray(vao);
         
-        glDrawArrays(GL_LINES, 0, indexCount);
+        glDrawArrays(drawType, 0, indexCount);
         
         glBindVertexArray(0);
         
@@ -114,14 +113,22 @@ namespace OME {
     
     void ObjLoader::switchModel(){
 
-//        static bool perVertex = false;
-//        perVertex = !perVertex;
-//        if(perVertex){
-//            program = gouraud;
-//        }else{
-//            program = phong;
-//        }
+        static bool perVertex = false;
+        perVertex = !perVertex;
+        if(perVertex){
+            program = gouraud;
+        }else{
+            program = phong;
+        }
 //
+        
+        
+        if(drawType == GL_LINES){
+            drawType = GL_TRIANGLES;
+        }else{
+            drawType = GL_LINES;
+        }
+        
 //        
 //        if(direction > 0.0f){
 //            direction = -2.0f;
@@ -129,9 +136,9 @@ namespace OME {
 //            direction = 2.0f;
 //        }
         
-//        ++modelNum;
-//        modelNum = modelNum % 7;
-//        loadMesh();
+        ++modelNum;
+        modelNum = modelNum % 7;
+        loadMesh();
     }
     
     
