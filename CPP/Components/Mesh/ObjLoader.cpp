@@ -10,8 +10,8 @@
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
-#define P_VERTEX_SHADER "shaders/one_light/wobble.vert"
-#define P_FRAGMENT_SHADER "shaders/one_light/wobble.frag"
+#define P_VERTEX_SHADER "shaders/one_light/ripple.vert"
+#define P_FRAGMENT_SHADER "shaders/one_light/ripple.frag"
 #endif
 
 #include "GameObject.hpp"
@@ -99,7 +99,6 @@ namespace OME {
         program.setUniform("light.diffuse", lightDiffuse);
         program.setUniform("light.specular", lightSpecular);
 
-        Utils::LOG("TIME: %f", Time::sinceStart());
         program.setUniform("time", Time::sinceStart());
         
         glBindVertexArray(vao);
