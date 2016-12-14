@@ -18,6 +18,8 @@ namespace OME {
     
     Loader3DS *ds;
     
+    Grid *grid;
+    
     Scene::Scene(){    }
     
     Scene::~Scene(){    }
@@ -26,7 +28,7 @@ namespace OME {
         
         // TODO: Wrong direction! TEMP solution
         GameObject *camGO = Camera::instance()->go;
-        camGO->transform()->mPosition -= vec3(0, 2, 1);
+        camGO->transform()->mPosition -= vec3(0, 1, 1);
         
         addObject(up<GameObject>( Camera::instance()->go ));
 
@@ -48,6 +50,7 @@ namespace OME {
         
         
         addObject(std::move(go));
+        
         return true;
     }
     

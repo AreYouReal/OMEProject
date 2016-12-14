@@ -5,8 +5,8 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "wobble.vert"
-#define P_FRAGMENT_SHADER "wobble.frag"
+#define P_VERTEX_SHADER "ripple.vert"
+#define P_FRAGMENT_SHADER "ripple.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
@@ -21,7 +21,7 @@
 
 namespace OME {
     
-    string meshesNames[] = {"SemiHollowCylinder.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj", "Cone.obj"};
+    string meshesNames[] = {"SubDividedPlane.obj", "SemiHollowCylinder.obj", "Sphere.obj", "Torus.obj", "Monkey.obj", "IsoSphere.obj", "Cone.obj"};
     
     float direction = 0.0f;
     
@@ -105,7 +105,7 @@ namespace OME {
         
         glBindVertexArray(vao);
         
-        glDrawArrays(GL_TRIANGLES, 0, indexCount);
+        glDrawArrays(GL_LINES, 0, indexCount);
         
         glBindVertexArray(0);
         
@@ -129,9 +129,9 @@ namespace OME {
 //            direction = 2.0f;
 //        }
         
-        ++modelNum;
-        modelNum = modelNum % 6;
-        loadMesh();
+//        ++modelNum;
+//        modelNum = modelNum % 7;
+//        loadMesh();
     }
     
     
