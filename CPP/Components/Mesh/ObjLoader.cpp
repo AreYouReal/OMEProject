@@ -10,8 +10,8 @@
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
-#define P_VERTEX_SHADER "shaders/multi_light/phong.vert"
-#define P_FRAGMENT_SHADER "shaders/multi_light/phong.frag"
+#define P_VERTEX_SHADER "shaders/one_light/phong.vert"
+#define P_FRAGMENT_SHADER "shaders/one_light/phong.frag"
 #endif
 
 #include "GameObject.hpp"
@@ -59,7 +59,7 @@ namespace OME {
         
         Light *l = Illuminator::instance()->getLight();
         
-        l->go->transform()->mPosition = vec3(rot, 10.0f, 10.0f);
+        l->go->transform()->mPosition = vec3(10.0f, 10.0f, 10.0f);
         
         Camera::instance()->pushMatrix(go->transform()->getMatrix());
         
@@ -76,7 +76,7 @@ namespace OME {
         program.setUniform("transform.normal",     normalMatrix);
         
         glm::vec3 matAmbient(0.1f, 0.1f, 0.1f);
-        glm::vec3 matDiffuse(0.7f, 0.7f, 0.5f);
+        glm::vec3 matDiffuse(0.7f, 0.1f, 0.5f);
         glm::vec3 matSpecular(1.0f, 1.0f, 1.0f);
         float shininess = 40;
         
@@ -85,54 +85,17 @@ namespace OME {
         program.setUniform("material.specular", matSpecular);
         program.setUniform("material.shininess", shininess);
         
-
-        
         program.setUniform("directionLight", direction);
 
-        
-
-            glm::vec3 lightInViewPos = viewMat * vec4(10.0f, 10.0f, 10.0f, 1.0f);
-            glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
-            glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
-            glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
+        glm::vec3 lightInViewPos = viewMat * vec4(10.0f, 10.0f, 10.0f, 1.0f);
+        glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
+        glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
+        glm::vec3 lightSpecular(1.0f, 1.0f, 1.0f);
             
-            program.setUniform("light[0].position", lightInViewPos);
-            program.setUniform("light[0].ambient", lightAmbient);
-            program.setUniform("light[0].diffuse", lightDiffuse);
-            program.setUniform("light[0].specular", lightSpecular);
-        
-         lightInViewPos = viewMat * vec4(-10.0f, 10.0f, 0.0f, 1.0f);
-         lightAmbient = vec3(1.0f, 1.0f, 1.0f);
-         lightDiffuse = vec3(.0f, .0f, .5f);
-         lightSpecular = vec3(1.0f, 1.0f, 1.0f);
-        
-        program.setUniform("light[1].position", lightInViewPos);
-        program.setUniform("light[1].ambient", lightAmbient);
-        program.setUniform("light[1].diffuse", lightDiffuse);
-        program.setUniform("light[1].specular", lightSpecular);
-        
-         lightInViewPos = viewMat * vec4(10.0f, -10.0f, 0.0f, 1.0f);
-        lightAmbient = vec3(1.0f, 1.0f, 1.0f);
-        lightDiffuse = vec3(.5f, .0f, .0f);
-        lightSpecular = vec3(1.0f, 1.0f, 1.0f);
-        
-        program.setUniform("light[2].position", lightInViewPos);
-        program.setUniform("light[2].ambient", lightAmbient);
-        program.setUniform("light[2].diffuse", lightDiffuse);
-        program.setUniform("light[2].specular", lightSpecular);
-        
-         lightInViewPos = viewMat * vec4(-10.0f, -10.0f, -10.0f, 1.0f);
-        lightAmbient = vec3(0.0f, .0f, .0f);
-        lightDiffuse = vec3(.0f, .0f, 1.0f);
-        lightSpecular = vec3(.0f, .0f, 1.0f);
-        
-        program.setUniform("light[3].position", lightInViewPos);
-        program.setUniform("light[3].ambient", lightAmbient);
-        program.setUniform("light[3].diffuse", lightDiffuse);
-        program.setUniform("light[3].specular", lightSpecular);
-
-        
-
+        program.setUniform("light.position", lightInViewPos);
+        program.setUniform("light.ambient", lightAmbient);
+        program.setUniform("light.diffuse", lightDiffuse);
+        program.setUniform("light.specular", lightSpecular);
         
         glBindVertexArray(vao);
         

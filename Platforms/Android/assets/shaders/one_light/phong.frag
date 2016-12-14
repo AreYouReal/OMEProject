@@ -36,8 +36,6 @@ vec3 phongShading(){
     }else{
         nLightVec = normalize( light.position );
     }
-    
-    
         
     // Diffuse intensity
     float cosAngle = max(0.0, dot( nNorm, nLightVec));
@@ -52,7 +50,6 @@ vec3 phongShading(){
     vec3 specular = sIntensity * material.specular * light.specular;
     
     return ambient + diffuse + specular;
-
 }
 
 void main() {
