@@ -45,6 +45,8 @@
 		F31B19A71DE97C6200B1C174 /* Torus.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A21DE97C6200B1C174 /* Torus.obj */; };
 		F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19AC1DE981DE00B1C174 /* Cone.obj */; };
 		F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F325BF0A1DE4487900519F0E /* Cube.cpp */; };
+		F32A191E1E114438006AF89F /* procTexture.frag in Resources */ = {isa = PBXBuildFile; fileRef = F32A191C1E114438006AF89F /* procTexture.frag */; };
+		F32A191F1E114438006AF89F /* procTexture.vert in Resources */ = {isa = PBXBuildFile; fileRef = F32A191D1E114438006AF89F /* procTexture.vert */; };
 		F32AA2F31DC2223800563510 /* OMETests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F21DC2223800563510 /* OMETests-Info.plist */; };
 		F32AA2F61DC2223D00563510 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F41DC2223D00563510 /* InfoPlist.strings */; };
 		F32AA2F91DC2224600563510 /* OME-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32AA2F71DC2224600563510 /* OME-Info.plist */; };
@@ -288,6 +290,8 @@
 		F31B19AC1DE981DE00B1C174 /* Cone.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cone.obj; sourceTree = "<group>"; };
 		F325BF0A1DE4487900519F0E /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = Primitives/Cube.cpp; sourceTree = "<group>"; };
 		F325BF0B1DE4487900519F0E /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cube.hpp; path = Primitives/Cube.hpp; sourceTree = "<group>"; };
+		F32A191C1E114438006AF89F /* procTexture.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = procTexture.frag; sourceTree = "<group>"; };
+		F32A191D1E114438006AF89F /* procTexture.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = procTexture.vert; sourceTree = "<group>"; };
 		F32AA2F21DC2223800563510 /* OMETests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OMETests-Info.plist"; path = "OMETests/OMETests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F32AA2F51DC2223D00563510 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = OMETests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		F32AA2F71DC2224600563510 /* OME-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "OME-Info.plist"; path = "OME/OME-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -1247,6 +1251,8 @@
 		F352B0E61DFEEC7100ED383C /* one_light */ = {
 			isa = PBXGroup;
 			children = (
+				F32A191C1E114438006AF89F /* procTexture.frag */,
+				F32A191D1E114438006AF89F /* procTexture.vert */,
 				F38F459E1E0192EC006F2947 /* ripple.frag */,
 				F38F459F1E0192EC006F2947 /* ripple.vert */,
 				F38F45981E018732006F2947 /* wobble.frag */,
@@ -1485,6 +1491,7 @@
 				F352752D1DD4665100ED870D /* type_mat2x3.inl in Resources */,
 				F352754C1DD4665100ED870D /* round.inl in Resources */,
 				F352755F1DD4665100ED870D /* fast_trigonometry.inl in Resources */,
+				F32A191F1E114438006AF89F /* procTexture.vert in Resources */,
 				F352757E1DD4665100ED870D /* simd_mat4.inl in Resources */,
 				F3544CE01DED9CA000EB6E38 /* GUARD.obj in Resources */,
 				F35275481DD4665100ED870D /* quaternion.inl in Resources */,
@@ -1608,6 +1615,7 @@
 				F35275681DD4665100ED870D /* matrix_cross_product.inl in Resources */,
 				F35275781DD4665100ED870D /* projection.inl in Resources */,
 				F35275261DD4665100ED870D /* func_vector_relational.inl in Resources */,
+				F32A191E1E114438006AF89F /* procTexture.frag in Resources */,
 				F352B0F01DFEEC7100ED383C /* grid.vert in Resources */,
 				F35275211DD4665100ED870D /* func_matrix_simd.inl in Resources */,
 				F35275731DD4665100ED870D /* number_precision.inl in Resources */,

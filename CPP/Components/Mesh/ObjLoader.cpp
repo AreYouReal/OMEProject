@@ -5,8 +5,8 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "ripple.vert"
-#define P_FRAGMENT_SHADER "ripple.frag"
+#define P_VERTEX_SHADER "procTexture.vert"
+#define P_FRAGMENT_SHADER "procTexture.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
