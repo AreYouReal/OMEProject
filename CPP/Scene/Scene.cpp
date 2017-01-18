@@ -16,8 +16,6 @@ namespace OME {
     
     ObjLoader *obj;
     
-    Loader3DS *ds;
-    
     Grid *grid;
     
     Scene::Scene(){    }
@@ -39,9 +37,7 @@ namespace OME {
         
         obj = (ObjLoader*)go->addComponent(up<ObjLoader>(new ObjLoader()));
         obj->init();
-        
-//        ds = (Loader3DS*)go->addComponent(up<Loader3DS>(new Loader3DS()));
-//        ds->init();
+
         addObject(std::move(go));
         
         go = up<GameObject>(new GameObject());

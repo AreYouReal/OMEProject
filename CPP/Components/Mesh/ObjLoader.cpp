@@ -5,8 +5,8 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "procTexture.vert"
-#define P_FRAGMENT_SHADER "procTexture.frag"
+#define P_VERTEX_SHADER "circularPattern.vert"
+#define P_FRAGMENT_SHADER "circularPattern.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
@@ -29,7 +29,7 @@ namespace OME {
     GLvoid* offset;
     GLvoid* offsetTexCoord;
     
-    GLint drawType = GL_LINES;
+    GLint drawType = GL_TRIANGLES;
     
     float time;
     
@@ -89,6 +89,13 @@ namespace OME {
         
         program.setUniform("directionLight", direction);
 
+        glm::vec3 mColor(0.50, 0.50, 1.0);
+        program.setUniform("modeColor", mColor);
+        glm::vec3 dColor(1.0, 1.0, 10);
+        program.setUniform("dotColor", dColor);
+        program.setUniform("side", 80);
+
+
         glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
         glm::vec3 lightDiffuse(1.0f, 1.0f, 1.0f);
@@ -112,21 +119,21 @@ namespace OME {
     
     void ObjLoader::switchModel(){
 
-        static bool perVertex = false;
-        perVertex = !perVertex;
-        if(perVertex){
-            program = gouraud;
-        }else{
-            program = phong;
-        }
+//        static bool perVertex = false;
+//        perVertex = !perVertex;
+//        if(perVertex){
+//            program = gouraud;
+//        }else{
+//            program = phong;
+//        }
 //
         
         
-        if(drawType == GL_LINES){
-            drawType = GL_TRIANGLES;
-        }else{
-            drawType = GL_LINES;
-        }
+//        if(drawType == GL_LINES){
+//            drawType = GL_TRIANGLES;
+//        }else{
+//            drawType = GL_LINES;
+//        }
         
 //        
 //        if(direction > 0.0f){
