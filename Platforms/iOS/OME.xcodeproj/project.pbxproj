@@ -44,6 +44,8 @@
 		F31B19A61DE97C6200B1C174 /* Sphere.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A11DE97C6200B1C174 /* Sphere.obj */; };
 		F31B19A71DE97C6200B1C174 /* Torus.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19A21DE97C6200B1C174 /* Torus.obj */; };
 		F31B19AD1DE981DE00B1C174 /* Cone.obj in Resources */ = {isa = PBXBuildFile; fileRef = F31B19AC1DE981DE00B1C174 /* Cone.obj */; };
+		F31C61F71E323AD800CE373A /* brickPattern.frag in Resources */ = {isa = PBXBuildFile; fileRef = F31C61F51E323AD800CE373A /* brickPattern.frag */; };
+		F31C61F81E323AD800CE373A /* brickPattern.vert in Resources */ = {isa = PBXBuildFile; fileRef = F31C61F61E323AD800CE373A /* brickPattern.vert */; };
 		F325BF0C1DE4487900519F0E /* Cube.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F325BF0A1DE4487900519F0E /* Cube.cpp */; };
 		F32A191E1E114438006AF89F /* procTexture.frag in Resources */ = {isa = PBXBuildFile; fileRef = F32A191C1E114438006AF89F /* procTexture.frag */; };
 		F32A191F1E114438006AF89F /* procTexture.vert in Resources */ = {isa = PBXBuildFile; fileRef = F32A191D1E114438006AF89F /* procTexture.vert */; };
@@ -290,6 +292,8 @@
 		F31B19A11DE97C6200B1C174 /* Sphere.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Sphere.obj; path = ../../Assets/ObjModels/Sphere.obj; sourceTree = SOURCE_ROOT; };
 		F31B19A21DE97C6200B1C174 /* Torus.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Torus.obj; path = ../../Assets/ObjModels/Torus.obj; sourceTree = SOURCE_ROOT; };
 		F31B19AC1DE981DE00B1C174 /* Cone.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cone.obj; sourceTree = "<group>"; };
+		F31C61F51E323AD800CE373A /* brickPattern.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = brickPattern.frag; sourceTree = "<group>"; };
+		F31C61F61E323AD800CE373A /* brickPattern.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = brickPattern.vert; sourceTree = "<group>"; };
 		F325BF0A1DE4487900519F0E /* Cube.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Cube.cpp; path = Primitives/Cube.cpp; sourceTree = "<group>"; };
 		F325BF0B1DE4487900519F0E /* Cube.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Cube.hpp; path = Primitives/Cube.hpp; sourceTree = "<group>"; };
 		F32A191C1E114438006AF89F /* procTexture.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = procTexture.frag; sourceTree = "<group>"; };
@@ -1255,6 +1259,8 @@
 		F352B0E61DFEEC7100ED383C /* one_light */ = {
 			isa = PBXGroup;
 			children = (
+				F31C61F51E323AD800CE373A /* brickPattern.frag */,
+				F31C61F61E323AD800CE373A /* brickPattern.vert */,
 				F3B39B651E2F9DA3001CF585 /* circularPattern.frag */,
 				F3B39B661E2F9DA3001CF585 /* circularPattern.vert */,
 				F32A191C1E114438006AF89F /* procTexture.frag */,
@@ -1545,6 +1551,7 @@
 				F35275321DD4665100ED870D /* type_mat4x2.inl in Resources */,
 				F35275871DD4665100ED870D /* type_trait.inl in Resources */,
 				F35275241DD4665100ED870D /* func_trigonometric.inl in Resources */,
+				F31C61F81E323AD800CE373A /* brickPattern.vert in Resources */,
 				F352B0F41DFEEC7100ED383C /* wiredObj.vert in Resources */,
 				F352B0F61DFEEC7100ED383C /* gouraud.vert in Resources */,
 				F352751F1DD4665100ED870D /* func_integer_simd.inl in Resources */,
@@ -1561,6 +1568,7 @@
 				F35275611DD4665100ED870D /* gradient_paint.inl in Resources */,
 				F352753C1DD4665100ED870D /* bitfield.inl in Resources */,
 				F352B1001DFEEFD100ED383C /* phong.frag in Resources */,
+				F31C61F71E323AD800CE373A /* brickPattern.frag in Resources */,
 				F38F459B1E018732006F2947 /* wobble.vert in Resources */,
 				F35275641DD4665100ED870D /* integer.inl in Resources */,
 				F35275401DD4665100ED870D /* epsilon.inl in Resources */,

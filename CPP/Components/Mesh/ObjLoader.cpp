@@ -5,8 +5,8 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "circularPattern.vert"
-#define P_FRAGMENT_SHADER "circularPattern.frag"
+#define P_VERTEX_SHADER "brickPattern.vert"
+#define P_FRAGMENT_SHADER "brickPattern.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
@@ -89,14 +89,26 @@ namespace OME {
         
         program.setUniform("directionLight", direction);
 
-        glm::vec3 mColor(0.50, 0.50, 1.0);
-        program.setUniform("modelColor", mColor);
-        glm::vec3 dColor(1.0, 1.0, 1.0);
-        program.setUniform("dotColor", dColor);
-        program.setUniform("side", 50);
+        // CIRCULAR ROTATION
+//        glm::vec3 mColor(0.50, 0.50, 1.0);
+//        program.setUniform("modelColor", mColor);
+//        glm::vec3 dColor(1.0, 1.0, 1.0);
+//        program.setUniform("dotColor", dColor);
+//        program.setUniform("side", 50);
+//
+//        program.setUniform("radianAngle", rot);
 
-        program.setUniform("radianAngle", rot);
-
+        
+        glm::vec3 brickColor(1.0f, 0.3f, 0.2f);
+        glm::vec3 mortarColor(0.85f, 0.86f, 0.84f);
+        glm::vec2 rectSize(0.4f, 0.1f);
+        glm::vec2 brickPercent(0.90f, 0.85f);
+        
+        program.setUniform("brickColor", brickColor);
+        program.setUniform("mortarColor", mortarColor);
+        program.setUniform("rectangularSize", rectSize);
+        program.setUniform("brickPercent", brickPercent);
+        
 
         glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
