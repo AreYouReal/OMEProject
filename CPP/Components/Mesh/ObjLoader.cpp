@@ -52,7 +52,7 @@ namespace OME {
     
     void ObjLoader::draw(){
         static float rot = 0.0f;
-        rot += 1.0f * Time::deltaTime();
+        rot += .1f * Time::deltaTime();
         if(rot > 10.0f){
             rot = 0.0f;
         }
@@ -90,10 +90,12 @@ namespace OME {
         program.setUniform("directionLight", direction);
 
         glm::vec3 mColor(0.50, 0.50, 1.0);
-        program.setUniform("modeColor", mColor);
-        glm::vec3 dColor(1.0, 1.0, 10);
+        program.setUniform("modelColor", mColor);
+        glm::vec3 dColor(1.0, 1.0, 1.0);
         program.setUniform("dotColor", dColor);
-        program.setUniform("side", 80);
+        program.setUniform("side", 50);
+
+        program.setUniform("radianAngle", rot);
 
 
         glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);

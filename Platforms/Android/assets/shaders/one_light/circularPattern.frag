@@ -28,6 +28,7 @@ uniform float       directionLight;
 uniform vec3    modelColor;
 uniform vec3    dotColor;
 uniform float   side;
+uniform float   radianAngle;
 
 
 float dotSize = side * 0.25;
@@ -62,8 +63,13 @@ vec3 phongShading(){
 }
 
 void main() {
+    
+    float cos = cos(radianAngle);
+    float sin = sin(radianAngle);
+    
+    mat2 rotation = mat2(cos, -sin, sin, cos);
 
-    vec2 position = mod(gl_FragCoord.xy, square) - square * 0.5;
+    vec2 position = mod(rotation * gl_FragCoord.xy, square) - square * 0.5;
     float length = length(position);
     float inside = step(length, dotSize);
     fragColor = vec4(mix(modelColor, dotColor, inside), 1.0);
