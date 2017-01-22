@@ -232,6 +232,8 @@
 		F38F45A11E0192EC006F2947 /* ripple.vert in Resources */ = {isa = PBXBuildFile; fileRef = F38F459F1E0192EC006F2947 /* ripple.vert */; };
 		F3B39B671E2F9DA3001CF585 /* circularPattern.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3B39B651E2F9DA3001CF585 /* circularPattern.frag */; };
 		F3B39B681E2F9DA3001CF585 /* circularPattern.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3B39B661E2F9DA3001CF585 /* circularPattern.vert */; };
+		F3D9F2531E34D49D00C75F75 /* polkaDot.frag in Resources */ = {isa = PBXBuildFile; fileRef = F3D9F2511E34D49D00C75F75 /* polkaDot.frag */; };
+		F3D9F2541E34D49D00C75F75 /* polkaDot.vert in Resources */ = {isa = PBXBuildFile; fileRef = F3D9F2521E34D49D00C75F75 /* polkaDot.vert */; };
 		F3DB21AF1DE4825000804703 /* Time.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3DB21AD1DE4825000804703 /* Time.cpp */; };
 		F3E309A41DCDED29000ED6C1 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3E309A21DCDED29000ED6C1 /* ShaderProgram.cpp */; };
 		F3F79D4E1DEDC4650002CA39 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3F79D4C1DEDC4650002CA39 /* Light.cpp */; };
@@ -654,6 +656,8 @@
 		F38F459F1E0192EC006F2947 /* ripple.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = ripple.vert; sourceTree = "<group>"; };
 		F3B39B651E2F9DA3001CF585 /* circularPattern.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = circularPattern.frag; sourceTree = "<group>"; };
 		F3B39B661E2F9DA3001CF585 /* circularPattern.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = circularPattern.vert; sourceTree = "<group>"; };
+		F3D9F2511E34D49D00C75F75 /* polkaDot.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = polkaDot.frag; sourceTree = "<group>"; };
+		F3D9F2521E34D49D00C75F75 /* polkaDot.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = polkaDot.vert; sourceTree = "<group>"; };
 		F3DB21AD1DE4825000804703 /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = ../../CPP/Utils/Time.cpp; sourceTree = "<group>"; };
 		F3DB21AE1DE4825000804703 /* Time.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Time.hpp; path = ../../CPP/Utils/Time.hpp; sourceTree = "<group>"; };
 		F3E3099A1DCDE383000ED6C1 /* Shortcuts.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = Shortcuts.hpp; path = ../../CPP/Utils/Shortcuts.hpp; sourceTree = SOURCE_ROOT; };
@@ -1259,6 +1263,8 @@
 		F352B0E61DFEEC7100ED383C /* one_light */ = {
 			isa = PBXGroup;
 			children = (
+				F3D9F2511E34D49D00C75F75 /* polkaDot.frag */,
+				F3D9F2521E34D49D00C75F75 /* polkaDot.vert */,
 				F31C61F51E323AD800CE373A /* brickPattern.frag */,
 				F31C61F61E323AD800CE373A /* brickPattern.vert */,
 				F3B39B651E2F9DA3001CF585 /* circularPattern.frag */,
@@ -1580,6 +1586,7 @@
 				F35275841DD4665100ED870D /* transform.inl in Resources */,
 				F352754B1DD4665100ED870D /* reciprocal.inl in Resources */,
 				F35275851DD4665100ED870D /* transform2.inl in Resources */,
+				F3D9F2531E34D49D00C75F75 /* polkaDot.frag in Resources */,
 				F352753A1DD4665100ED870D /* type_vec4.inl in Resources */,
 				F35275601DD4665100ED870D /* float_notmalize.inl in Resources */,
 				F31B19A51DE97C6200B1C174 /* Monkey.obj in Resources */,
@@ -1626,6 +1633,7 @@
 				F35275291DD4665100ED870D /* type_gentype.inl in Resources */,
 				F352752A1DD4665100ED870D /* type_half.inl in Resources */,
 				F352754D1DD4665100ED870D /* type_precision.inl in Resources */,
+				F3D9F2541E34D49D00C75F75 /* polkaDot.vert in Resources */,
 				F35275651DD4665100ED870D /* intersect.inl in Resources */,
 				F35275311DD4665100ED870D /* type_mat3x4.inl in Resources */,
 				F35275681DD4665100ED870D /* matrix_cross_product.inl in Resources */,

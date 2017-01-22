@@ -5,8 +5,8 @@
 #ifdef __APPLE__
 #define G_VERTEX_SHADER "gouraud.vert"
 #define G_FRAGMENT_SHADER "gouraud.frag"
-#define P_VERTEX_SHADER "brickPattern.vert"
-#define P_FRAGMENT_SHADER "brickPattern.frag"
+#define P_VERTEX_SHADER "polkaDot.vert"
+#define P_FRAGMENT_SHADER "polkaDot.frag"
 #else
 #define G_VERTEX_SHADER "shaders/one_light/gouraud.vert"
 #define G_FRAGMENT_SHADER "shaders/one_light/gouraud.frag"
@@ -97,18 +97,34 @@ namespace OME {
 //        program.setUniform("side", 50);
 //
 //        program.setUniform("radianAngle", rot);
+        //_______________________
 
+
+        // BRICK SHADER
+//        glm::vec3 brickColor(1.0f, 0.3f, 0.2f);
+//        glm::vec3 mortarColor(0.85f, 0.86f, 0.84f);
+//        glm::vec2 rectSize(0.4f, 0.1f);
+//        glm::vec2 brickPercent(0.90f, 0.85f);
+//        
+//        program.setUniform("brickColor", brickColor);
+//        program.setUniform("mortarColor", mortarColor);
+//        program.setUniform("rectangularSize", rectSize);
+//        program.setUniform("brickPercent", brickPercent);
+        //______________________
         
-        glm::vec3 brickColor(1.0f, 0.3f, 0.2f);
-        glm::vec3 mortarColor(0.85f, 0.86f, 0.84f);
-        glm::vec2 rectSize(0.4f, 0.1f);
-        glm::vec2 brickPercent(0.90f, 0.85f);
         
-        program.setUniform("brickColor", brickColor);
-        program.setUniform("mortarColor", mortarColor);
-        program.setUniform("rectangularSize", rectSize);
-        program.setUniform("brickPercent", brickPercent);
+        program.setUniform("side", 0.30);
+        program.setUniform("dotSize", 0.13);
         
+        glm::vec3 modelColor(1.0, 1.0, 1.0);
+        glm::vec3 dotColor(0.0f, 0.0f, .7f);
+        glm::vec3 backSideModelColor(0.0f, 0.7f, 0.0f);
+        glm::vec3 backSideDotColor(0.8f, 0.2f, 0.0f);
+        
+        program.setUniform("modelColor", modelColor);
+        program.setUniform("dotColor", dotColor);
+        program.setUniform("backSideModelColor", backSideModelColor);
+        program.setUniform("backSideDotColor", backSideDotColor);
 
         glm::vec3 lightInViewPos = viewMat * vec4(l->go->transform()->mPosition, 1.0f);
         glm::vec3 lightAmbient(1.0f, 1.0f, 1.0f);
