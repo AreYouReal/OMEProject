@@ -69,6 +69,10 @@ void main() {
     length = sqrt((position.x * position.x) + (position.y * position.y) + (position.z * position.z));
     insideSphere = step(length, dotSize);
     
+    if(insideSphere == 0.0){
+        discard;
+    }
+    
     if(gl_FrontFacing){
         renderColor = vec3(mix(modelColor, dotColor, insideSphere));
     }else{
