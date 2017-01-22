@@ -56,10 +56,14 @@ namespace OME {
         Scene::instance()->draw();
     }
     
-    void Game::OnTouch(const int x, const int y, const int type){
+    void Game::OnTouch(const int x, const int y, const int type, const int index){
         Camera::instance()->onTouch(x, y, type);
         if(type == 0)
             Scene::instance()->OnTouch();
+        
+        
+        
+        Utils::LOG("Touch id: %d", index);
     }
     
     void Game::OnDestroy   (){

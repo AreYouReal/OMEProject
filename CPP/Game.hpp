@@ -16,7 +16,7 @@ namespace OME {
     private:
         static void OnUpdate    (const float);
         static void OnDraw      ();
-        static void OnTouch     (const int, const int, const int);
+        static void OnTouch     (const int, const int, const int, const int);
         static void OnDestroy   ();        
         
         static void initOGL(const float, const float);

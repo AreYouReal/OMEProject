@@ -103,10 +103,12 @@
     CGPoint pos;
     
     if(ctx.onTouch){
+        int i = 0;
         for( touch in touches ){
             pos = [ touch locationInView:self.view ];
             
-            ctx.onTouch( pos.x, pos.y, 0 );
+            ctx.onTouch( pos.x, pos.y, 0, i );
+            ++i;
         }
     }
 
@@ -118,10 +120,13 @@
     CGPoint pos;
     
     if(ctx.onTouch){
+        int i = 0;
         for( touch in touches ){
+           
             pos = [ touch locationInView:self.view ];
             
-            ctx.onTouch( pos.x, pos.y, 1 );
+            ctx.onTouch( pos.x, pos.y, 1, i );
+            ++i;
         }
     }
 }
@@ -132,10 +137,12 @@
     CGPoint pos;
     
     if(ctx.onTouch){
+        int i = 0;
         for( touch in touches ){
             pos = [ touch locationInView:self.view ];
             
-            ctx.onTouch( pos.x, pos.y, 2 );
+            ctx.onTouch( pos.x, pos.y, 2, i );
+            ++i;
         }
     }
 }
