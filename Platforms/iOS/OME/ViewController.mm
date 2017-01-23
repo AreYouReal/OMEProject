@@ -106,10 +106,11 @@
     
     if(ctx.onTouch){
         int i = 0;
+        int touchCount = [touches count];
         for( touch in touches ){
             pos = [ touch locationInView:self.view ];
             
-            ctx.onTouch( pos.x, pos.y, 0, i );
+            ctx.onTouch(touchCount, i, 0, pos.x, pos.y);
             ++i;
         }
     }
@@ -123,11 +124,12 @@
     
     if(ctx.onTouch){
         int i = 0;
+        int touchCount = [touches count];
         for( touch in touches ){
            
             pos = [ touch locationInView:self.view ];
             
-            ctx.onTouch( pos.x, pos.y, 1, i );
+            ctx.onTouch(touchCount, i, 1, pos.x, pos.y);
             ++i;
         }
     }
@@ -142,10 +144,11 @@
     
     if(ctx.onTouch){
         int i = 0;
+        int touchCount = [touches count];
         for( touch in touches ){
             pos = [ touch locationInView:self.view ];
-            
-            ctx.onTouch( pos.x, pos.y, 2, i );
+
+            ctx.onTouch(touchCount, i, 2, pos.x, pos.y);
             ++i;
         }
     }

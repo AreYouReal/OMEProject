@@ -44,7 +44,7 @@ namespace OME {
     
     using OnUpdate  = void(*)(const float);
     using OnDraw    = void(*)();
-    using OnTouch   = void(*)(const int, const int, const int, const int);
+    using OnTouch   = void(*)(const int, const int, const int, const int, const int);
     using OnDestroy = void(*)();
     
     struct Context{
