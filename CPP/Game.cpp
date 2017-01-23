@@ -60,10 +60,6 @@ namespace OME {
         Camera::instance()->onTouch(x, y, type);
         if(type == 0)
             Scene::instance()->OnTouch();
-        
-        
-        
-        Utils::LOG("Touch id: %d", index);
     }
     
     void Game::OnDestroy   (){

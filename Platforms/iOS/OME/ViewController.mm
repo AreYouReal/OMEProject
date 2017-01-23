@@ -30,6 +30,8 @@
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    [view setMultipleTouchEnabled:YES];
+    
     
     [self setupGL];
 }
@@ -135,6 +137,8 @@
 {
     UITouch *touch;
     CGPoint pos;
+    
+
     
     if(ctx.onTouch){
         int i = 0;
