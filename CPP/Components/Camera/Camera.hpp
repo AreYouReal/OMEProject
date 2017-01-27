@@ -42,7 +42,7 @@ namespace OME {
         void setWindthAndHeight(const int, const int);
 
         
-        void onTouch(const int, const int, const int);
+        void onTouch(const int count, const int id, const int event, const int x, const int y);
         
         void pushMatrix(const mat4 modelMatrix);
         void popMatrix();
@@ -66,8 +66,9 @@ namespace OME {
         
         
         // TOUCH RELATED
-        vec2 mPrevTouch{0.0f};
-        vec2 mDeltaTouch{0.0f};
+        std::vector<vec2> mPrevTouch{vec2(0.0f), vec2(0.0f)};
+        std::vector<vec2> mCurrentTouch{vec2(0.0f), vec2(0.0f)};
+        std::vector<vec2> mDeltaTouch{vec2(0.0f), vec2(0.0f)};
         float mTouchSensetivity = 0.01;
         
     };

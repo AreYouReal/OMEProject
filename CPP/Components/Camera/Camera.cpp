@@ -54,26 +54,33 @@ namespace OME {
         mHeight = height;
     }
     
-    void Camera::onTouch(const int x, const int y, const int event){
+    void Camera::onTouch(const int count, const int id, const int event, const int x, const int y){
         TOUCH_EVENT touchEvent = (TOUCH_EVENT)event;
-        switch (touchEvent) {
-            case TOUCH_EVENT::DOWN :
-                mPrevTouch.x = x;
-                mPrevTouch.y = y;
-                break;
-            case TOUCH_EVENT::MOVED :
-                mDeltaTouch.x = (x - mPrevTouch.x) * mTouchSensetivity;
-                mDeltaTouch.y = (y - mPrevTouch.y) * mTouchSensetivity;
-                mPrevTouch.x = x;
-                mPrevTouch.y = y;
-                break;
-            case TOUCH_EVENT::UP :
-                mPrevTouch = mDeltaTouch = vec2(0.0f);
-                break;
-                
-            default:
-                break;
-        }
+        
+        if(id >= mPrevTouch.size()) return;
+        
+            switch (touchEvent) {
+                case TOUCH_EVENT::DOWN :
+                    mCurrentTouch[id].x = x;
+                    mCurrentTouch[id].y = y;
+                    mPrevTouch[id].x = x;
+                    mPrevTouch[id].y = y;
+                    break;
+                case TOUCH_EVENT::MOVED :
+                    mCurrentTouch[id].x = x;
+                    mCurrentTouch[id].y = y;
+                    mDeltaTouch[id].x = (x - mPrevTouch[id].x) * mTouchSensetivity;
+                    mDeltaTouch[id].y = (y - mPrevTouch[id].y) * mTouchSensetivity;
+                    mPrevTouch[id].x = x;
+                    mPrevTouch[id].y = y;
+                    break;
+                case TOUCH_EVENT::UP :
+                    mCurrentTouch[id] = mPrevTouch[id] = mDeltaTouch[id] = vec2(0.0f);
+                    break;
+                    
+                default:
+                    break;
+            }
     
     }
     
@@ -92,16 +99,20 @@ namespace OME {
     void Camera::update(){
         
         
-        if(mDeltaTouch.x != 0.0f){
-            vec3 newRotation = transform->mRotation;
-            newRotation.y += mDeltaTouch.x;
-            transform->mRotation = newRotation;
-            transform->mFront = vec3(-sinf(newRotation.y), 0.0f, -cosf(newRotation.y));
+        if(mDeltaTouch[0].x != 0.0f){
+            transform->rotate(vec3(0.0f, mDeltaTouch[0].x, 0.0f));
         }
         
-        if(mDeltaTouch.y != 0.0f){
-            transform->mPosition += (transform->mFront * mDeltaTouch.y);
+        if(mDeltaTouch[0].y != 0.0f){
+            transform->rotate(vec3(mDeltaTouch[0].y, 0.0f, 0.0f));
         }
+        
+        if(mCurrentTouch[1].x != 0.0f && mPrevTouch[1].x != 0.0f){
+            vec3 offset = vec3((mCurrentTouch[0] - mCurrentTouch[1]) - (mPrevTouch[0] - mPrevTouch[1]), 0.0f);
+            Utils::LOG("Offset: { %f, %f, %f}", offset.x, offset.y, offset.z);
+            transform->translate(offset);
+        }
+        
         
         vec3 target = transform->mFront + transform->mPosition;
         mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);

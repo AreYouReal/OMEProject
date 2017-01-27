@@ -28,8 +28,11 @@ namespace OME {
         glm::vec3 mUp;
         glm::vec3 mRight;
         
-        
         static glm::vec3 WORLD_UP;
+
+        void rotate(vec3 eulerAngles);
+        void translate(vec3 offset);
+        void scale(vec3 scale);
         
     };
 }

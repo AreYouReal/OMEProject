@@ -27,6 +27,26 @@ namespace OME {
         return returnValue;
     }
     
+    
+    void Transform::rotate(vec3 eulerAngles){
+        mRotation += eulerAngles;
+        mat4 rotMatrix;
+        rotMatrix = (glm::rotate(rotMatrix, eulerAngles.x, vec3(1, 0, 0))
+                              * glm::rotate(rotMatrix, eulerAngles.y, vec3(0, 1, 0))
+                                            *glm::rotate(rotMatrix, eulerAngles.z, vec3(0, 0, 1)));
+        
+        mFront =vec3( glm::vec4(mFront, 1.0f) * rotMatrix);
+        mRight = vec3(glm::vec4(mRight, 1.0f) * rotMatrix);
+    
+    }
+    
+    void Transform::translate(vec3 offset){
+        mPosition += offset;
+    }
+    
+    void Transform::scale(vec3 scale){
+    
+    }
 }
 
 
