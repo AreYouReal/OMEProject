@@ -57,6 +57,8 @@ namespace OME {
     void Camera::onTouch(const int count, const int id, const int event, const int x, const int y){
         TOUCH_EVENT touchEvent = (TOUCH_EVENT)event;
         
+        Utils::LOG("Touch id: %d", id);
+        
         if(id >= mPrevTouch.size()) return;
         
             switch (touchEvent) {
@@ -71,8 +73,6 @@ namespace OME {
                     mCurrentTouch[id].y = y;
                     mDeltaTouch[id].x = (x - mPrevTouch[id].x) * mTouchSensetivity;
                     mDeltaTouch[id].y = (y - mPrevTouch[id].y) * mTouchSensetivity;
-                    mPrevTouch[id].x = x;
-                    mPrevTouch[id].y = y;
                     break;
                 case TOUCH_EVENT::UP :
                     mCurrentTouch[id] = mPrevTouch[id] = mDeltaTouch[id] = vec2(0.0f);
@@ -97,23 +97,33 @@ namespace OME {
     }
     
     void Camera::update(){
-        
-        
-        if(mDeltaTouch[0].x != 0.0f){
-            transform->rotate(vec3(0.0f, mDeltaTouch[0].x, 0.0f));
-        }
-        
-        if(mDeltaTouch[0].y != 0.0f){
-            transform->rotate(vec3(mDeltaTouch[0].y, 0.0f, 0.0f));
-        }
-        
         if(mCurrentTouch[1].x != 0.0f && mPrevTouch[1].x != 0.0f){
-            vec3 offset = vec3((mCurrentTouch[0] - mCurrentTouch[1]) - (mPrevTouch[0] - mPrevTouch[1]), 0.0f);
+            
+
+            
+            float prevLength = (mPrevTouch[0] - mPrevTouch[1]).length();
+            float currLength = (mCurrentTouch[0] - mCurrentTouch[1]).length();
+
+            Utils::LOG("PrevTouch length: { %f }", prevLength);
+            Utils::LOG("CurrTouch length: { %f }", currLength);
+            
+            vec3 offset = transform->mFront * (currLength - prevLength);
+            
+            
             Utils::LOG("Offset: { %f, %f, %f}", offset.x, offset.y, offset.z);
             transform->translate(offset);
+        }else{
+            if(mDeltaTouch[0].x != 0.0f){
+                transform->rotate(vec3(0.0f, mDeltaTouch[0].x, 0.0f));
+            }
+            
+            if(mDeltaTouch[0].y != 0.0f){
+                transform->rotate(vec3(mDeltaTouch[0].y, 0.0f, 0.0f));
+            }
         }
-        
-        
+        mPrevTouch[0] = mCurrentTouch[0];
+        mPrevTouch[1] = mCurrentTouch[1];
+
         vec3 target = transform->mFront + transform->mPosition;
         mViewMatrix = glm::lookAt(transform->mPosition, target, transform->mUp);
         mProjectinoMatrix = glm::perspective(mFOV, mWidth/mHeight, mNearPlane, mFarPlane);
