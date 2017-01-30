@@ -57,7 +57,7 @@ namespace OME {
     void Camera::onTouch(const int count, const int id, const int event, const int x, const int y){
         TOUCH_EVENT touchEvent = (TOUCH_EVENT)event;
         
-        Utils::LOG("Touch id: %d", id);
+        Utils::LOG("Touch count: %d %d %d", count, x, y);
         
         if(id >= mPrevTouch.size()) return;
         
@@ -65,14 +65,12 @@ namespace OME {
                 case TOUCH_EVENT::DOWN :
                     mCurrentTouch[id].x = x;
                     mCurrentTouch[id].y = y;
-                    mPrevTouch[id].x = x;
-                    mPrevTouch[id].y = y;
+                    mPrevTouch[id] = mCurrentTouch[id];
                     break;
                 case TOUCH_EVENT::MOVED :
                     mCurrentTouch[id].x = x;
                     mCurrentTouch[id].y = y;
-                    mDeltaTouch[id].x = (x - mPrevTouch[id].x) * mTouchSensetivity;
-                    mDeltaTouch[id].y = (y - mPrevTouch[id].y) * mTouchSensetivity;
+                    mDeltaTouch[id] = (mCurrentTouch[id] - mPrevTouch[id]) * mTouchSensetivity;
                     break;
                 case TOUCH_EVENT::UP :
                     mCurrentTouch[id] = mPrevTouch[id] = mDeltaTouch[id] = vec2(0.0f);
@@ -97,20 +95,15 @@ namespace OME {
     }
     
     void Camera::update(){
-        if(mCurrentTouch[1].x != 0.0f && mPrevTouch[1].x != 0.0f){
-            
+       
+        if(mCurrentTouch[1].x != 0.0f && mPrevTouch[1].x != 0.0f && mCurrentTouch[0].x != 0.0f && mCurrentTouch[0].x != 0.0f){
 
+            float prevLength = glm::length(mPrevTouch[0] - mPrevTouch[1]);
+            float currLength = glm::length( mCurrentTouch[0] - mCurrentTouch[1] );
             
-            float prevLength = (mPrevTouch[0] - mPrevTouch[1]).length();
-            float currLength = (mCurrentTouch[0] - mCurrentTouch[1]).length();
-
-            Utils::LOG("PrevTouch length: { %f }", prevLength);
-            Utils::LOG("CurrTouch length: { %f }", currLength);
+            float length = currLength - prevLength;
             
-            vec3 offset = transform->mFront * (currLength - prevLength);
-            
-            
-            Utils::LOG("Offset: { %f, %f, %f}", offset.x, offset.y, offset.z);
+            vec3 offset = transform->mFront *length * mTouchSensetivity;
             transform->translate(offset);
         }else{
             if(mDeltaTouch[0].x != 0.0f){
